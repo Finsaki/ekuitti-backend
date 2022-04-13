@@ -5,6 +5,6 @@ import * as config from './utils/config'
 
 const server = http.createServer(app)
 
-app.listen(config.PORT, () => {
+server.listen(config.PORT, () => {
   return logger.info(`Server is listening on ${config.PORT}`)
 })
