@@ -5,3 +5,5 @@ Testing 2
 git clone / git pull
 yarn install
 yarn run dev
+
+> Read documentation.md for more information
