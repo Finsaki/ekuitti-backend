@@ -1,51 +1,43 @@
 import { Request, Response } from 'express';
-import { TaskDao } from "../models/TaskDao";
+import { find, addItem, updateItem, getItem } from "../models/TaskDao";
+const taskRouter = require('express').Router()
 
-class TaskList {
-  private taskDao: TaskDao
+//Show tasks
+taskRouter.get('/', async (_req: Request, res: Response) => {
+  const querySpec = {
+    query: "SELECT * FROM root",
+    parameters: [
+      {
+        name: "@completed",
+        value: false
+      }
+    ]
+  };
 
-  /**
-   * Handles the various APIs for displaying and managing tasks
-   */
-  constructor(taskDao: TaskDao) {
-    this.taskDao = taskDao;
-  }
-  async showTasks(_req: Request, res: Response) {
-    const querySpec = {
-      query: "SELECT * FROM root r WHERE r.completed=@completed",
-      parameters: [
-        {
-          name: "@completed",
-          value: false
-        }
-      ]
-    };
+  const items = await find(querySpec);
+  res.json(items)
+  //res.json(items.map(item => item.toJSON()))
+})
 
-    const items = await this.taskDao.find(querySpec);
-    res.render("index", {
-      title: "My ToDo List ",
-      tasks: items
-    });
-  }
+//addTask
+taskRouter.post('/addtask', async (req: Request, res: Response) => {
+  const item = req.body;
 
-  async addTask(req: Request, res: Response) {
-    const item = req.body;
+  await addItem(item);
+  res.redirect("/");
+})
 
-    await this.taskDao.addItem(item);
-    res.redirect("/");
-  }
+//completeTask
+taskRouter.post('/completetask', async (req: Request, res: Response) => {
+  const completedTasks = Object.keys(req.body);
+  const tasks: any = [];
 
-  async completeTask(req: Request, res: Response) {
-    const completedTasks = Object.keys(req.body);
-    const tasks: any = [];
+  completedTasks.forEach(task => {
+    tasks.push(updateItem(task));
+  });
 
-    completedTasks.forEach(task => {
-      tasks.push(this.taskDao.updateItem(task));
-    });
+  await Promise.all(tasks);
+  res.redirect("/");
+})
 
-    await Promise.all(tasks);
-    res.redirect("/");
-  }
-}
-
-export { TaskList }
+export { taskRouter }
