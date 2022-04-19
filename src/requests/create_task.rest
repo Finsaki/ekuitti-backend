@@ -1,0 +1,6 @@
+POST http://localhost:8080/api/tasks/addtask
+content-type: application/json
+
+{
+"name": "very important task 2", "category": "top-kekret3"
+}

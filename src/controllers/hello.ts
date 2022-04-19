@@ -1,4 +1,5 @@
 //Example router that defines the CRUD operations for given path in app.ts
+//No database connections are used so no DAO model class is associated
 
 import { Request, Response } from 'express';
 const helloRouter = require('express').Router()
