@@ -1,0 +1,6 @@
+PUT http://localhost:8080/api/tasks/e7736114-9d58-4e9b-a28f-a15dd4ecf04d
+content-type: application/json
+
+{
+"name": "CHANGED NAME 2"
+}

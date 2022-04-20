@@ -11,7 +11,13 @@ const error = (...params: String[]) => {
     console.error(...params)
   }
 }
+
+const debug = (...params: String[]) => {
+  if (process.env.NODE_ENV !== 'production') {
+    console.log(...params)
+  }
+}
   
 export {
-  info, error
+  info, error, debug
 }
