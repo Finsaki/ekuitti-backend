@@ -9,6 +9,7 @@ import { CosmosClient } from '@azure/cosmos'
 import { init } from "./models/TaskDao";
 import { helloRouter } from './controllers/hello'
 import { taskRouter } from './controllers/tasklist'
+import { receiptsRouter } from "./controllers/receipts"
 
 //--------connection to db here-------------
 const cosmosClient = new CosmosClient({
@@ -32,6 +33,9 @@ app.use(middleware.morgan(':method :url :status :res[content-length] :response-t
 //--------routers here, (GET, POST, PUT..).---------
 app.use('/api/hello', helloRouter)
 app.use('/api/tasks', taskRouter)
+
+//-------for testing example receipts------------
+app.use("/api/receipts", receiptsRouter)
 
 //--------API error handling here, errorhandler last-------
 app.use(middleware.unknownEndpoint)

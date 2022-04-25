@@ -1,0 +1,69 @@
+[
+    {
+        "date": "pp-kk-vvvv",
+        "company": {
+            "name": "Esimerkki Oy",
+            "business-id": "1234567-8",
+            "vat-id": "FI12345678",
+            "address": {
+                "street": "Esimerkkikatu 4 A 6",
+                "city": "Helsinki",
+                "postal-code": "00000",
+                "country": "Finland"
+            }
+        },
+        "products": [
+            {
+                "name": "pesapallomaila",
+                "quantity": 10,
+                "unit": "pcs",
+                "unit-price": 24.29,
+                "price-total": 242.90,
+                "vat": 24,
+                "unit-vat":  4.7,
+                "vat-total": 47
+            },
+            {
+                "name": "puuhoyla",
+                "quantity": 4,
+                "unit": "pcs",
+                "unit-price": 56.50,
+                "price-total": 226.00,
+                "vat": 24,
+                "unit-vat":  10.94,
+                "vat-total": 43.76
+            },
+            {
+                "name": "vesimeloni",
+                "quantity": 24,
+                "unit": "kg",
+                "unit-price": 5.42,
+                "price-total": 130.08,
+                "vat": 14,
+                "unit-vat":  0.67,
+                "vat-total": 16.08
+            },
+            {
+                "name": "vesimelonikirja",
+                "quantity": 2,
+                "unit": "pcs",
+                "unit-price": 34.99,
+                "price-total": 69.98,
+                "vat": 10,
+                "unit-vat":  3.18,
+                "vat-total": 6.36
+            }
+        ],
+        "currency": "eur",
+        "total-price-excl-vat": 555.76,
+        "vat-10": 6.36,
+        "vat-14": 16.08,
+        "vat-24": 90.76,
+        "total-vat": 113.2,
+        "total-price": 668.96,
+        "meta-data": {
+            "custom-data": "custom value",
+            "example-data": "example value"
+        }
+    }
+]
