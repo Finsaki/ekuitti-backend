@@ -6,6 +6,7 @@
   "author": "AkiK <anifinski@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
     "@types/node": "^17.0.23",
@@ -16,6 +17,7 @@
   },
   "dependencies": {
     "@azure/cosmos": "^3.15.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "express-async-errors": "^3.1.1",
