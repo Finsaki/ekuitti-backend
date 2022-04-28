@@ -1,38 +1,20 @@
 //Example model to handle Database connection methods from controller tasklist
 
-import { Database, Container, SqlQuerySpec, CosmosClient } from "@azure/cosmos"
+import { SqlQuerySpec } from "@azure/cosmos"
 import * as logger from '../utils/logger'
-import * as config from '../utils/config'
+import { taskContainer } from "../utils/dao";
 
 // For simplicity this is a constant partition key
 const partitionKey: string = undefined
-let database: Database
-let container: Container
 type Item = {date: number, completed: boolean}
-
-//used to set up the database connection when starting the program
-const init = async (client: CosmosClient) => {
-  logger.info('Setting up the database...')
-  const dbResponse = await client.databases.createIfNotExists({
-    id: config.DB_ID
-  })
-  database = dbResponse.database
-  logger.info('Setting up the database...done!')
-  logger.info('Setting up the container...')
-  const coResponse = await database.containers.createIfNotExists({
-    id: config.CONT_ID
-  })
-  container = coResponse.container
-  logger.info('Setting up the container...done!')
-}
 
 //Used to find items with spesific SQL query
 const find = async (querySpec: SqlQuerySpec) => {
   logger.debug('Querying for items from the database')
-  if (!container) {
+  if (!taskContainer) {
     throw new Error('Collection is not initialized.')
   }
-  const { resources } = await container.items.query(querySpec).fetchAll()
+  const { resources } = await taskContainer.items.query(querySpec).fetchAll()
   return resources
 }
 
@@ -41,7 +23,7 @@ const addItem = async (item: Item) => {
   logger.debug('Adding an item to the database')
   item.date = Date.now()
   item.completed = false
-  const { resource: doc } = await container.items.create(item)
+  const { resource: doc } = await taskContainer.items.create(item)
   return doc
 }
 
@@ -51,7 +33,7 @@ const updateItemName = async (itemId: string, name: string) => {
   const doc = await getItem(itemId)
   doc.name = name
 
-  const { resource: replaced } = await container
+  const { resource: replaced } = await taskContainer
     .item(itemId, partitionKey)
     .replace(doc)
   return replaced
@@ -60,15 +42,15 @@ const updateItemName = async (itemId: string, name: string) => {
 //Used to delete a spesific item with id
 const deleteItem = async (itemId: string) => {
   logger.debug('Delete an item in the database')
-  const { resource } = await container.item(itemId, partitionKey).delete()
+  const { resource } = await taskContainer.item(itemId, partitionKey).delete()
   return resource
 }
 
 //Used to fetch a spesific item with id
 const getItem = async (itemId: string) => {
   logger.debug('Getting an item from the database')
-  const { resource } = await container.item(itemId, partitionKey).read()
+  const { resource } = await taskContainer.item(itemId, partitionKey).read()
   return resource
 }
 
-export { init, find, addItem, updateItemName, getItem, deleteItem } 
+export { find, addItem, updateItemName, getItem, deleteItem } 

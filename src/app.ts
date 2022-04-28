@@ -1,12 +1,12 @@
 import express from "express";
 require("express-async-errors");
 const app = express();
-import cors from "cors"; //yarn add cors
+import cors from "cors";
 import * as config from "./utils/config";
 import * as logger from "./utils/logger";
 import * as middleware from "./utils/middleware";
 import { CosmosClient } from "@azure/cosmos";
-import { init } from "./models/TaskDao";
+import { init } from "./utils/dao";
 import { helloRouter } from "./controllers/hello";
 import { taskRouter } from "./controllers/tasklist";
 import { receiptsRouter } from "./controllers/receipts";
