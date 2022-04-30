@@ -97,17 +97,17 @@ Tests kansio lisätään myöhemmin
 
 - hello.ts - Esimerkki router joka määrittelee CRUD operaatiot kyseiselle api-osoitteelle (Delete later)
 
-- tasklist.ts - Esimerkki router jossa CRUD operaatiot kohdistuvat tietokantaan (Delete later)
+- tasks.ts - Esimerkki router jossa CRUD operaatiot kohdistuvat tietokantaan (Delete later)
 
 - receipts.ts - Router joka yhdistää URL API endpointit model luokassa määriteltyihin CRUD tietokanta operaatioihin
 
 - models - Kansio sisältää routereiden apumetodit jotka käyttävät tietokanta yhteyksiä
 
-- taskDao.ts - Esimerkki model josta löytyy tasklist.ts tiedostossa käytetyt tietokanta apumetodit (Delete later)
+- taskDao.ts - Esimerkki model josta löytyy tasks.ts tiedostossa käytetyt tietokanta apumetodit (Delete later)
 
 - receipt.ts - Model josta löytyy kuittien sisällön määrittely typescriptin type oliona
 
-- receiptDao.ts - Model josta löytyy tasklist.ts tiedostossa käytetyt tietokanta CRUD tietokanta operaatiot
+- receiptDao.ts - Model josta löytyy receipts.ts tiedostossa käytetyt tietokanta CRUD operaatiot
 
 - utils - Kansio joka sisältää ohjelman aputiedostot
 
