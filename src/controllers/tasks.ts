@@ -2,7 +2,8 @@
 //app.ts defines the starter API
 
 import { Request, Response, Router  } from 'express';
-import { find, addItem, updateItemName, getItem, deleteItem } from "../models/TaskDao";
+import { find, addItem, updateItemName, getItem, deleteItem } from "../models/taskDao";
+
 const taskRouter = Router()
 
 //Show tasks which are not completed
@@ -24,9 +25,8 @@ taskRouter.get('/', async (req: Request, res: Response) => {
 
 //get a single task by id
 taskRouter.get('/:id', async (req: Request, res: Response) => {
-  console.log(req.params)
-  const task = await getItem(req.params.id)
-  res.json(task)
+  const item = await getItem(req.params.id)
+  res.json(item)
 })
 
 //addTask

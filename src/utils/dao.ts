@@ -37,4 +37,13 @@ const createContainer = async (database: Database, contId: string) => {
   return coResponse.container
 }
 
-export { init, receiptContainer, userContainer, taskContainer }
+const checkIfContainerInitialized = (container: Container) => {
+  if (!container) {
+    throw new Error('Collection is not initialized.')
+  }
+}
+
+export {
+  init, checkIfContainerInitialized,
+  receiptContainer, userContainer, taskContainer
+}

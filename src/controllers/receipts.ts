@@ -1,50 +1,53 @@
 import { Request, Response, Router } from 'express';
+import { Receipt } from "../models/receipt";
+import { find, addItem, getItem, deleteItem } from "../models/receiptDao";
+
+/**
+ * This class connects the API endpoints and database CRUD operations from model
+ * class receiptDao.ts
+ */
 
 const receiptsRouter = Router();
 
 type Receipts = Receipt[]
 
-type Receipt = {
-    date: string,
-    company: {
-        name: string,
-        "business-id": string,
-        "vat-id": string, 
-        address: {
-            street: string,
-            city: string,
-            "postal-code": string,
-            country: string
-        }
-    },
-    products: Product[],
-    currency: string,
-    "total-price-excl-vat": number,
-    "vat-10"?: number,
-    "vat-14"?: number,
-    "vat-24"?: number,
-    "total-vat": number,
-    "total-price": number,
-    "meta-data"?: {
-        [key: string]: any
-    }
-}
+//testReceipt without database connection
+receiptsRouter.get("/test", async (_req: Request, res: Response) => {
+  const json = await import("../../docs/receipts.json") // import local json file for testing
+  const data: Receipts = json.default //.default gets the actual data
+  res.json(data)
+})
 
-type Product = {
-    name: string,
-    quantity: number,
-    unit: string,
-    "unit-price": number,
-    "price-total": number,
-    "vat": number,
-    "unit-vat":  number,
-    "vat-total": number
-}
+//Show all receipts in database. Not wanted for production, modify later to work with user!!!
+receiptsRouter.get('/', async (_req: Request, res: Response) => {
+  const querySpec = {
+    query: "SELECT * FROM root",
+  };
+  const items = await find(querySpec);
+  res.json(items)
+})
+  
+//get a single item by id
+receiptsRouter.get('/:id', async (req: Request, res: Response) => {
+  const item = await getItem(req.params.id)
+  res.json(item)
+})
+  
+//addReceipt
+receiptsRouter.post('/addreceipt', async (req: Request, res: Response) => {
+  const item = req.body;
 
-receiptsRouter.get("/", async (_req: Request, res: Response) => {
-    const json = await import("../../docs/receipts.json") // import local json file for testing
-    const data: Receipts = json.default //.default gets the actual data
-    res.json(data)
+  await addItem(item);
+  res.redirect("/");
+})
+  
+//deleteReceipt, not for production
+receiptsRouter.delete('/:id', async (req: Request, res: Response) => {
+  let result = 'delete not allowed'
+  if (process.env.NODE_ENV !== 'production') {
+    result = await deleteItem(req.params.id)
+  }
+  res.json(result)
 })
 
 export { receiptsRouter }

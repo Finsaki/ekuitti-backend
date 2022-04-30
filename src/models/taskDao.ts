@@ -2,25 +2,27 @@
 
 import { SqlQuerySpec } from "@azure/cosmos"
 import * as logger from '../utils/logger'
-import { taskContainer } from "../utils/dao";
+import { taskContainer, checkIfContainerInitialized } from "../utils/dao";
 
 // For simplicity this is a constant partition key
 const partitionKey: string = undefined
+//This is just for reference, in the post method other fields can be added as well
+//Item here could actually be named Task but it is named Item because objects in
+//cosmosdb collection are called items.
+//type Task should be housed in its own file: task.ts in src/models
 type Item = {date: number, completed: boolean}
 
 //Used to find items with spesific SQL query
 const find = async (querySpec: SqlQuerySpec) => {
-  logger.debug('Querying for items from the database')
-  if (!taskContainer) {
-    throw new Error('Collection is not initialized.')
-  }
+  logger.debug('Querying for tasks from the database')
+  checkIfContainerInitialized(taskContainer)
   const { resources } = await taskContainer.items.query(querySpec).fetchAll()
   return resources
 }
 
 //Used to add a new Item to database
 const addItem = async (item: Item) => {
-  logger.debug('Adding an item to the database')
+  logger.debug('Adding a task to the database')
   item.date = Date.now()
   item.completed = false
   const { resource: doc } = await taskContainer.items.create(item)
@@ -29,7 +31,7 @@ const addItem = async (item: Item) => {
 
 //Used to update name for an existing item in the database
 const updateItemName = async (itemId: string, name: string) => {
-  logger.debug('Update an item in the database')
+  logger.debug('Update a task in the database')
   const doc = await getItem(itemId)
   doc.name = name
 
@@ -41,14 +43,14 @@ const updateItemName = async (itemId: string, name: string) => {
 
 //Used to delete a spesific item with id
 const deleteItem = async (itemId: string) => {
-  logger.debug('Delete an item in the database')
+  logger.debug('Delete a task in the database')
   const { resource } = await taskContainer.item(itemId, partitionKey).delete()
   return resource
 }
 
 //Used to fetch a spesific item with id
 const getItem = async (itemId: string) => {
-  logger.debug('Getting an item from the database')
+  logger.debug('Getting a task from the database')
   const { resource } = await taskContainer.item(itemId, partitionKey).read()
   return resource
 }

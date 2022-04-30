@@ -23,10 +23,11 @@ Ohjelmisto käyttää tietokantana Azure pilvipalvelun CosmosDB tietokantaa.
 Vaatimukset tietokantayhteyden käytölle
 1. Ohjelmistoa käyttävällä taholla tulee olla käytössä oma Azure tili.
 2. Azure tilille tulee luoda uusi resource-group (Tämän nimellä ei ole väliä).
-3. Resource-grouping sisälle tulee luoda oma Cosmos DB tietokanta.
-4. Tietokannan sisälle tulee luoda uusi Container.
-5. Tietokannan nimi ja Containerin nimi tulee päivittää src/utils/config.ts tiedostoon.
-6. Tietokannan osoite ja salainen avain tulee lisätä .env tiedostoon. Ohjeet ovat tämän dokumentin lopussa.
+3. Resource-groupissa tulee ottaa käyttöön Cosmos DB tili (Resource groupin voi myös luoda Cosmos DB tilin luomisen yhteydessä).
+4. Cosmos DB tilin URI ja SECRET-KEY tulee tallettaa .env tiedostoon. Ohjeet tämän tiedoston lopussa.
+5. Tietokantojen ja containereiden nimet voi halutessaan päivittää src/utils/config.ts tiedostoon tai jättää alkuarvoisiksi.
+
+> Sovelluksen käynnistäminen luo tietokannat ja containerit annetuilla nimillä. Jos kyseisen nimiset tietokannat ja containerit löytyvät jo Cosmos DB tilitä, sovellus vain yhdistää niihin.
 
 > Tietokannan toimintaa voi tällä hetkellä testata src/requests kansiosta löytyvillä .rest tiedostoilla.
 
@@ -34,9 +35,13 @@ Vaatimukset tietokantayhteyden käytölle
 
 > app.ts tiedostoon kirjataan ylemmän tason api endpointit kuten '/api/tasks' ja sille liitetään oma router kuten 'taskRouter'
 
+> utils/dao.ts sisältää tietokannan ja containereiden luontiin tarkoitetut funktiot. app.ts suorittaa nämä toiminnot init funktion kautta.
+
 > jokaiselle routerille on oma tiedostonsa src/controllers kansiossa. Tänne talletetaan alemman tason API endpointit sekä CRUD menetelmät joilla niitä kutsutaan.
 
 > routerit tarvitsevat tietokantayhteyksien luomiseen ja hallinnointiin apumetodeja joita säilytetään src/models kansiossa. Jokaiselle tietokanta-routerille on oma model aputiedosto.
+
+> config.ts sisältää tietokantojen ja containereiden käyttämät nimet.
 
 ## Backendin struktuuri
 
@@ -55,13 +60,17 @@ Osa-alueet:
 ├── src
 │   ├── controllers
 │   │   ├── hello.ts
-│   │   ├── tasklist.ts
+│   │   ├── tasks.ts
+│   │   ├── receipts.ts
 │   │   └── ...
 │   ├── models
 │   │   ├── taskDao.ts
+│   │   ├── receipt.ts
+│   │   ├── receiptDao.ts
 │   │   └── ...
 │   ├── utils
 │   │   ├── config.ts
+│   │   ├── dao.ts
 │   │   ├── logger.ts
 │   │   ├── middleware.ts
 │   │   └── ...
@@ -86,19 +95,27 @@ Tests kansio lisätään myöhemmin
 
 - controllers - Kansio sisältää eri api osoitteiden routerit
 
-- hello.ts - Esimerkki router joka määrittelee CRUD operaatiot kyseiselle api-osoitteelle
+- hello.ts - Esimerkki router joka määrittelee CRUD operaatiot kyseiselle api-osoitteelle (Delete later)
 
-- tasklist.ts - Esimerkki router jossa CRUD operaatiot kohdistuvat tietokantaan
+- tasklist.ts - Esimerkki router jossa CRUD operaatiot kohdistuvat tietokantaan (Delete later)
+
+- receipts.ts - Router joka yhdistää URL API endpointit model luokassa määriteltyihin CRUD tietokanta operaatioihin
 
 - models - Kansio sisältää routereiden apumetodit jotka käyttävät tietokanta yhteyksiä
 
-- taskDao.ts - Esimerkki model josta löytyy tasklist.ts tiedostossa käytetyt tietokanta apumetodit
+- taskDao.ts - Esimerkki model josta löytyy tasklist.ts tiedostossa käytetyt tietokanta apumetodit (Delete later)
+
+- receipt.ts - Model josta löytyy kuittien sisällön määrittely typescriptin type oliona
+
+- receiptDao.ts - Model josta löytyy tasklist.ts tiedostossa käytetyt tietokanta CRUD tietokanta operaatiot
 
 - utils - Kansio joka sisältää ohjelman aputiedostot
 
 - requests - Kansio sisältää REST tyylisiä kutsuja joilla voi testata tietokannan toimivuutta
 
 - config.ts - Määrittelee ulospäin menevät yhteydet .env tiedoston avulla
+
+- dao.ts - Sisältää tietokantayhteyden luontiin tarvittavat metodit. Luo uudet tietokannat ja containerit ellei niitä jo ole olemassa.
 
 - logger.ts - Luo info ja error logit joita voi käyttää console.log sijaan
 
@@ -118,13 +135,11 @@ Tests kansio lisätään myöhemmin
 
 ```
 
-PORT="<valittu portti, esim 8000>"
+PORT="<valittu portti johon sovelluspalvelin käynnistyy, esim 8000>"
 
-DB_URI="<verkko-osoite tietokantaan jota käytetään tuotannossa/kehityksessä>"
+DB_URI="<verkko-osoite Azure Cosmos DB tilille jota käytetään tuotannossa/kehityksessä/testauksessa>"
 
 DB_SECRET_KEY="<salainen avain jota tarvitaan tietokanta yhteyden avaamiseen>"
-
-TEST_DB_URI="<verkko-osoite tietokantaan jota käytetään testeissä/kehityksessä>"
 
 ```
 
