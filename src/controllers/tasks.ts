@@ -1,25 +1,25 @@
 //Example controller to handle API calls to /api/tasks
 //app.ts defines the starter API
 
-import { Request, Response, Router  } from 'express';
-import { find, addItem, updateItemName, getItem, deleteItem } from "../models/taskDao";
+import { Request, Response, Router  } from 'express'
+import { find, addItem, updateItemName, getItem, deleteItem } from '../models/taskDao'
 
 const taskRouter = Router()
 
 //Show tasks which are not completed
 taskRouter.get('/', async (req: Request, res: Response) => {
   const querySpec = {
-    query: "SELECT * FROM root r WHERE r.completed=@completed",
+    query: 'SELECT * FROM root r WHERE r.completed=@completed',
     //query: "SELECT * FROM root",
     parameters: [
       {
-        name: "@completed",
+        name: '@completed',
         value: false
       }
     ]
-  };
+  }
 
-  const items = await find(querySpec);
+  const items = await find(querySpec)
   res.json(items)
 })
 
@@ -31,10 +31,10 @@ taskRouter.get('/:id', async (req: Request, res: Response) => {
 
 //addTask
 taskRouter.post('/addtask', async (req: Request, res: Response) => {
-  const item = req.body;
+  const item = req.body
 
-  await addItem(item);
-  res.redirect("/");
+  await addItem(item)
+  res.redirect('/')
 })
 
 //deleteTask

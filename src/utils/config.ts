@@ -6,12 +6,12 @@ config()
 const PORT = process.env.PORT || '8000'
 const AUTH_KEY = process.env.DB_SECRET_KEY
 //Development conf
-const DEV_DB_ID = "cosmos-receipts-dev" //Name of the development database
-const RECEIPT_CONT_ID = "receipts" //Name of the receipts container
-const USER_CONT_ID = "users" //Name of the users container
+const DEV_DB_ID = 'cosmos-receipts-dev' //Name of the development database
+const RECEIPT_CONT_ID = 'receipts' //Name of the receipts container
+const USER_CONT_ID = 'users' //Name of the users container
 //Test conf
-const TEST_DB_ID = "ToDoList"; //OLD
-const ITEM_CONT_ID = "Items"; //OLD
+const TEST_DB_ID = 'ToDoList' //OLD
+const ITEM_CONT_ID = 'Items' //OLD
 
 //this will check if test environment is in use and switch the database accordingly
 const HOST = process.env.NODE_ENV === 'test'

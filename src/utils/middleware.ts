@@ -1,10 +1,11 @@
-//Contains helper functions which are used in response to API calls
-
-import { Request, Response } from 'express';
+import { Request, Response } from 'express'
 import morgan from 'morgan'
 import * as logger from './logger'
 
+//This file contains helper functions which are used in response to API calls
+
 //setting up a custom morgan token that shows the request body data when the operation is a POST operation
+// eslint-disable-next-line no-unused-vars
 morgan.token('response-body', function (req: Request, res: Response) {
   if (req.method === 'POST') {
     return JSON.stringify(req.body)
@@ -36,4 +37,3 @@ export {
   unknownEndpoint,
   errorHandler
 }
-  

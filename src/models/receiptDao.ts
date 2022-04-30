@@ -1,7 +1,7 @@
-import { SqlQuerySpec } from "@azure/cosmos"
+import { SqlQuerySpec } from '@azure/cosmos'
 import * as logger from '../utils/logger'
-import { receiptContainer, checkIfContainerInitialized } from "../utils/dao";
-import { Receipt } from "../models/receipt";
+import { receiptContainer, checkIfContainerInitialized } from '../utils/dao'
+import { Receipt } from '../models/receipt'
 
 /**
  * This class houses the CRUD operations to manage receipts in the database
@@ -22,7 +22,7 @@ const find = async (querySpec: SqlQuerySpec) => {
 //Used to add a new Receipt to database
 const addItem = async (receipt: Receipt) => {
   logger.debug('Adding a receipt to the database')
-  receipt.date = JSON.stringify({'now': new Date()})
+  receipt.date = JSON.stringify({ 'now': new Date() })
   const { resource: doc } = await receiptContainer.items.create(receipt)
   return doc
 }
@@ -41,4 +41,4 @@ const getItem = async (itemId: string) => {
   return resource
 }
 
-export { find, addItem, getItem, deleteItem } 
+export { find, addItem, getItem, deleteItem }

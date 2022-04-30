@@ -59,7 +59,6 @@ Osa-alueet:
 │   └── ...
 ├── src
 │   ├── controllers
-│   │   ├── hello.ts
 │   │   ├── tasks.ts
 │   │   ├── receipts.ts
 │   │   └── ...
@@ -94,8 +93,6 @@ Tests kansio lisätään myöhemmin
 - src - Kansio sisältää kaiken backendin toiminnallisuuden
 
 - controllers - Kansio sisältää eri api osoitteiden routerit
-
-- hello.ts - Esimerkki router joka määrittelee CRUD operaatiot kyseiselle api-osoitteelle (Delete later)
 
 - tasks.ts - Esimerkki router jossa CRUD operaatiot kohdistuvat tietokantaan (Delete later)
 

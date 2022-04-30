@@ -1,4 +1,4 @@
-import { Database, Container, CosmosClient } from "@azure/cosmos"
+import { Database, Container, CosmosClient } from '@azure/cosmos'
 import * as logger from '../utils/logger'
 import * as config from '../utils/config'
 

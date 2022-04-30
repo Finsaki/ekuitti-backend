@@ -1,8 +1,8 @@
 //Example model to handle Database connection methods from controller tasklist
 
-import { SqlQuerySpec } from "@azure/cosmos"
+import { SqlQuerySpec } from '@azure/cosmos'
 import * as logger from '../utils/logger'
-import { taskContainer, checkIfContainerInitialized } from "../utils/dao";
+import { taskContainer, checkIfContainerInitialized } from '../utils/dao'
 
 // For simplicity this is a constant partition key
 const partitionKey: string = undefined
@@ -55,4 +55,4 @@ const getItem = async (itemId: string) => {
   return resource
 }
 
-export { find, addItem, updateItemName, getItem, deleteItem } 
+export { find, addItem, updateItemName, getItem, deleteItem }
