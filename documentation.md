@@ -5,16 +5,18 @@
   - yarn run dev - käynnistä kehitysympäristö
   - yarn run build - luo tuotantoversio koonti
   - yarn run start - käynnistä tuotantoversio
-  - yarn run test - käynnistä testiympäristö (ei vielä toiminnassa)
+  - yarn run test - käynnistä testiympäristö
+  - yarn run lint - testaa koodin yhtenevyyttä
 
 > Luo oma .env tiedosto projektin juureen ennen ennen kuin ajat ohjelmaa
 
-> Backendin toimintaa voi testata lokaalisti selaimesta:
+> Backendin toimintaa voi kokeilla lokaalisti selaimesta:
 
-http://localhost:[porttinumero]/api/hello
+http://localhost:[porttinumero]/api/receipts/test
 
-http://localhost:[porttinumero]/api/hello/[nimesitähän]
+ja
 
+http://localhost:[porttinumero]/api/receipts
 
 ## Tietokanta: Azure CosmosDB
 
@@ -24,12 +26,15 @@ Vaatimukset tietokantayhteyden käytölle
 1. Ohjelmistoa käyttävällä taholla tulee olla käytössä oma Azure tili.
 2. Azure tilille tulee luoda uusi resource-group (Tämän nimellä ei ole väliä).
 3. Resource-groupissa tulee ottaa käyttöön Cosmos DB tili (Resource groupin voi myös luoda Cosmos DB tilin luomisen yhteydessä).
-4. Cosmos DB tilin URI ja SECRET-KEY tulee tallettaa .env tiedostoon. Ohjeet tämän tiedoston lopussa.
-5. Tietokantojen ja containereiden nimet voi halutessaan päivittää src/utils/config.ts tiedostoon tai jättää alkuarvoisiksi.
+4. Cosmos DB tilin DB_URI ja SECRET_KEY tulee tallettaa .env tiedostoon. Ohjeet tämän tiedoston lopussa.
+5. Tietokantojen ja containereiden nimet voi halutessaan päivittää src/utils/config.ts tiedostoon tai jättää alkuarvoisiksi. Ohjelma luo nämä resurssit cosmos DB tilille käynnistyessään, tai ottaa niihin yhteyden jos ne ovat jo olemassa.
+6. Testaamista varten pitää samaan resource-grouppiin lisätä myös toinen Cosmos DB tili. Tämän TEST_DB_URI ja TEST_SECRET_KEY tulee myös päivittää .env tiedostoon.
 
 > Sovelluksen käynnistäminen luo tietokannat ja containerit annetuilla nimillä. Jos kyseisen nimiset tietokannat ja containerit löytyvät jo Cosmos DB tilitä, sovellus vain yhdistää niihin.
 
-> Tietokannan toimintaa voi tällä hetkellä testata src/requests kansiosta löytyvillä .rest tiedostoilla.
+> Tietokannan toimintaa voi kokeilla ajamalla kutsuja src/requests kansiosta löytyvistä .rest tiedostoista.
+
+> Suuremmat testit voi ajaa "yarn run test" komennolla joka ottaa yhteyden testaus tietokantaan.
 
 ### Tietokantayhteyksien arkkitehtuuri
 
@@ -41,7 +46,7 @@ Vaatimukset tietokantayhteyden käytölle
 
 > routerit tarvitsevat tietokantayhteyksien luomiseen ja hallinnointiin apumetodeja joita säilytetään src/models kansiossa. Jokaiselle tietokanta-routerille on oma model aputiedosto.
 
-> config.ts sisältää tietokantojen ja containereiden käyttämät nimet.
+> config.ts sisältää tietokantojen ja containereiden käyttämät nimet. Sovelluksen käynnistyessä se myös määrittelee mitä tietokantayhteyttä käytetään. Testitilanteessa käytetään eri Cosmos DB tiliä.
 
 ## Backendin struktuuri
 
@@ -134,9 +139,13 @@ Tests kansio lisätään myöhemmin
 
 PORT="<valittu portti johon sovelluspalvelin käynnistyy, esim 8000>"
 
-DB_URI="<verkko-osoite Azure Cosmos DB tilille jota käytetään tuotannossa/kehityksessä/testauksessa>"
+DB_URI="<verkko-osoite Azure Cosmos DB tilille>"
 
 DB_SECRET_KEY="<salainen avain jota tarvitaan tietokanta yhteyden avaamiseen>"
+
+TEST_DB_URI="<verkko-osoite Azure Cosmos DB testaus tilille>"
+
+TEST_DB_SECRET_KEY="<salainen avain testaustilille>"
 
 ```
 

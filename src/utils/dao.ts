@@ -10,15 +10,15 @@ let taskContainer: Container
 const init = async (client: CosmosClient) => {
   logger.info('Setting up databases...')
 
-  const devDatabase = await createDatabase(client, config.DEV_DB_ID)
-  const testDatabase = await createDatabase(client, config.TEST_DB_ID)
+  const primDatabase = await createDatabase(client, config.PRIMARY_DB_ID)
+  const secDatabase = await createDatabase(client, config.SECONDARY_DB_ID)
 
   logger.info('Setting up databases...done!')
   logger.info('Setting up containers...')
 
-  receiptContainer = await createContainer(devDatabase, config.RECEIPT_CONT_ID)
-  userContainer = await createContainer(devDatabase, config.USER_CONT_ID)
-  taskContainer = await createContainer(testDatabase, config.ITEM_CONT_ID)
+  receiptContainer = await createContainer(primDatabase, config.RECEIPT_CONT_ID)
+  userContainer = await createContainer(primDatabase, config.USER_CONT_ID)
+  taskContainer = await createContainer(secDatabase, config.ITEM_CONT_ID)
 
   logger.info('Setting up containers...done!')
 }
