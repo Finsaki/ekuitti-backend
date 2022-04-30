@@ -8,7 +8,7 @@ import * as middleware from "./utils/middleware";
 import { CosmosClient } from "@azure/cosmos";
 import { init } from "./utils/dao";
 import { helloRouter } from "./controllers/hello";
-import { taskRouter } from "./controllers/tasklist";
+import { taskRouter } from "./controllers/tasks";
 import { receiptsRouter } from "./controllers/receipts";
 
 //--------connection to db here-------------
@@ -37,10 +37,8 @@ app.use(
 );
 
 //--------routers here, (GET, POST, PUT..).---------
-app.use("/api/hello", helloRouter);
-app.use("/api/tasks", taskRouter);
-
-//-------for testing example receipts------------
+app.use("/api/hello", helloRouter); //testing without db
+app.use("/api/tasks", taskRouter); //testing with db
 app.use("/api/receipts", receiptsRouter);
 
 //--------API error handling here, errorhandler last-------
