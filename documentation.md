@@ -5,7 +5,7 @@
   - yarn run dev - käynnistä kehitysympäristö
   - yarn run build - luo tuotantoversio koonti
   - yarn run start - käynnistä tuotantoversio
-  - yarn run test - käynnistä testiympäristö
+  - yarn run test - käynnistä testiympäristö (Ei vielä toiminnassa!!!)
   - yarn run lint - testaa koodin yhtenevyyttä
 
 > Luo oma .env tiedosto projektin juureen ennen ennen kuin ajat ohjelmaa
@@ -26,15 +26,17 @@ Vaatimukset tietokantayhteyden käytölle
 1. Ohjelmistoa käyttävällä taholla tulee olla käytössä oma Azure tili.
 2. Azure tilille tulee luoda uusi resource-group (Tämän nimellä ei ole väliä).
 3. Resource-groupissa tulee ottaa käyttöön Cosmos DB tili (Resource groupin voi myös luoda Cosmos DB tilin luomisen yhteydessä).
-4. Cosmos DB tilin DB_URI ja SECRET_KEY tulee tallettaa .env tiedostoon. Ohjeet tämän tiedoston lopussa.
+4. Cosmos DB tilin DEV_DB_URI ja DEV_SECRET_KEY tulee tallettaa .env tiedostoon. Ohjeet tämän tiedoston lopussa.
 5. Tietokantojen ja containereiden nimet voi halutessaan päivittää src/utils/config.ts tiedostoon tai jättää alkuarvoisiksi. Ohjelma luo nämä resurssit cosmos DB tilille käynnistyessään, tai ottaa niihin yhteyden jos ne ovat jo olemassa.
-6. Testaamista varten pitää samaan resource-grouppiin lisätä myös toinen Cosmos DB tili. Tämän TEST_DB_URI ja TEST_SECRET_KEY tulee myös päivittää .env tiedostoon.
+6. Tuotantoa varten pitää samaan resource-grouppiin lisätä myös toinen Cosmos DB tili. Tämän PROD_DB_URI ja PROD_SECRET_KEY tulee myös päivittää .env tiedostoon.
 
-> Sovelluksen käynnistäminen luo tietokannat ja containerit annetuilla nimillä. Jos kyseisen nimiset tietokannat ja containerit löytyvät jo Cosmos DB tilitä, sovellus vain yhdistää niihin.
+> Sovelluksen käynnistäminen luo tietokannat ja containerit config.ts tiedostossa annetuilla nimillä. Jos kyseisen nimiset tietokannat ja containerit löytyvät jo Cosmos DB tilitä, sovellus vain yhdistää niihin.
 
-> Tietokannan toimintaa voi kokeilla ajamalla kutsuja src/requests kansiosta löytyvistä .rest tiedostoista.
+> Kehitys-ympäristö ja tuotantoympäristö käyttävät eri Azure Cosmos DB tiliä. Tämän vuoksi molemmille on asetettava omat URI ja SECRET_KEY arvot .env tiedostoon. Sovellus valitsee käynnistyessään tilin mihin se luo tietokantayhteyden riippuen siitä käynnistettiinkö se kehitys vai tuotanto moodissa.
 
-> Suuremmat testit voi ajaa "yarn run test" komennolla joka ottaa yhteyden testaus tietokantaan.
+### Tietokantayhteyksien testaaminen
+
+Tietokannan toimintaa voi testata ajamalla kutsuja src/requests kansiosta löytyvistä .rest tiedostoista.
 
 ### Tietokantayhteyksien arkkitehtuuri
 
@@ -130,22 +132,26 @@ Tests kansio lisätään myöhemmin
 
 - index.ts - Luo ja käynnistää sovelluspalvelimen
 
-- .env - Tämä tiedosto tulee jokaisen kehittäjän itse luoda, sisältää mahdollisesti salaista tietoa
-  - Alla on tarkemmat ohjeet .env-tiedoston vaaditulle sisällölle
+- .env - Tämä tiedosto tulee jokaisen kehittäjän itse luoda, sisältää mahdollisesti salaista tietoa. Alla on tarkemmat ohjeet .env-tiedoston vaaditulle sisällölle
 
 #### Sisältö .env tiedostolle
 
 ```
 
-PORT="<valittu portti johon sovelluspalvelin käynnistyy, esim 8000>"
+PORT="1"
 
-DB_URI="<verkko-osoite Azure Cosmos DB tilille>"
+DEV_DB_URI="2"
 
-DB_SECRET_KEY="<salainen avain jota tarvitaan tietokanta yhteyden avaamiseen>"
+DEV_DB_SECRET_KEY="3"
 
-TEST_DB_URI="<verkko-osoite Azure Cosmos DB testaus tilille>"
+PROD_DB_URI="4"
 
-TEST_DB_SECRET_KEY="<salainen avain testaustilille>"
+PROD_DB_SECRET_KEY="5"
 
 ```
 
+1. valittu portti johon sovelluspalvelin käynnistyy, esim 8000
+2. verkko-osoite kehitys-version Azure Cosmos DB tilille
+3. salainen avain jota tarvitaan kehitys-version tietokanta yhteyden avaamiseen
+4. verkko-osoite tuotanto-version Azure Cosmos DB tilille
+5. salainen avain jota tarvitaan tuotanto-version tietokanta yhteyden avaamiseen

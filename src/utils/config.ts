@@ -14,15 +14,15 @@ const USER_CONT_ID = 'users' //Name of the users container
 const SECONDARY_DB_ID = 'ToDoList'
 const ITEM_CONT_ID = 'Items'
 
-//this will check if test environment is in use and switch the database accordingly
-const HOST = process.env.NODE_ENV === 'test'
-  ? process.env.TEST_DB_URI
-  : process.env.DB_URI
+//this will check if production environment is in use and switch the database accordingly
+const HOST = process.env.NODE_ENV === 'production'
+  ? process.env.PROD_DB_URI
+  : process.env.DEV_DB_URI
 
-//this will check if test environment is in use and switch the secret key accordingly
-const AUTH_KEY = process.env.NODE_ENV === 'test'
-  ? process.env.TEST_DB_SECRET_KEY
-  : process.env.DB_SECRET_KEY
+//this will check if production environment is in use and switch the secret key accordingly
+const AUTH_KEY = process.env.NODE_ENV === 'production'
+  ? process.env.PROD_DB_SECRET_KEY
+  : process.env.DEV_DB_SECRET_KEY
 
 //export { HOST, PORT, AUTH_KEY, DB_ID, CONT_ID }
 export {
