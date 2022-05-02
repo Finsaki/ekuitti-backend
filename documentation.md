@@ -18,6 +18,8 @@ ja
 
 http://localhost:[porttinumero]/api/receipts
 
+> Porttinumero on oletuksena 8080 mutta sen voi vaihtaa .env tiedostoon halutessaan. Ohjeet tämän tiedoston lopussa.
+
 ## Tietokanta: Azure CosmosDB
 
 Ohjelmisto käyttää tietokantana Azure pilvipalvelun CosmosDB tietokantaa.
@@ -36,19 +38,19 @@ Vaatimukset tietokantayhteyden käytölle
 
 ### Tietokantayhteyksien testaaminen
 
-Tietokannan toimintaa voi testata ajamalla kutsuja src/requests kansiosta löytyvistä .rest tiedostoista.
+Tietokannan toimintaa voi testata ajamalla kutsuja src/requests kansiosta löytyvistä .rest tiedostoista. Nämä käyttävät oletuksena porttia 8080 kutsuissa, porttinumero tulee vaihtaa kutsuihin jos sen on vaihtanut .env tiedostossa.
 
 ### Tietokantayhteyksien arkkitehtuuri
 
-> app.ts tiedostoon kirjataan ylemmän tason api endpointit kuten '/api/tasks' ja sille liitetään oma router kuten 'taskRouter'
+app.ts tiedostoon kirjataan ylemmän tason api endpointit kuten '/api/tasks' ja sille liitetään oma router kuten 'taskRouter'
 
-> utils/dao.ts sisältää tietokannan ja containereiden luontiin tarkoitetut funktiot. app.ts suorittaa nämä toiminnot init funktion kautta.
+utils/dao.ts sisältää tietokannan ja containereiden luontiin tarkoitetut funktiot. app.ts suorittaa nämä toiminnot init funktion kautta.
 
-> jokaiselle routerille on oma tiedostonsa src/controllers kansiossa. Tänne talletetaan alemman tason API endpointit sekä CRUD menetelmät joilla niitä kutsutaan.
+jokaiselle routerille on oma tiedostonsa src/controllers kansiossa. Tänne talletetaan alemman tason API endpointit sekä CRUD menetelmät joilla niitä kutsutaan.
 
-> routerit tarvitsevat tietokantayhteyksien luomiseen ja hallinnointiin apumetodeja joita säilytetään src/models kansiossa. Jokaiselle tietokanta-routerille on oma model aputiedosto.
+routerit tarvitsevat tietokantayhteyksien luomiseen ja hallinnointiin apumetodeja joita säilytetään src/models kansiossa. Jokaiselle tietokanta-routerille on oma model aputiedosto.
 
-> config.ts sisältää tietokantojen ja containereiden käyttämät nimet. Sovelluksen käynnistyessä se myös määrittelee mitä tietokantayhteyttä käytetään. Testitilanteessa käytetään eri Cosmos DB tiliä.
+config.ts sisältää tietokantojen ja containereiden käyttämät nimet. Sovelluksen käynnistyessä se myös määrittelee mitä tietokantayhteyttä käytetään. Tuotanto ja kehitys ympäristöissä käytetään eri Cosmos DB tilejä.
 
 ## Backendin struktuuri
 
