@@ -3,7 +3,7 @@ config()
 
 //Contains necessary variables for database connection
 
-const PORT = process.env.PORT || '8000'
+const PORT = process.env.PORT || '8080'
 
 //E-receipt db
 const PRIMARY_DB_ID = 'cosmos-e-receipts' //Name of the database for receipts

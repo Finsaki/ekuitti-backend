@@ -1,5 +1,5 @@
 import express from 'express'
-require('express-async-errors')
+import 'express-async-errors'
 const app = express()
 import cors from 'cors'
 import * as config from './utils/config'
