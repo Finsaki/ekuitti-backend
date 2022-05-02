@@ -5,7 +5,7 @@ const info = (...params: String[]) => {
     console.log(...params)
   }
 }
-  
+
 const error = (...params: String[]) => {
   if (process.env.NODE_ENV !== 'test') {
     console.error(...params)
@@ -17,7 +17,7 @@ const debug = (...params: String[]) => {
     console.log(...params)
   }
 }
-  
+
 export {
   info, error, debug
 }
