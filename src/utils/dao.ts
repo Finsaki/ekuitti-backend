@@ -37,6 +37,22 @@ const createContainer = async (database: Database, contId: string) => {
   return coResponse.container
 }
 
+//Use this later to make sure no dublicate usernames, also for eAddressId
+/*
+const createUserContainer = async (database: Database, contId: string) => {
+  const coResponse = await database.containers.createIfNotExists({
+    id: contId,
+    uniqueKeyPolicy: {
+      uniqueKeys: [
+        { paths: ['/firstName', '/lastName', '/emailAddress'] },
+        { paths: ['/address/zipCode'] }
+      ]
+    }
+  })
+  return coResponse.container
+}
+*/
+
 const checkIfContainerInitialized = (container: Container) => {
   if (!container) {
     throw new Error('Collection is not initialized.')
