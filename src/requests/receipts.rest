@@ -1,4 +1,4 @@
-### Get all tasks
+### Get all receipts
 GET http://localhost:8080/api/receipts
 
 

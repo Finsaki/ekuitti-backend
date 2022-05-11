@@ -6,6 +6,7 @@
   "author": "AkiK <anifinski@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "@azure/cosmos": "^3.15.1",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",

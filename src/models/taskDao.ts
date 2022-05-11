@@ -2,7 +2,7 @@
 
 import { SqlQuerySpec } from '@azure/cosmos'
 import * as logger from '../utils/logger'
-import { taskContainer, checkIfContainerInitialized } from '../utils/dao'
+import { taskContainer, checkIfContainerInitialized } from '../utils/daoHelper'
 
 // For simplicity this is a constant partition key
 const partitionKey: string = undefined

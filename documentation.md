@@ -78,7 +78,7 @@ Osa-alueet:
 │   │   └── ...
 │   ├── utils
 │   │   ├── config.ts
-│   │   ├── dao.ts
+│   │   ├── daoHelper.ts
 │   │   ├── logger.ts
 │   │   ├── middleware.ts
 │   │   └── ...
@@ -121,7 +121,7 @@ Tests kansio lisätään myöhemmin
 
 - config.ts - Määrittelee ulospäin menevät yhteydet .env tiedoston avulla
 
-- dao.ts - Sisältää tietokantayhteyden luontiin tarvittavat metodit. Luo uudet tietokannat ja containerit ellei niitä jo ole olemassa.
+- daoHelper.ts - Sisältää tietokantayhteyden luontiin tarvittavat metodit. Luo uudet tietokannat ja containerit ellei niitä jo ole olemassa.
 
 - logger.ts - Luo info ja error logit joita voi käyttää console.log sijaan
 

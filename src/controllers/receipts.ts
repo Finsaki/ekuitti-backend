@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express'
-import { Receipt } from '../models/receipt'
+import { Receipts } from '../models/receipt'
 import { find, addItem, getItem, deleteItem } from '../models/receiptDao'
 
 /**
@@ -8,8 +8,6 @@ import { find, addItem, getItem, deleteItem } from '../models/receiptDao'
  */
 
 const receiptsRouter = Router()
-
-type Receipts = Receipt[]
 
 //testReceipt without database connection
 receiptsRouter.get('/test', async (_req: Request, res: Response) => {

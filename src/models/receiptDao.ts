@@ -1,6 +1,6 @@
 import { SqlQuerySpec } from '@azure/cosmos'
 import * as logger from '../utils/logger'
-import { receiptContainer, checkIfContainerInitialized } from '../utils/dao'
+import { receiptContainer, checkIfContainerInitialized } from '../utils/daoHelper'
 import { Receipt } from '../models/receipt'
 
 /**
@@ -11,9 +11,9 @@ import { Receipt } from '../models/receipt'
 // For simplicity this is a constant partition key
 const partitionKey: string = undefined
 
-//Used to find items with spesific SQL query
+//Used to find receipts with spesific SQL query
 const find = async (querySpec: SqlQuerySpec) => {
-  logger.debug('Querying for items from the database')
+  logger.debug('Querying for receipts from the database')
   checkIfContainerInitialized(receiptContainer)
   const { resources } = await receiptContainer.items.query(querySpec).fetchAll()
   return resources
@@ -34,7 +34,7 @@ const deleteItem = async (itemId: string) => {
   return resource
 }
 
-//Used to fetch a spesific item with id
+//Used to fetch a spesific receipt with id
 const getItem = async (itemId: string) => {
   logger.debug('Getting a receipt from the database')
   const { resource } = await receiptContainer.item(itemId, partitionKey).read()

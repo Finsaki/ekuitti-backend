@@ -1,4 +1,5 @@
 type Receipt = {
+  //eAddressId: string //add this later when login is working for user
   date: string,
   company: {
     name: string,
@@ -35,4 +36,6 @@ type Product = {
   'vat-total': number
 }
 
-export { Receipt, Product }
+type Receipts = Receipt[]
+
+export { Receipts, Receipt, Product }
