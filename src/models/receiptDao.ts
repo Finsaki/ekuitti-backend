@@ -1,6 +1,6 @@
 import { SqlQuerySpec } from '@azure/cosmos'
 import * as logger from '../utils/logger'
-import { receiptContainer, checkIfContainerInitialized } from '../utils/dao'
+import { receiptContainer, checkIfContainerInitialized } from '../utils/daoHelper'
 import { Receipt } from '../models/receipt'
 
 /**

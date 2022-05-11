@@ -1,6 +1,6 @@
 import { SqlQuerySpec } from '@azure/cosmos'
 import * as logger from '../utils/logger'
-import { userContainer, checkIfContainerInitialized } from '../utils/dao'
+import { userContainer, checkIfContainerInitialized } from '../utils/daoHelper'
 import { User } from '../models/user'
 
 /**

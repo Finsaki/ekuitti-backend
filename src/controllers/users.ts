@@ -14,6 +14,7 @@ const usersRouter = Router()
 usersRouter.get('/test', async (_req: Request, res: Response) => {
   const json = await import('../../docs/users.json') // import local json file for testing
   const data: Users = json.default //.default gets the actual data
+  await removePasswordForUsers(data)
   res.json(data)
 })
 
@@ -22,12 +23,14 @@ usersRouter.get('/', async (_req: Request, res: Response) => {
     query: 'SELECT * FROM root',
   }
   const items = await find(querySpec)
+  await removePasswordForUsers(items)
   res.json(items)
 })
 
 //get a single item by id
 usersRouter.get('/:id', async (req: Request, res: Response) => {
   const item = await getItem(req.params.id)
+  await removePasswordForUser(item)
   res.json(item)
 })
 
@@ -72,5 +75,15 @@ usersRouter.delete('/:id', async (req: Request, res: Response) => {
   const result = await deleteItem(req.params.id)
   res.json(result)
 })
+
+const removePasswordForUsers = async (users: Users) => {
+  users.forEach((user) => {
+    delete user.passwordHash
+  })
+}
+
+const removePasswordForUser = async (user: User) => {
+  delete user.passwordHash
+}
 
 export { usersRouter }
