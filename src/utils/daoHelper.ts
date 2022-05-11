@@ -44,7 +44,8 @@ const createUserContainer = async (database: Database, contId: string) => {
     id: contId,
     uniqueKeyPolicy: {
       uniqueKeys: [
-        { paths: ['/username', '/eAddressId'] }
+        { paths: ['/username'] },
+        { paths: ['/eAddressId'] }
       ]
     }
   })

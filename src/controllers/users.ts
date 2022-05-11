@@ -2,6 +2,7 @@ import { Request, Response, Router } from 'express'
 import bcrypt from 'bcryptjs'
 import { Users, User } from '../models/user'
 import { find, addItem, getItem, deleteItem } from '../models/userDao'
+import { removePasswordForUsers, removePasswordForUser } from '../utils/userHelper'
 
 /**
  * This class connects the API endpoints and database CRUD operations from model
@@ -75,15 +76,5 @@ usersRouter.delete('/:id', async (req: Request, res: Response) => {
   const result = await deleteItem(req.params.id)
   res.json(result)
 })
-
-const removePasswordForUsers = async (users: Users) => {
-  users.forEach((user) => {
-    delete user.passwordHash
-  })
-}
-
-const removePasswordForUser = async (user: User) => {
-  delete user.passwordHash
-}
 
 export { usersRouter }
