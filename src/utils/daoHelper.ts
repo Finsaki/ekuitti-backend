@@ -1,6 +1,6 @@
 import { Database, Container, CosmosClient } from '@azure/cosmos'
-import * as logger from '../utils/logger'
-import * as config from '../utils/config'
+import * as logger from './logger'
+import * as config from './config'
 
 let receiptContainer: Container
 let userContainer: Container
@@ -17,7 +17,7 @@ const init = async (client: CosmosClient) => {
   logger.info('Setting up containers...')
 
   receiptContainer = await createContainer(primDatabase, config.RECEIPT_CONT_ID)
-  userContainer = await createContainer(primDatabase, config.USER_CONT_ID)
+  userContainer = await createUserContainer(primDatabase, config.USER_CONT_ID)
   taskContainer = await createContainer(secDatabase, config.ITEM_CONT_ID)
 
   logger.info('Setting up containers...done!')
@@ -37,21 +37,19 @@ const createContainer = async (database: Database, contId: string) => {
   return coResponse.container
 }
 
-//Use this later to make sure no dublicate usernames, also for eAddressId
-/*
+//Special container creation tool for user where username and eAddressId should be unique
+//Azure will make sure that no unique values can be added, will respond with Error 500
 const createUserContainer = async (database: Database, contId: string) => {
   const coResponse = await database.containers.createIfNotExists({
     id: contId,
     uniqueKeyPolicy: {
       uniqueKeys: [
-        { paths: ['/firstName', '/lastName', '/emailAddress'] },
-        { paths: ['/address/zipCode'] }
+        { paths: ['/username', '/eAddressId'] }
       ]
     }
   })
   return coResponse.container
 }
-*/
 
 const checkIfContainerInitialized = (container: Container) => {
   if (!container) {
