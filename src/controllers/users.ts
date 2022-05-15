@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express'
-import bcrypt from 'bcryptjs'
+import crypto from 'crypto'
 import { Users, User } from '../models/user'
 import { find, addItem, getItem, deleteItem } from '../models/userDao'
 import { removePasswordForUsers, removePasswordForUser } from '../utils/userHelper'
@@ -47,7 +47,7 @@ usersRouter.post('/adduser', async (req: Request, res: Response) => {
 
   if (item.username === undefined) {
     return res.status(400).json({ error: 'username missing' })
-  } else if (item.name.length === undefined) {
+  } else if (item.name === undefined) {
     item.name = 'User'
   }
 
@@ -55,8 +55,9 @@ usersRouter.post('/adduser', async (req: Request, res: Response) => {
     return res.status(400).json({ error: 'e-Address missing' })
   }
 
-  const saltRounds = 10
-  const passwordHash = await bcrypt.hash(item.password, saltRounds)
+  const passwordHash = crypto.createHash('sha256')
+    .update(item.password)
+    .digest('hex')
 
   const newUser: User = {
     username: item.username,

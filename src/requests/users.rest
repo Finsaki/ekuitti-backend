@@ -7,17 +7,17 @@ POST http://localhost:8080/api/users/adduser
 content-type: application/json
 
 {
-  "username": "kayttaja2",
-  "name": "User2",
+  "username": "kayttaja1",
+  "name": "User1",
   "password": "sekret",
   "receiptIds": ["34ba08e0-26b4-4d0b-aa0b-ddd37254a612"],
-  "eAddressId": "did:example:023456789abcdefghi"
+  "eAddressId": "did:example:123456789abcdefghi"
 }
 
 ### Get a user with username
-GET http://localhost:8080/api/users/5dbc4cf6-a213-4e86-9ae7-04d3a15b3574
+GET http://localhost:8080/api/users/628fce80-f716-4aa5-951a-fdad469553f5
 
 
 ### Delete a user with username
-DELETE http://localhost:8080/api/users/063babac-f9a1-4af8-a25c-35cd1d510281
+DELETE http://localhost:8080/api/users/628fce80-f716-4aa5-951a-fdad469553f5
 

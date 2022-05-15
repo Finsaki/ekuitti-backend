@@ -10,6 +10,7 @@ import { init } from './utils/daoHelper'
 import { taskRouter } from './controllers/tasks'
 import { receiptsRouter } from './controllers/receipts'
 import { usersRouter } from './controllers/users'
+import { loginRouter } from './controllers/login'
 
 //--------connection to db here-------------
 const cosmosClient = new CosmosClient({
@@ -40,6 +41,7 @@ app.use(
 app.use('/api/tasks', taskRouter) //testing with db
 app.use('/api/receipts', receiptsRouter)
 app.use('/api/users', usersRouter)
+app.use('/api/login', loginRouter)
 
 //--------API error handling here, errorhandler last-------
 app.use(middleware.unknownEndpoint)
