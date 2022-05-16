@@ -10,14 +10,13 @@ content-type: application/json
   "username": "kayttaja1",
   "name": "User1",
   "password": "sekret",
-  "receiptIds": ["34ba08e0-26b4-4d0b-aa0b-ddd37254a612"],
   "eAddressId": "did:example:123456789abcdefghi"
 }
 
-### Get a user with username
-GET http://localhost:8080/api/users/628fce80-f716-4aa5-951a-fdad469553f5
+### Get a user with id
+GET http://localhost:8080/api/users/366b9431-e198-4aeb-bc98-5fe2f146f4c6
 
 
-### Delete a user with username
-DELETE http://localhost:8080/api/users/628fce80-f716-4aa5-951a-fdad469553f5
+### Delete a user with id
+DELETE http://localhost:8080/api/users/ded44668-33b0-46fa-9208-5101164e4834
 

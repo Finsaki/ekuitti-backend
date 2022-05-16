@@ -1,8 +1,8 @@
 import { Request, Response, Router } from 'express'
-import crypto from 'crypto'
 import { Users, User } from '../models/user'
 import { find, addItem, getItem, deleteItem } from '../models/userDao'
 import { removePasswordForUsers, removePasswordForUser } from '../utils/userHelper'
+import { genRandomString, sha512 } from '../utils/hashHelper'
 
 /**
  * This class connects the API endpoints and database CRUD operations from model
@@ -47,23 +47,28 @@ usersRouter.post('/adduser', async (req: Request, res: Response) => {
 
   if (item.username === undefined) {
     return res.status(400).json({ error: 'username missing' })
-  } else if (item.name === undefined) {
-    item.name = 'User'
   }
 
   if (item.eAddressId === undefined) {
     return res.status(400).json({ error: 'e-Address missing' })
   }
 
-  const passwordHash = crypto.createHash('sha256')
-    .update(item.password)
-    .digest('hex')
+  if (item.name === undefined) {
+    item.name = 'User'
+  }
+
+  //Creating the passwordhash and salt with hashHelper class
+  const salt = genRandomString(16)
+  const passwordHash = sha512(item.password, salt)
 
   const newUser: User = {
     username: item.username,
     name: item.name,
     receiptIds: [],
-    passwordHash: passwordHash,
+    passwordData: {
+      passwordHash: passwordHash,
+      salt: salt
+    },
     eAddressId: item.eAddressId
   }
 

@@ -23,26 +23,26 @@ const unknownEndpoint = (_req: Request, res: Response) => {
 
 const errorHandler = (error: Error, _req: Request, res: Response, next: any) => {
   //Define spesific errors here to get custom error messages
-  if (error.name === 'JsonWebTokenError') {
-    return res.status(401).json({ error: 'invalid token' })
+  switch (error.name) {
+    case 'JsonWebTokenError': {
+      return res.status(401).json({ error: 'invalid token' })
+    }
+    case 'TokenExpiredError': {
+      return res.status(401).json({ error: 'token expired' })
+    }
+    case 'Error': {
+      if (error.message.startsWith('Entity with the specified id already exists in the system')) {
+        return res.status(500).json({ error: 'database: values must be unique' })
 
-  } else if (error.name === 'TokenExpiredError') {
-    return res.status(401).json({ error: 'token expired' })
-
-  } else if (error.name === 'Error'
-      && error.message.startsWith('Entity with the specified id already exists in the system')){
-    return res.status(500).json({ error: 'database: values must be unique' })
-
-  } else if (error.name === 'Error'
-      && error.message.startsWith('Entity with the specified id does not exist in the system')){
-    return res.status(500).json({ error: 'database: values matching given id not found' })
-
-  } else if (error.name === 'SomeOtherError') {
-    return res.status(400).json({ error: error.message })
+      } else if (error.message.startsWith('Entity with the specified id does not exist in the system')) {
+        return res.status(500).json({ error: 'database: values matching given id not found' })
+      }
+      break
+    }
   }
 
   //print out the whole error message
-  //move this before the spesified errors if want to see full messages
+  //move this before the specified errors if want to see full messages
   logger.error(error.message)
 
   next(error)

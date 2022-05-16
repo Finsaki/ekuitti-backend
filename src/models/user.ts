@@ -1,7 +1,10 @@
 type User = {
   username: string,
   name: string,
-  passwordHash: string,
+  passwordData: {
+    passwordHash: string,
+    salt: string
+  },
   receiptIds: string[],
   eAddressId: string
 }
