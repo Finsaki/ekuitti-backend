@@ -16,7 +16,10 @@
 2. Create a resource group inside the account
 3. Create two Azure Cosmos DB accounts under the created resource group, name them **-dev and **-prod
 4. Create a .env file in project root and update it with URI and PRIMARY KEY values from both Cosmos DB accounts.
-5. (Optional) Update the port value to .env file
+
+## Other
+1. (Optional) Update the PORT value to .env file, default is 8080
+2. Update SECRET value to .env file, it is used for token creation when user logs in, can be any string value
 
 ### .env file required contents
 ```
@@ -29,6 +32,8 @@ DEV_DB_SECRET_KEY=""
 PROD_DB_URI=""
 
 PROD_DB_SECRET_KEY=""
+
+SECRET=""
 ```
 
 ## Testing
