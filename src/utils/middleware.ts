@@ -8,6 +8,9 @@ import * as logger from './logger'
 // eslint-disable-next-line no-unused-vars
 morgan.token('response-body', function (req: Request, res: Response) {
   if (req.method === 'POST') {
+    if (req.body.password) {
+      req.body.password = '****'
+    }
     return JSON.stringify(req.body)
   }
   return null
@@ -19,15 +22,28 @@ const unknownEndpoint = (_req: Request, res: Response) => {
 }
 
 const errorHandler = (error: Error, _req: Request, res: Response, next: any) => {
-  logger.error(error.message)
-
   //Define spesific errors here to get custom error messages
-  if (error.name === 'SomeError') {
-    return res.status(400).send({ error: 'unique error message' })
+  switch (error.name) {
+    case 'JsonWebTokenError': {
+      return res.status(401).json({ error: 'invalid token' })
+    }
+    case 'TokenExpiredError': {
+      return res.status(401).json({ error: 'token expired' })
+    }
+    case 'Error': {
+      if (error.message.startsWith('Entity with the specified id already exists in the system')) {
+        return res.status(500).json({ error: 'database: values must be unique' })
 
-  } else if (error.name === 'SomeOtherError') {
-    return res.status(400).json({ error: error.message })
+      } else if (error.message.startsWith('Entity with the specified id does not exist in the system')) {
+        return res.status(500).json({ error: 'database: values matching given id not found' })
+      }
+      break
+    }
   }
+
+  //print out the whole error message
+  //move this before the specified errors if want to see full messages
+  logger.error(error.message)
 
   next(error)
 }

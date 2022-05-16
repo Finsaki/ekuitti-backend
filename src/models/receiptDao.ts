@@ -8,6 +8,7 @@ import { Receipt } from '../models/receipt'
  * It is used by the controller class receipts.ts
  */
 
+// !!!Partitionkey could be changed to eAddressId
 // For simplicity this is a constant partition key
 const partitionKey: string = undefined
 

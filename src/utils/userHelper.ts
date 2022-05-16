@@ -1,13 +1,17 @@
 import { Users, User } from '../models/user'
 
 const removePasswordForUsers = async (users: Users) => {
-  users.forEach((user) => {
-    delete user.passwordHash
-  })
+  if (users) {
+    users.forEach((user) => {
+      delete user.passwordData
+    })
+  }
 }
 
 const removePasswordForUser = async (user: User) => {
-  delete user.passwordHash
+  if (user) {
+    delete user.passwordData
+  }
 }
 
 export { removePasswordForUsers, removePasswordForUser }

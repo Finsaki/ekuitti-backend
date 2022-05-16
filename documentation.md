@@ -150,6 +150,8 @@ PROD_DB_URI="4"
 
 PROD_DB_SECRET_KEY="5"
 
+SECRET="6"
+
 ```
 
 1. valittu portti johon sovelluspalvelin käynnistyy, esim 8000
@@ -157,3 +159,4 @@ PROD_DB_SECRET_KEY="5"
 3. salainen avain jota tarvitaan kehitys-version tietokanta yhteyden avaamiseen
 4. verkko-osoite tuotanto-version Azure Cosmos DB tilille
 5. salainen avain jota tarvitaan tuotanto-version tietokanta yhteyden avaamiseen
+5. salainen merkkijono jolla luodaan kirjautumistoken käyttäjälle
