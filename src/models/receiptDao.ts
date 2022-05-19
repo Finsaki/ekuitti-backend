@@ -1,6 +1,9 @@
 import { SqlQuerySpec } from '@azure/cosmos'
 import * as logger from '../utils/logger'
-import { receiptContainer, checkIfContainerInitialized } from '../utils/daoHelper'
+import {
+  receiptContainer,
+  checkIfContainerInitialized,
+} from '../utils/daoHelper'
 import { Receipt } from '../models/receipt'
 
 /**
@@ -23,7 +26,7 @@ const find = async (querySpec: SqlQuerySpec) => {
 //Used to add a new Receipt to database
 const addItem = async (receipt: Receipt) => {
   logger.debug('Adding a receipt to the database')
-  receipt.date = JSON.stringify({ 'now': new Date() })
+  receipt.receiptTimeStamp = new Date().toJSON()
   const { resource: doc } = await receiptContainer.items.create(receipt)
   return doc
 }
@@ -31,7 +34,9 @@ const addItem = async (receipt: Receipt) => {
 //!!!Receipts should be immutable, not to be used in production
 const deleteItem = async (itemId: string) => {
   logger.debug('Delete a receipt from the database')
-  const { resource } = await receiptContainer.item(itemId, partitionKey).delete()
+  const { resource } = await receiptContainer
+    .item(itemId, partitionKey)
+    .delete()
   return resource
 }
 

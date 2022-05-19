@@ -1,41 +1,47 @@
+type Receipts = Receipt[]
+
 type Receipt = {
-  //eAddressId: string //add this later when login is working for user
-  date: string,
-  company: {
-    name: string,
-    'business-id': string,
-    'vat-id': string,
-    address: {
-      street: string,
-      city: string,
-      'postal-code': string,
-      country: string
+  id?: string // Azure item ID
+  receiptTimeStamp: string
+  merchant: {
+    name: string
+    companyID: string
+    branch: {
+      name: string
+      address: {
+        streetAddress: string
+        city: string
+        zipCode: string
+        country: string
+      }
     }
-  },
-  products: Product[],
-  currency: string,
-  'total-price-excl-vat': number,
-  'vat-10'?: number,
-  'vat-14'?: number,
-  'vat-24'?: number,
-  'total-vat': number,
-  'total-price': number,
-  'meta-data'?: {
+  }
+  products: Product[]
+  currencyISOCode: string
+  totalPriceExcVAT: number
+  vats: VAT[]
+  totalVATAmount: number
+  totalPriceIncVAT: number
+  metaData?: {
     [key: string]: any
   }
 }
 
 type Product = {
-  name: string,
-  quantity: number,
-  unit: string,
-  'unit-price': number,
-  'price-total': number,
-  'vat': number,
-  'unit-vat':  number,
-  'vat-total': number
+  name: string
+  quantity: number
+  quantityCode: string
+  unitPriceIncVAT: number
+  totalAmountExcVAT: number
+  totalAmountIncVAT: number
+  vats: VAT[]
 }
 
-type Receipts = Receipt[]
+type VAT = {
+  VATRate: number
+  VATAmount: number
+  totalAmountExcVAT: number
+  totalAmountIncVAT: number
+}
 
-export { Receipts, Receipt, Product }
+export type { Product, Receipt, Receipts }
