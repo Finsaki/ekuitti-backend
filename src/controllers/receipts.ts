@@ -11,7 +11,7 @@ const receiptsRouter = Router()
 
 //testReceipt without database connection
 receiptsRouter.get('/test', async (_req: Request, res: Response) => {
-  const json = await import('../../docs/receipts.json') // import local json file for testing
+  const json = await import('../../docs/fake_receipts.json') // import local json file for testing
   const data: Receipts = json.default //.default gets the actual data
   res.json(data)
 })
