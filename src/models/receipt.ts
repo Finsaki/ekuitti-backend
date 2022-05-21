@@ -18,6 +18,9 @@ type Receipt = {
   //unused/optional receipt data
   receiptNumber?: string
   payments?: Payment[]
+  metaData?: {
+    [key: string]: any
+  }
 }
 
 type Merchant = {
@@ -68,14 +71,14 @@ type VAT = {
 
 type Payment = {
   type: string,
-  amount: number,
+  amount: number
   attributes: {
-    cardType: string,
-    timeStamp: string,
-    terminalId: string,
-    referenceNumber: string,
-    authorizationCode: string,
-    transactionId: string,
+    cardType: string
+    timeStamp: string
+    terminalId: string
+    referenceNumber: string
+    authorizationCode: string
+    transactionId: string
     maskedPAN: string
   }
 }
