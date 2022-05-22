@@ -1,0 +1,139 @@
+{
+  "eAddressId": "did:example:123456789abcdefghi",
+  "receiptNumber": "1652278238952",
+  "merchant": {
+    "name": "Vahvaselän kauppa",
+    "companyID": "1544017-2",
+    "branch": {
+      "name": "Vahvaselän kauppa",
+      "address": {
+        "city": "Korpikoski",
+        "country": "Suomi",
+        "streetAddress": "Vanhamäentie 96",
+        "zipCode": "50770"
+      }
+    }
+  },
+  "payments": [
+    {
+      "type": "CARD",
+      "amount": 8468,
+      "attributes": {
+        "cardType": "PaymentCard",
+        "timeStamp": "2022-05-10T16:25:43.713Z",
+        "terminalId": "4714169",
+        "referenceNumber": "590544362331",
+        "authorizationCode": "0000000000000000",
+        "transactionId": "5774226386",
+        "maskedPAN": "4111*****111"
+      }
+    }
+  ],
+  "currencyISOCode": "EUR",
+  "products": [
+    {
+      "name": "Dencon foods big al's hiiligrillattu ham",
+      "EANCode": "5099556020858",
+      "vats": [
+        {
+          "VATRate": "14",
+          "VATAmount": 378,
+          "totalAmountExcVAT": 2702,
+          "totalAmountIncVAT": 3080
+        }
+      ],
+      "quantity": "1",
+      "productId": "8055724",
+      "quantityCode": "kpl",
+      "unitPriceIncVAT": 3080,
+      "totalAmountExcVAT": 2702,
+      "totalAmountIncVAT": 3080,
+      "freeText": "",
+      "discounts": []
+    },
+    {
+      "name": "Pirkka sinappikurkkusalaatti 360g",
+      "EANCode": "6410405180032",
+      "quantity": "1,000",
+      "productId": "6410405180032",
+      "quantityCode": "KPL",
+      "freeText": "",
+      "unitPriceIncVAT": 175,
+      "unitPriceIncVATDecimal": "1.75",
+      "totalAmountExcVAT": 154,
+      "totalAmountIncVAT": 175,
+      "vats": [
+        {
+          "VATRate": "14",
+          "VATAmount": 21.491228044033,
+          "totalAmountExcVAT": 154,
+          "totalAmountIncVAT": 175
+        }
+      ]
+    },
+    {
+      "name": "Amerikansalaatti filmi espanja",
+      "EANCode": "2300130643503",
+      "vats": [
+        {
+          "VATRate": "14",
+          "VATAmount": 212,
+          "totalAmountExcVAT": 1511,
+          "totalAmountIncVAT": 1723
+        }
+      ],
+      "quantity": "4.35",
+      "productId": "1306",
+      "quantityCode": "kg",
+      "unitPriceIncVAT": 426,
+      "totalAmountExcVAT": 1511,
+      "totalAmountIncVAT": 1723,
+      "freeText": "",
+      "discounts": [
+        {
+          "amount": 130,
+          "percentage": "7.02",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "name": "Taittomoppi SINI",
+      "EANCode": "6423800033629",
+      "quantity": "1,000",
+      "productId": "6423800033629",
+      "quantityCode": "KPL",
+      "freeText": "",
+      "unitPriceIncVAT": 3490,
+      "unitPriceIncVATDecimal": "34,90",
+      "totalAmountExcVAT": 2815,
+      "totalAmountIncVAT": 3490,
+      "vats": [
+        {
+          "VATRate": "24",
+          "VATAmount": 675,
+          "totalAmountExcVAT": 2815,
+          "totalAmountIncVAT": 3490
+        }
+      ]
+    }
+  ],
+  "vats": [
+    {
+      "VATRate": "14",
+      "totalVATAmount": 611.491228044033,
+      "totalAmountExcVAT": 4367,
+      "totalAmountIncVAT": 4978
+    },
+    {
+      "VATRate": "24",
+      "totalVATAmount": 675,
+      "totalAmountExcVAT": 2815,
+      "totalAmountIncVAT": 3490
+    }
+  ],
+  "receiptTimeStamp": "2022-05-10T16:25:43.713Z",
+  "totalPriceExcVAT": 7182,
+  "totalPriceIncVAT": 8468,
+  "totalVATAmount": 1286.491228044033
+}

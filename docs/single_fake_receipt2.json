@@ -1,0 +1,141 @@
+{
+  "eAddressId": "did:other:ihgfedcba987654321",
+  "receiptNumber": "1652278238954",
+  "merchant": {
+    "name": "Kirpputori Säästöporsas",
+    "companyID": "2785592-2",
+    "branch": {
+      "name": "Kirpputori Säästöporsas",
+      "address": {
+        "city": "Loimaa",
+        "country": "Suomi",
+        "streetAddress": "Turuntie 67",
+        "zipCode": "32200"
+      }
+    }
+  },
+  "payments": [
+    {
+      "type": "CARD",
+      "amount": 3963,
+      "attributes": {
+        "cardType": "PaymentCard",
+        "timeStamp": "2022-05-11T01:58:10.430Z",
+        "terminalId": "9263479",
+        "referenceNumber": "711524809860",
+        "authorizationCode": "0000000000000000",
+        "transactionId": "2042282840",
+        "maskedPAN": "4111*****111"
+      }
+    }
+  ],
+  "currencyISOCode": "EUR",
+  "products": [
+    {
+      "name": "HALLITUNKKI 2T",
+      "EANCode": "6438159998406",
+      "quantity": "1,000",
+      "productId": "6438159998406",
+      "quantityCode": "KPL",
+      "freeText": "",
+      "unitPriceIncVAT": 2990,
+      "unitPriceIncVATDecimal": "29,90",
+      "totalAmountExcVAT": 2411,
+      "totalAmountIncVAT": 2990,
+      "vats": [
+        {
+          "VATRate": "24",
+          "VATAmount": 579,
+          "totalAmountExcVAT": 2411,
+          "totalAmountIncVAT": 2990
+        }
+      ]
+    },
+      {
+        "name": "Sitruuna etelä-afrikka",
+        "EANCode": "2300319230104",
+        "vats": [
+          {
+            "VATRate": "14",
+            "VATAmount": 68,
+            "totalAmountExcVAT": 486,
+            "totalAmountIncVAT": 554
+          }
+        ],
+        "quantity": "3.01",
+        "productId": "3192",
+        "quantityCode": "kg",
+        "unitPriceIncVAT": 200,
+        "totalAmountExcVAT": 486,
+        "totalAmountIncVAT": 554,
+        "freeText": "",
+        "discounts": [
+          {
+            "amount": 48,
+            "percentage": "7.97",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "Fazer Puikula pehmeä täysjyvä 4kpl 240",
+        "EANCode": "6413467364303",
+        "quantity": "1,000",
+        "productId": "6413467364303",
+        "quantityCode": "KPL",
+        "freeText": "",
+        "unitPriceIncVAT": 169.000005722046,
+        "unitPriceIncVATDecimal": "1.69",
+        "totalAmountExcVAT": 148,
+        "totalAmountIncVAT": 169,
+        "vats": [
+          {
+            "VATRate": "14",
+            "VATAmount": 20.754386484623,
+            "totalAmountExcVAT": 148,
+            "totalAmountIncVAT": 169
+          }
+        ]
+      },
+      {
+        "name": "CHILIJUUSTONUGGETS 5 KPL",
+        "EANCode": "0259280000112",
+        "quantity": "1",
+        "productId": "345034",
+        "quantityCode": "KPL",
+        "freeText": "",
+        "unitPriceIncVAT": 250,
+        "unitPriceIncVATDecimal": "2,50",
+        "totalAmountExcVAT": 219,
+        "totalAmountIncVAT": 250,
+        "vats": [
+          {
+            "VATRate": "14",
+            "VATAmount": 31,
+            "totalAmountExcVAT": 219,
+            "totalAmountIncVAT": 250
+          }
+        ],
+        "discounts": [],
+        "customAttributes": []
+      }
+  ],
+  "vats": [
+    {
+      "VATRate": "14",
+      "totalVATAmount": 119.754386484623,
+      "totalAmountExcVAT": 853,
+      "totalAmountIncVAT": 973
+    },
+    {
+      "VATRate": "24",
+      "totalVATAmount": 579,
+      "totalAmountExcVAT": 2411,
+      "totalAmountIncVAT": 2990
+    }
+  ],
+  "receiptTimeStamp": "2022-05-11T01:58:10.430Z",
+  "totalPriceExcVAT": 3264,
+  "totalPriceIncVAT": 3963,
+  "totalVATAmount": 698.754386484623
+}

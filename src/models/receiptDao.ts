@@ -23,7 +23,10 @@ const find = async (querySpec: SqlQuerySpec) => {
 //Used to add a new Receipt to database
 const addItem = async (receipt: Receipt) => {
   logger.debug('Adding a receipt to the database')
-  receipt.date = JSON.stringify({ 'now': new Date() })
+  //checking if date already exists, this could be the case when manually adding receipts
+  if (!receipt.receiptTimeStamp) {
+    receipt.receiptTimeStamp = new Date().toJSON()
+  }
   const { resource: doc } = await receiptContainer.items.create(receipt)
   return doc
 }
