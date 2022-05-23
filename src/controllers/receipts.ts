@@ -1,6 +1,8 @@
 import { Request, Response, Router } from 'express'
 import { Receipts } from '../models/receipt'
 import { find, addItem, getItem, deleteItem } from '../models/receiptDao'
+import { addToReceiptArray, deleteFromReceiptArray } from '../models/userDao'
+import { userExtractor } from '../utils/middleware'
 
 /**
  * This class connects the API endpoints and database CRUD operations from model
@@ -28,22 +30,56 @@ receiptsRouter.get('/', async (_req: Request, res: Response) => {
 //get a single item by id
 receiptsRouter.get('/:id', async (req: Request, res: Response) => {
   const item = await getItem(req.params.id)
+  if (!item) {
+    return res.status(500).json({ error: 'database: values matching given id not found' })
+  }
   res.json(item)
 })
 
 //addReceipt
-receiptsRouter.post('/addreceipt', async (req: Request, res: Response) => {
+receiptsRouter.post('/addreceipt', userExtractor, async (req: Request, res: Response) => {
   const item = req.body
+  const user = req.user
 
-  await addItem(item)
+  if (item.eAddressId === undefined) {
+    return res.status(400).json({ error: 'eAddress is missing' })
+  } else if (item.merchant === undefined) {
+    return res.status(400).json({ error: 'merchant information is missing' })
+  } else if (item.products === undefined) {
+    return res.status(400).json({ error: 'product information is missing' })
+  } //add more checks for receipt validation...
+
+  if (item.eAddressId !== user.eAddressId) {
+    return res.status(400).json({ error: 'eAddress is not valid for current user' })
+  }
+
+  //adding the receipt to database
+  const addedItem = await addItem(item)
+  if (addedItem) {
+    //updating the logged in user with the new receipt id
+    await addToReceiptArray(user.id, addedItem.id)
+  }
+
   res.redirect('/')
 })
 
-//deleteReceipt, not for production
-receiptsRouter.delete('/:id', async (req: Request, res: Response) => {
+/* tobeimplemented
+receiptsRouter.post('/sendreceipt', userExtractor, async (req: Request, res: Response) => {
+})
+*/
+
+//deleteReceipt, not for production!!!
+receiptsRouter.delete('/:id', userExtractor, async (req: Request, res: Response) => {
   let result = 'delete not allowed'
   if (process.env.NODE_ENV !== 'production') {
-    result = await deleteItem(req.params.id)
+    const user = req.user
+
+    //deleting the receipt from db
+    await deleteItem(req.params.id)
+    //deleting the receiptId from users receiptId array
+    await deleteFromReceiptArray(user.id, req.params.id)
+
+    result = `receipt ${req.params.id} successfully deleted`
   }
   res.json(result)
 })

@@ -31,6 +31,9 @@ usersRouter.get('/', async (_req: Request, res: Response) => {
 //get a single item by id
 usersRouter.get('/:id', async (req: Request, res: Response) => {
   const item = await getItem(req.params.id)
+  if (!item) {
+    return res.status(500).json({ error: 'database: values matching given id not found' })
+  }
   await removePasswordForUser(item)
   res.json(item)
 })

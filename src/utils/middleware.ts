@@ -1,6 +1,8 @@
 import { Request, Response } from 'express'
 import morgan from 'morgan'
 import * as logger from './logger'
+import jwt from 'jsonwebtoken'
+import { getItem } from '../models/userDao'
 
 //This file contains helper functions which are used in response to API calls
 
@@ -19,6 +21,23 @@ morgan.token('response-body', function (req: Request, res: Response) {
 //will return json message instead of default 404
 const unknownEndpoint = (_req: Request, res: Response) => {
   res.status(404).send({ error: 'unknown endpoint' })
+}
+
+//This adds the user as a new field to a request for easy access from anywhere in the app
+const userExtractor = async (req: Request, res: Response, next: any) => {
+  //checking that token field in request matches decodedToken with envSecret value
+  const decodedToken: any = jwt.verify(req.headers.cookie, process.env.SECRET)
+  if (!req.headers.cookie || !decodedToken.id) {
+    return res.status(401).json({ error: 'token missing or invalid' })
+  }
+  const user = await getItem(decodedToken.id)
+  //all id's are used for verification processes
+  req.user = {
+    id: user.id,
+    eAddressId: user.eAddressId,
+    receiptIds: user.receiptIds
+  }
+  next()
 }
 
 const errorHandler = (error: Error, _req: Request, res: Response, next: any) => {
@@ -51,5 +70,6 @@ const errorHandler = (error: Error, _req: Request, res: Response, next: any) => 
 export {
   morgan,
   unknownEndpoint,
-  errorHandler
+  errorHandler,
+  userExtractor
 }

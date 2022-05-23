@@ -41,4 +41,30 @@ const getItem = async (itemId: string) => {
   return resource
 }
 
-export { find, addItem, getItem, deleteItem }
+//Used to update name for an existing item in the database
+const addToReceiptArray = async (itemId: string, receiptId: string) => {
+  logger.debug('Adding a new receipt for user')
+  const doc = await getItem(itemId)
+  doc.receiptIds.push(receiptId)
+
+  const { resource: replaced } = await userContainer
+    .item(itemId, partitionKey)
+    .replace(doc)
+  return replaced
+}
+
+//Used to delete a receipt from users receipt list !!!Only to be used in development
+const deleteFromReceiptArray = async (itemId: string, receiptId: string) => {
+  logger.debug('Deleting a receipt from users receipt list')
+  const doc = await getItem(itemId)
+  const receiptList: string[] = doc.receiptIds
+  const newReceiptList = receiptList.filter(receipt => receipt !== receiptId)
+  doc.receiptIds = newReceiptList
+
+  const { resource: replaced } = await userContainer
+    .item(itemId, partitionKey)
+    .replace(doc)
+  return replaced
+}
+
+export { find, addItem, getItem, deleteItem, addToReceiptArray, deleteFromReceiptArray }

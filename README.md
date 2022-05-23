@@ -47,3 +47,15 @@ yarn run lint
 Run requests from src/requests/--.rest
 
 > (optional) download REST client for vscode https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+#### To run requests which need a userid
+1. Run GET request inside given .rest file and copy the value of "id" from response
+2. Replace the @idVariable value in the same .rest file with the copied id value
+3. Run requests in the .rest file which use {{idVariable}}
+
+#### To run receipt requests which need a user to be logged in
+1. Run POST request inside login.rest and copy the value of "token" from response.
+2. Replace the @tokenVariable value inside receipt.rest request with the copied token value
+3. Now run requests inside receipt.rest which use {{tokenVariable}}
+
+> Make sure to change the json file accordingly in POST request when creating a new receipt, program will throw error if eAddresses do not match

@@ -1,6 +1,7 @@
+@idVariable = ded44668-33b0-46fa-9208-5101164e4834
+
 ### Get all users
 GET http://localhost:8080/api/users
-
 
 ### Create a new user
 POST http://localhost:8080/api/users/adduser
@@ -13,10 +14,21 @@ content-type: application/json
   "eAddressId": "did:example:123456789abcdefghi"
 }
 
+### Create a second user
+POST http://localhost:8080/api/users/adduser
+content-type: application/json
+
+{
+  "username": "kayttaja2",
+  "name": "User2",
+  "password": "kekret",
+  "eAddressId": "did:other:ihgfedcba987654321"
+}
+
 ### Get a user with id
-GET http://localhost:8080/api/users/366b9431-e198-4aeb-bc98-5fe2f146f4c6
+GET http://localhost:8080/api/users/{{idVariable}}
 
 
 ### Delete a user with id
-DELETE http://localhost:8080/api/users/ded44668-33b0-46fa-9208-5101164e4834
+DELETE http://localhost:8080/api/users/{{idVariable}}
 
