@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express'
 import { Receipts } from '../models/receipt'
 import { find, addItem, getItem, deleteItem } from '../models/receiptDao'
-import { addToReceiptArray, deleteFromReceiptArray } from '../models/userDao'
+import { addToReceiptArray, deleteReceiptFromAllUsers } from '../models/userDao'
 import { userExtractor } from '../utils/middleware'
 
 /**
@@ -69,15 +69,17 @@ receiptsRouter.post('/sendreceipt', userExtractor, async (req: Request, res: Res
 */
 
 //deleteReceipt, not for production!!!
-receiptsRouter.delete('/:id', userExtractor, async (req: Request, res: Response) => {
+receiptsRouter.delete('/:id', async (req: Request, res: Response) => {
   let result = 'delete not allowed'
   if (process.env.NODE_ENV !== 'production') {
-    const user = req.user
 
+    //deleting the receiptId from all users receiptId arrays
+    const check = await deleteReceiptFromAllUsers(req.params.id)
     //deleting the receipt from db
+    if (!check) {
+      return res.status(400).json({ error: 'removing receiptIds from users failed, deletion canceled' })
+    }
     await deleteItem(req.params.id)
-    //deleting the receiptId from users receiptId array
-    await deleteFromReceiptArray(user.id, req.params.id)
 
     result = `receipt ${req.params.id} successfully deleted`
   }

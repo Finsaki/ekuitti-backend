@@ -53,18 +53,42 @@ const addToReceiptArray = async (itemId: string, receiptId: string) => {
   return replaced
 }
 
-//Used to delete a receipt from users receipt list !!!Only to be used in development
-const deleteFromReceiptArray = async (itemId: string, receiptId: string) => {
+//Used to delete given receiptId from all users that have it !!!Only to be used in development
+//no authorization is used as run can only happen in devepoment
+const deleteReceiptFromAllUsers= async (receiptId: string) => {
   logger.debug('Deleting a receipt from users receipt list')
-  const doc = await getItem(itemId)
-  const receiptList: string[] = doc.receiptIds
-  const newReceiptList = receiptList.filter(receipt => receipt !== receiptId)
-  doc.receiptIds = newReceiptList
+  //this query finds all users which have the given receiptId in their receiptIds array
+  //this has to be queried for all users because receiptIds can be sent to other users
+  const querySpec = {
+    query: 'SELECT users.id FROM users WHERE ARRAY_CONTAINS(users.receiptIds, @receiptId)',
+    parameters: [
+      { name: '@receiptId', value: receiptId }
+    ]
+  }
 
-  const { resource: replaced } = await userContainer
-    .item(itemId, partitionKey)
-    .replace(doc)
-  return replaced
+  try {
+    //queries will be returned in [ {id: 1234} ] form
+    const doc = await find(querySpec)
+
+    //to iterate over all found objects in the array
+    for (let i:number = 0; i < doc.length; i++) {
+      const user: User = await getItem(doc[i].id)
+      const receiptArray = user.receiptIds
+      const newReceiptArray = receiptArray.filter(receipt => receipt !== receiptId)
+      user.receiptIds = newReceiptArray
+
+      logger.debug('Removing a receiptId from user')
+      await userContainer
+        .item(doc[i].id, partitionKey)
+        .replace(user)
+    }
+
+  } catch (e) {
+    //return false and let the receipt deletion know that deletion should be cancelled
+    return false
+  }
+
+  return true
 }
 
-export { find, addItem, getItem, deleteItem, addToReceiptArray, deleteFromReceiptArray }
+export { find, addItem, getItem, deleteItem, addToReceiptArray, deleteReceiptFromAllUsers }
