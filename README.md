@@ -19,7 +19,8 @@
 
 ## Other
 1. (Optional) Update the PORT value to .env file, default is 8080
-2. Update SECRET value to .env file, it is used for token creation when user logs in, can be any string value
+2. (Optional) Update the FRONTURI value to .env file, default is http://localhost:3000
+3. Update SECRET value to .env file, it is used for token creation when user logs in, can be any string value
 
 ### .env file required contents
 ```
@@ -34,6 +35,8 @@ PROD_DB_URI=""
 PROD_DB_SECRET_KEY=""
 
 SECRET=""
+
+FRONTURI=""
 ```
 
 ## Testing

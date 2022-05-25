@@ -15,5 +15,6 @@ type UserValues = {
 declare namespace Express { // eslint-disable-line no-unused-vars
   interface Request { // eslint-disable-line no-unused-vars
     user?: UserValues
+    token?: string
   }
 }

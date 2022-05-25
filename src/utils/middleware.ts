@@ -27,12 +27,13 @@ const userExtractor = async (
   next: NextFunction
 ) => {
   //checking that token field in request matches decodedToken with envSecret value
+  console.log(req.token)
   const decodedToken = verify(
-    req.headers.cookie,
+    req.token,
     process.env.SECRET
   ) as JwtPayload // Tell tsc that token is a jwtpayload not a string
 
-  if (!req.headers.cookie || !decodedToken.id) {
+  if (!req.token || !decodedToken.id) {
     return res.status(401).json({ error: 'token missing or invalid' })
   }
 
@@ -44,6 +45,22 @@ const userExtractor = async (
     receiptIds: user.receiptIds,
   }
 
+  next()
+}
+
+//extract the token and save it to Request on a form that can be compared in backend
+const tokenExtractor = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const auth = req.headers.cookie
+  if (auth && auth.toLowerCase().startsWith('token=')) {
+    //starts with token=1234 so we start after the sixth character
+    req.token = auth.substring(6)
+  } else {
+    req.token = null
+  }
   next()
 }
 
@@ -90,4 +107,4 @@ const errorHandler = (
   next(error)
 }
 
-export { morgan, unknownEndpoint, errorHandler, userExtractor }
+export { morgan, unknownEndpoint, errorHandler, userExtractor, tokenExtractor }

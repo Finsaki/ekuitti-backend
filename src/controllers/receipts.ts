@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express'
-import { Receipts } from '../models/receipt'
+import { Receipt, Receipts } from '../models/receipt'
 import { find, addItem, getItem, deleteItem } from '../models/receiptDao'
 import { addToReceiptArray, deleteReceiptFromAllUsers } from '../models/userDao'
 import { userExtractor } from '../utils/middleware'
@@ -28,8 +28,13 @@ receiptsRouter.get('/', async (_req: Request, res: Response) => {
 })
 
 //get a single item by id
-receiptsRouter.get('/:id', async (req: Request, res: Response) => {
-  const item = await getItem(req.params.id)
+receiptsRouter.get('/:id', userExtractor, async (req: Request, res: Response) => {
+  const user = req.user
+  let item: Receipt
+  //change to SQL query and add error handling!!!
+  if (user.receiptIds.includes(req.params.id)) {
+    item = await getItem(req.params.id)
+  }
   if (!item) {
     return res.status(500).json({ error: 'database: values matching given id not found' })
   }
