@@ -3,6 +3,7 @@ import morgan from 'morgan'
 import * as logger from './logger'
 import { verify, JwtPayload } from 'jsonwebtoken'
 import { getItem } from '../models/userDao'
+import { parseCookies } from './cookieHelper'
 
 //This file contains helper functions which are used in response to API calls
 
@@ -27,7 +28,6 @@ const userExtractor = async (
   next: NextFunction
 ) => {
   //checking that token field in request matches decodedToken with envSecret value
-  console.log(req.token)
   const decodedToken = verify(
     req.token,
     process.env.SECRET
@@ -54,10 +54,11 @@ const tokenExtractor = async (
   res: Response,
   next: NextFunction
 ) => {
-  const auth = req.headers.cookie
-  if (auth && auth.toLowerCase().startsWith('token=')) {
-    //starts with token=1234 so we start after the sixth character
-    req.token = auth.substring(6)
+  const cookies = req.headers.cookie
+  if (cookies && cookies.includes('token=')) {
+    const parsedCookies = parseCookies(cookies)
+    const tokenCookie = parsedCookies.token
+    req.token = tokenCookie
   } else {
     req.token = null
   }
