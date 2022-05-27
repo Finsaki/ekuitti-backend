@@ -1,8 +1,9 @@
 import { Request, Response, Router } from 'express'
 import { Receipt, Receipts } from '../models/receipt'
-import { find, addItem, getItem, deleteItem } from '../models/receiptDao'
+import { addItem, getItem, deleteItem } from '../models/receiptDao' //find
 import { addToReceiptArray, deleteReceiptFromAllUsers } from '../models/userDao'
 import { userExtractor } from '../utils/middleware'
+//import { find } from '../models/userDao'
 
 /**
  * This class connects the API endpoints and database CRUD operations from model
@@ -19,25 +20,61 @@ receiptsRouter.get('/test', async (_req: Request, res: Response) => {
 })
 
 //Show all receipts in database. Not wanted for production, modify later to work with user!!!
-receiptsRouter.get('/', async (_req: Request, res: Response) => {
-  const querySpec = {
-    query: 'SELECT * FROM root',
+receiptsRouter.get('/', userExtractor, async (req: Request, res: Response) => {
+  const user = req.user
+  const receiptIdValues = user.receiptIds
+  let values = []
+  //!!!This could deffinitelly be done better than firing request for each id but for now it works
+  for (let i = 0; i < receiptIdValues.length; i++) {
+    const item = await getItem(receiptIdValues[i])
+    values.push(item)
   }
-  const items = await find(querySpec)
-  res.json(items)
+
+  /*
+  //This does not produce any results, even though syntax is correct
+  const mappedValues = receiptIdValues.map(i => `"${i}"`).join(",")
+  //The IN operator goes through string values in a form of "abc", "123", "ubn"
+  const querySpec3 = {
+    query: `SELECT * FROM receipts r WHERE r.id IN ${mappedValues}`,
+    parameters: [
+      { name: '@receiptIds', value: mappedValues }
+    ]
+  }
+  //only the receipts where eAddressId matches
+  const querySpec2 = {
+    query: 'SELECT * FROM receipts r WHERE r.eAddressId = @userEAddress',
+    parameters: [
+      { name: '@userEAddress', value: user.eAddressId }
+    ]
+  }
+  //original, finds all receipts
+  const querySpec = {
+    query: 'SELECT * FROM root'
+  }
+
+  //remember to use find from receiptDao, not userDao
+  const values = await find(querySpec3)
+  */
+
+  res.json(values)
 })
 
 //get a single item by id
 receiptsRouter.get('/:id', userExtractor, async (req: Request, res: Response) => {
   const user = req.user
   let item: Receipt
-  //change to SQL query and add error handling!!!
-  if (user.receiptIds.includes(req.params.id)) {
+
+  //!!!Could be changed to an sql query
+  if (!user.receiptIds.includes(req.params.id)) {
+    return res.status(400).json({ error: 'user does not have access to given receiptId' })
+  } else {
     item = await getItem(req.params.id)
   }
+
   if (!item) {
-    return res.status(500).json({ error: 'database: values matching given id not found' })
+    return res.status(500).json({ error: 'database: receipt matching given id not found' })
   }
+
   res.json(item)
 })
 
@@ -68,8 +105,16 @@ receiptsRouter.post('/addreceipt', userExtractor, async (req: Request, res: Resp
   res.redirect('/')
 })
 
-/* tobeimplemented
-receiptsRouter.post('/sendreceipt', userExtractor, async (req: Request, res: Response) => {
+//tobeimplemented
+/*
+receiptsRouter.post('/sendreceipt/:eAddress', userExtractor, async (req: Request, res: Response) => {
+  const querySpec = {
+    query: 'SELECT DISTINCT FROM users u WHERE u.eAddressId = @eAddress',
+    parameters: [
+      { name: '@eAddress', value: req.params.eAddress }
+    ]
+  }
+  const recipient: User = await find(querySpec)
 })
 */
 
