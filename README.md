@@ -19,7 +19,8 @@
 
 ## Other
 1. (Optional) Update the PORT value to .env file, default is 8080
-2. Update SECRET value to .env file, it is used for token creation when user logs in, can be any string value
+2. (Optional) Update the FRONTURI value to .env file, default is http://localhost:3000
+3. Update SECRET value to .env file, it is used for token creation when user logs in, can be any string value
 
 ### .env file required contents
 ```
@@ -34,6 +35,8 @@ PROD_DB_URI=""
 PROD_DB_SECRET_KEY=""
 
 SECRET=""
+
+FRONTURI=""
 ```
 
 ## Testing
@@ -47,3 +50,15 @@ yarn run lint
 Run requests from src/requests/--.rest
 
 > (optional) download REST client for vscode https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+#### To run requests which need a userid
+1. Run GET request inside given .rest file and copy the value of "id" from response
+2. Replace the @idVariable value in the same .rest file with the copied id value
+3. Run requests in the .rest file which use {{idVariable}}
+
+#### To run receipt requests which need a user to be logged in
+1. Run POST request inside login.rest and copy the value of "token" from response.
+2. Replace the @tokenVariable value inside receipt.rest request with the copied token value
+3. Now run requests inside receipt.rest which use {{tokenVariable}}
+
+> Make sure to change the json file accordingly in POST request when creating a new receipt, program will throw error if eAddresses do not match
