@@ -1,7 +1,10 @@
 import { Request, Response, Router } from 'express'
 import { Users, User } from '../models/user'
 import { find, addItem, getItem, deleteItem } from '../models/userDao'
-import { removePasswordForUsers, removePasswordForUser } from '../utils/userHelper'
+import {
+  removePasswordForUsers,
+  removePasswordForUser,
+} from '../utils/userHelper'
 import { genRandomString, sha512 } from '../utils/hashHelper'
 
 /**
@@ -12,12 +15,12 @@ import { genRandomString, sha512 } from '../utils/hashHelper'
 const usersRouter = Router()
 
 //testUser without database connection
-usersRouter.get('/test', async (_req: Request, res: Response) => {
+/* usersRouter.get('/test', async (_req: Request, res: Response) => {
   const json = await import('../../docs/users.json') // import local json file for testing
   const data: Users = json.default //.default gets the actual data
   await removePasswordForUsers(data)
   res.json(data)
-})
+}) */
 
 usersRouter.get('/', async (_req: Request, res: Response) => {
   const querySpec = {
@@ -32,7 +35,9 @@ usersRouter.get('/', async (_req: Request, res: Response) => {
 usersRouter.get('/:id', async (req: Request, res: Response) => {
   const item = await getItem(req.params.id)
   if (!item) {
-    return res.status(500).json({ error: 'database: values matching given id not found' })
+    return res
+      .status(500)
+      .json({ error: 'database: values matching given id not found' })
   }
   await removePasswordForUser(item)
   res.json(item)
@@ -70,9 +75,9 @@ usersRouter.post('/adduser', async (req: Request, res: Response) => {
     receiptIds: [],
     passwordData: {
       passwordHash: passwordHash,
-      salt: salt
+      salt: salt,
     },
-    eAddressId: item.eAddressId
+    eAddressId: item.eAddressId,
   }
 
   await addItem(newUser)
