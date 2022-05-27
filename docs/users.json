@@ -2,13 +2,22 @@
   {
     "username": "kayttaja1",
     "name": "User1",
-    "password": "terkes",
+    "passwordData": {
+      "passwordHash": "terkes",
+      "salt": "abcdefghijklmnop"
+    },
+    "receiptIds": ["34ba08e0-26b4-4d0b-aa0b-ddd37254a612",
+      "ddd37254a612-26b4-4d0b-aa0b-34ba08e0"],
     "eAddressId": "did:example:123456789abcdefghi"
   },
   {
     "username": "kayttaja2",
     "name": "User2",
-    "password": "sekret",
+    "passwordData": {
+      "passwordHash": "sekret",
+      "salt": "ponmlkjihgfedcba"
+    },
+    "receiptIds": ["34ba08e0-26b4-4d0b-aa0b-ddd37254a612"],
     "eAddressId": "did:example:987654321abcdefghi"
   }
 ]
