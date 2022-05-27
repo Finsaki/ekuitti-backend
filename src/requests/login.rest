@@ -4,7 +4,7 @@ content-type: application/json
 
 {
   "username": "kayttaja1",
-  "password": "sekret"
+  "password": "terkes"
 }
 
 ### Login with other user
@@ -13,5 +13,5 @@ content-type: application/json
 
 {
   "username": "kayttaja2",
-  "password": "kekret"
+  "password": "sekret"
 }
