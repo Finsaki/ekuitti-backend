@@ -1,8 +1,9 @@
-@tokenVariable = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtheXR0YWphMSIsImlkIjoiMWUxOTYyY2UtN2Y5Yy00YWU5LWI5MjktN2ZmMGY0NTVkMjAxIiwiaWF0IjoxNjUzNDg0MDcyLCJleHAiOjE2NTM0ODc2NzJ9.8rlp8VTDDV5QTpzHx47LYJ0Vc6UmsRA2j36rX70UIqk
-@idVariable = a34e6390-eb2a-4cbd-a62b-b463f6ed0f25
+@tokenVariable = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtheXR0YWphMSIsImlkIjoiMWUxOTYyY2UtN2Y5Yy00YWU5LWI5MjktN2ZmMGY0NTVkMjAxIiwiaWF0IjoxNjUzNjQ3MDY2LCJleHAiOjE2NTM2NTA2NjZ9.gAhNxQCtMyqan5bfj8CDh5IX8kY1ozgvKpkHGKdIblc
+@idVariable = dbcea958-fda8-4ea9-9791-1bb005dce00b
 
 ### Get all receipts
 GET http://localhost:8080/api/receipts
+Cookie: token={{tokenVariable}}
 
 ### Create a new receipt with json content and token
 POST http://localhost:8080/api/receipts/addreceipt
@@ -10,6 +11,16 @@ Cookie: token={{tokenVariable}}
 content-type: application/json
 
 < ../../docs/single_fake_receipt1.json
+
+### Forward an existing receipt to another user
+POST http://localhost:8080/api/receipts/forwardreceipt
+Cookie: token={{tokenVariable}}
+content-type: application/json
+
+{
+  "receiptId": "a34e6390-eb2a-4cbd-a62b-b463f6ed0f25",
+  "eAddressId": "did:other:ihgfedcba987654321"
+}
 
 
 ### Get a receipt with id
