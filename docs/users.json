@@ -9,6 +9,6 @@
     "username": "kayttaja2",
     "name": "User2",
     "password": "sekret",
-    "eAddressId": "did:example:987654321abcdefghi"
+    "eAddressId": "did:other:ihgfedcba987654321"
   }
 ]

@@ -1,8 +1,9 @@
 import { Request, Response, Router } from 'express'
-import { Users, User } from '../models/user'
+import { User } from '../models/user'
 import { findUsers, addItem, getItem, deleteItem } from '../models/userDao'
 import { removePasswordForUsers, removePasswordForUser } from '../utils/userHelper'
 import { genRandomString, sha512 } from '../utils/hashHelper'
+import * as logger from '../utils/logger'
 
 /**
  * This class connects the API endpoints and database CRUD operations from model
@@ -25,6 +26,9 @@ usersRouter.get('/', async (_req: Request, res: Response) => {
   }
   const items = await findUsers(querySpec)
   await removePasswordForUsers(items)
+
+  logger.debug(`${items.length} values found`)
+
   res.json(items)
 })
 
@@ -69,7 +73,6 @@ usersRouter.post('/adduser', async (req: Request, res: Response) => {
   const newUser: User = {
     username: item.username,
     name: item.name,
-    receiptIds: [],
     passwordData: {
       passwordHash: passwordHash,
       salt: salt,

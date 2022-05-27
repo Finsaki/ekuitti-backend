@@ -5,7 +5,6 @@ type User = {
     passwordHash: string,
     salt: string
   },
-  receiptIds: string[],
   eAddressId: string
 }
 
