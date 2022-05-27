@@ -1,11 +1,9 @@
 import { config } from 'dotenv'
 config()
 
-//Contains necessary variables for connections
+//Contains necessary variables for database connection
 
 const PORT = process.env.PORT || '8080'
-
-const FRONTURI = process.env.FRONTURI || 'http://localhost:3000'
 
 //E-receipt db
 const PRIMARY_DB_ID = 'cosmos-e-receipts' //Name of the database for receipts
@@ -30,6 +28,5 @@ const AUTH_KEY = process.env.NODE_ENV === 'production'
 export {
   HOST, PORT, AUTH_KEY,
   PRIMARY_DB_ID, RECEIPT_CONT_ID, USER_CONT_ID,
-  SECONDARY_DB_ID, ITEM_CONT_ID,
-  FRONTURI
+  SECONDARY_DB_ID, ITEM_CONT_ID
 }

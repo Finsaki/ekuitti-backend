@@ -29,9 +29,8 @@ try {
 }
 
 //--------middlewares here (other than error handling), before routers-------
-app.use(cors({ credentials: true, origin: config.FRONTURI }))
+app.use(cors())
 app.use(express.json())
-app.use(middleware.tokenExtractor)
 app.use(
   middleware.morgan(
     ':method :url :status :res[content-length] :response-time ms :response-body'

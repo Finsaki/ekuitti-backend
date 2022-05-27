@@ -6,12 +6,3 @@ content-type: application/json
   "username": "kayttaja1",
   "password": "sekret"
 }
-
-### Login with other user
-POST http://localhost:8080/api/login
-content-type: application/json
-
-{
-  "username": "kayttaja2",
-  "password": "kekret"
-}

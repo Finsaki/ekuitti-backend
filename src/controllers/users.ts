@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express'
 import { Users, User } from '../models/user'
-import { findUsers, addItem, getItem, deleteItem } from '../models/userDao'
+import { find, addItem, getItem, deleteItem } from '../models/userDao'
 import { removePasswordForUsers, removePasswordForUser } from '../utils/userHelper'
 import { genRandomString, sha512 } from '../utils/hashHelper'
 
@@ -23,7 +23,7 @@ usersRouter.get('/', async (_req: Request, res: Response) => {
   const querySpec = {
     query: 'SELECT * FROM root',
   }
-  const items = await findUsers(querySpec)
+  const items = await find(querySpec)
   await removePasswordForUsers(items)
   res.json(items)
 })
@@ -31,9 +31,6 @@ usersRouter.get('/', async (_req: Request, res: Response) => {
 //get a single item by id
 usersRouter.get('/:id', async (req: Request, res: Response) => {
   const item = await getItem(req.params.id)
-  if (!item) {
-    return res.status(500).json({ error: 'database: values matching given id not found' })
-  }
   await removePasswordForUser(item)
   res.json(item)
 })

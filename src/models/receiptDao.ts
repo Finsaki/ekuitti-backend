@@ -13,7 +13,7 @@ import { Receipt } from '../models/receipt'
 const partitionKey: string = undefined
 
 //Used to find receipts with spesific SQL query
-const findReceipts = async (querySpec: SqlQuerySpec) => {
+const find = async (querySpec: SqlQuerySpec) => {
   logger.debug('Querying for receipts from the database')
   checkIfContainerInitialized(receiptContainer)
   const { resources } = await receiptContainer.items.query(querySpec).fetchAll()
@@ -45,4 +45,4 @@ const getItem = async (itemId: string) => {
   return resource
 }
 
-export { findReceipts, addItem, getItem, deleteItem }
+export { find, addItem, getItem, deleteItem }
