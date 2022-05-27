@@ -38,6 +38,22 @@ const deleteItem = async (itemId: string) => {
   return resource
 }
 
+//Used to update name for an existing item in the database
+const addToReceiptArray = async (receiptId: string, userId: string) => {
+  logger.debug('Adding a new userid for forwardedUsers array in receipt')
+  let doc: Receipt = await getItem(receiptId)
+  if (!doc.forwardedUsers) {
+    const emptyArray: string[] = []
+    doc.forwardedUsers = emptyArray
+  }
+  doc.forwardedUsers.push(userId)
+
+  const { resource: replaced } = await receiptContainer
+    .item(receiptId, partitionKey)
+    .replace(doc)
+  return replaced
+}
+
 //Used to fetch a spesific receipt with id
 const getItem = async (itemId: string) => {
   logger.debug('Getting a receipt from the database')
@@ -45,4 +61,4 @@ const getItem = async (itemId: string) => {
   return resource
 }
 
-export { findReceipts, addItem, getItem, deleteItem }
+export { findReceipts, addItem, getItem, deleteItem, addToReceiptArray }

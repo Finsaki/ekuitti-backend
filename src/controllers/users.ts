@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express'
-import { Users, User } from '../models/user'
+import { User } from '../models/user'
 import { findUsers, addItem, getItem, deleteItem } from '../models/userDao'
 import { removePasswordForUsers, removePasswordForUser } from '../utils/userHelper'
 import { genRandomString, sha512 } from '../utils/hashHelper'

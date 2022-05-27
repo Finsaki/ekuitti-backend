@@ -41,8 +41,7 @@ const userExtractor = async (
   //all id's are used for verification processes
   req.user = {
     id: user.id,
-    eAddressId: user.eAddressId,
-    receiptIds: user.receiptIds,
+    eAddressId: user.eAddressId
   }
 
   next()

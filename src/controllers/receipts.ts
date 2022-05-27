@@ -1,8 +1,7 @@
 import { Request, Response, Router } from 'express'
 import { Receipt, Receipts } from '../models/receipt'
-import { findReceipts, addItem, getItem, deleteItem } from '../models/receiptDao' //find
+import { findReceipts, addItem, getItem, deleteItem, addToReceiptArray } from '../models/receiptDao' //find
 import { findUsers } from '../models/userDao'
-import { addToReceiptArray, deleteReceiptFromAllUsers } from '../models/userDao'
 import { userExtractor } from '../utils/middleware'
 //import { find } from '../models/userDao'
 
@@ -26,7 +25,7 @@ receiptsRouter.get('/', userExtractor, async (req: Request, res: Response) => {
 
   //only the receipts where eAddressId matches
   const querySpec2 = {
-    query: 'SELECT * FROM receipts r WHERE r.eAddressId = @userEAddress',
+    query: 'SELECT * FROM root r WHERE r.eAddressId = @userEAddress',
     parameters: [
       { name: '@userEAddress', value: user.eAddressId }
     ]
@@ -41,20 +40,32 @@ receiptsRouter.get('/', userExtractor, async (req: Request, res: Response) => {
 //get a single item by id
 receiptsRouter.get('/:id', userExtractor, async (req: Request, res: Response) => {
   const user = req.user
-  let item: Receipt
+  //let item: Receipt
 
   //!!!Could be changed to an sql query
+  /*
   if (!user.receiptIds.includes(req.params.id)) {
     return res.status(400).json({ error: 'user does not have access to given receiptId' })
-  } else {
-    item = await getItem(req.params.id)
-  }
+  */
+  const item: Receipt = await getItem(req.params.id)
 
   if (!item) {
     return res.status(500).json({ error: 'database: receipt matching given id not found' })
   }
 
-  res.json(item)
+  if (item.eAddressId === user.eAddressId) {
+    res.json(item)
+  } else if (item.forwardedUsers) {
+    if (item.forwardedUsers.includes(user.eAddressId)) {
+      res.json(item)
+    } else {
+      return res.status(400).json({ error: 'access denied: receipt is not forwarded to current user' })
+    }
+  } else {
+    return res.status(400).json({ error: 'access denied: current user is not the owner of this receipt and it is not forwarded to anyone' })
+  }
+
+  res.redirect('/')
 })
 
 //addReceipt
@@ -126,11 +137,13 @@ receiptsRouter.post('/forwardreceipt', userExtractor, async (req: Request, res: 
 
   if (!userItem) {
     return res.status(500).json({ error: 'database: no user with given eAddress was found' })
-  } else if (userItem.receiptIds.includes(receiptId)) {
-    return res.status(500).json({ error: 'database: user already has access to receipt' })
-  } else {
-    //updating the logged in user with the new receipt id
-    await addToReceiptArray(userItem.id, receiptId)
+  }
+
+  if (receipt.forwardedUsers) {
+    if (receipt.forwardedUsers.includes(userItem.eAddressId)) {
+      return res.status(500).json({ error: 'database: user already has access to receipt' })
+    }
+    await addToReceiptArray(receiptId, userItem.id)
   }
 
   res.redirect('/')
@@ -138,20 +151,13 @@ receiptsRouter.post('/forwardreceipt', userExtractor, async (req: Request, res: 
 
 //deleteReceipt, not for production!!!
 receiptsRouter.delete('/:id', async (req: Request, res: Response) => {
-  let result = 'delete not allowed'
   if (process.env.NODE_ENV !== 'production') {
-
-    //deleting the receiptId from all users receiptId arrays
-    const check = await deleteReceiptFromAllUsers(req.params.id)
-    //deleting the receipt from db
-    if (!check) {
-      return res.status(400).json({ error: 'removing receiptIds from users failed, deletion canceled' })
-    }
+    //middleware will catch not found database exception
     await deleteItem(req.params.id)
-
-    result = `receipt ${req.params.id} successfully deleted`
+    res.json(`receipt ${req.params.id} successfully deleted`)
+  } else {
+    res.json('delete not allowed')
   }
-  res.json(result)
 })
 
 export { receiptsRouter }

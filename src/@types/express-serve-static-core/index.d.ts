@@ -4,8 +4,7 @@
 
 type UserValues = {
   id: string,
-  eAddressId: string,
-  receiptIds: string[]
+  eAddressId: string
 }
 
 //if any importing is done then the following needs to be wrapped in declare global {}
