@@ -13,7 +13,7 @@ import { User } from '../models/user'
 const partitionKey: string = undefined
 
 //Used to find users with spesific SQL query
-const find = async (querySpec: SqlQuerySpec) => {
+const findUsers = async (querySpec: SqlQuerySpec) => {
   logger.debug('Querying for users from the database')
   checkIfContainerInitialized(userContainer)
   const { resources } = await userContainer.items.query(querySpec).fetchAll()
@@ -68,7 +68,7 @@ const deleteReceiptFromAllUsers= async (receiptId: string) => {
 
   try {
     //queries will be returned in [ {id: 1234} ] form
-    const doc = await find(querySpec)
+    const doc = await findUsers(querySpec)
 
     //to iterate over all found objects in the array
     for (let i:number = 0; i < doc.length; i++) {
@@ -91,4 +91,4 @@ const deleteReceiptFromAllUsers= async (receiptId: string) => {
   return true
 }
 
-export { find, addItem, getItem, deleteItem, addToReceiptArray, deleteReceiptFromAllUsers }
+export { findUsers, addItem, getItem, deleteItem, addToReceiptArray, deleteReceiptFromAllUsers }

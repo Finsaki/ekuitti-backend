@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express'
-import { find } from '../models/userDao'
+import { findUsers } from '../models/userDao'
 import { sha512 } from '../utils/hashHelper'
 import jwt from 'jsonwebtoken'
 
@@ -18,13 +18,13 @@ loginRouter.post('/', async (req: Request, res: Response) => {
   }
 
   //CosmosDB returns queries in arrays
-  const userItemArray = await find(querySpec)
+  const userItemArray = await findUsers(querySpec)
 
   //This should not be possible but adding incase of manual changes to db
   //createUserContainer method in daoHelper class enforces unique usernames
   if (userItemArray.length > 1) {
-    return res.status(400).json({
-      error: 'more than one user with given username found'
+    return res.status(500).json({
+      error: 'database: more than one user with given username found'
     })
   }
 

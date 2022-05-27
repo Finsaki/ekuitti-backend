@@ -1,6 +1,7 @@
 import { Request, Response, Router } from 'express'
 import { Receipt, Receipts } from '../models/receipt'
-import { find, addItem, getItem, deleteItem } from '../models/receiptDao' //find
+import { findReceipts, addItem, getItem, deleteItem } from '../models/receiptDao' //find
+import { findUsers } from '../models/userDao'
 import { addToReceiptArray, deleteReceiptFromAllUsers } from '../models/userDao'
 import { userExtractor } from '../utils/middleware'
 //import { find } from '../models/userDao'
@@ -22,26 +23,7 @@ receiptsRouter.get('/test', async (_req: Request, res: Response) => {
 //Show all receipts in database. Not wanted for production, modify later to work with user!!!
 receiptsRouter.get('/', userExtractor, async (req: Request, res: Response) => {
   const user = req.user
-  const receiptIdValues = user.receiptIds
 
-  let values = []
-  //!!!This could deffinitelly be done better than firing request for each id but for now it works
-  for (let i = 0; i < receiptIdValues.length; i++) {
-    const item = await getItem(receiptIdValues[i])
-    values.push(item)
-  }
-
-
-  /*
-  //This does not produce any results, even though syntax is correct
-  const mappedValues = receiptIdValues.map(i => `"${i}"`).join(",")
-  //The IN operator goes through string values in a form of "abc", "123", "ubn"
-  const querySpec3 = {
-    query: `SELECT * FROM receipts r WHERE r.id IN (@receiptIds)`,
-    parameters: [
-      { name: '@receiptIds', value: mappedValues }
-    ]
-  }
   //only the receipts where eAddressId matches
   const querySpec2 = {
     query: 'SELECT * FROM receipts r WHERE r.eAddressId = @userEAddress',
@@ -49,14 +31,9 @@ receiptsRouter.get('/', userExtractor, async (req: Request, res: Response) => {
       { name: '@userEAddress', value: user.eAddressId }
     ]
   }
-  //original, finds all receipts
-  const querySpec = {
-    query: 'SELECT * FROM root'
-  }
 
   //remember to use find from receiptDao, not userDao
-  const values = await find(querySpec3)
-  */
+  const values = await findReceipts(querySpec2)
 
   res.json(values)
 })
@@ -108,17 +85,56 @@ receiptsRouter.post('/addreceipt', userExtractor, async (req: Request, res: Resp
 })
 
 //tobeimplemented
-/*
-receiptsRouter.post('/sendreceipt/:eAddress', userExtractor, async (req: Request, res: Response) => {
+receiptsRouter.post('/forwardreceipt', userExtractor, async (req: Request, res: Response) => {
+  const item = req.body
+  const user = req.user
+  const receiptId = item.receiptId
+  const recipientAddress = item.eAddressId
+
+  if (recipientAddress === user.eAddressId) {
+    return res.status(400).json({ error: 'forwarding receipts to yourself is not allowed' })
+  }
+
+  const receipt: Receipt = await getItem(receiptId)
+
+  if (!receipt) {
+    return res.status(500).json({ error: 'database: no receipt with given id was found' })
+  } else if(receipt.eAddressId !== user.eAddressId) {
+    return res.status(400).json({ error: 'forwarding receipts is only allowed for the original owner of the receipt' })
+  }
+
   const querySpec = {
-    query: 'SELECT DISTINCT FROM users u WHERE u.eAddressId = @eAddress',
+    query: 'SELECT * FROM users u WHERE u.eAddressId = @eAddress',
     parameters: [
-      { name: '@eAddress', value: req.params.eAddress }
+      { name: '@eAddress', value: recipientAddress }
     ]
   }
-  const recipient: User = await find(querySpec)
+
+  //CosmosDB returns queries in arrays
+  const userItemArray = await findUsers(querySpec)
+
+  //This should not be possible but adding incase of manual changes to db
+  //createUserContainer method in daoHelper class enforces unique usernames
+  if (userItemArray.length > 1) {
+    return res.status(500).json({
+      error: 'database: more than one user with given username found'
+    })
+  }
+
+  //taking the first and only item from array
+  const userItem = userItemArray[0]
+
+  if (!userItem) {
+    return res.status(500).json({ error: 'database: no user with given eAddress was found' })
+  } else if (userItem.receiptIds.includes(receiptId)) {
+    return res.status(500).json({ error: 'database: user already has access to receipt' })
+  } else {
+    //updating the logged in user with the new receipt id
+    await addToReceiptArray(userItem.id, receiptId)
+  }
+
+  res.redirect('/')
 })
-*/
 
 //deleteReceipt, not for production!!!
 receiptsRouter.delete('/:id', async (req: Request, res: Response) => {

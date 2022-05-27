@@ -1,10 +1,7 @@
 import { Request, Response, Router } from 'express'
 import { Users, User } from '../models/user'
-import { find, addItem, getItem, deleteItem } from '../models/userDao'
-import {
-  removePasswordForUsers,
-  removePasswordForUser,
-} from '../utils/userHelper'
+import { findUsers, addItem, getItem, deleteItem } from '../models/userDao'
+import { removePasswordForUsers, removePasswordForUser } from '../utils/userHelper'
 import { genRandomString, sha512 } from '../utils/hashHelper'
 
 /**
@@ -26,7 +23,7 @@ usersRouter.get('/', async (_req: Request, res: Response) => {
   const querySpec = {
     query: 'SELECT * FROM root',
   }
-  const items = await find(querySpec)
+  const items = await findUsers(querySpec)
   await removePasswordForUsers(items)
   res.json(items)
 })
