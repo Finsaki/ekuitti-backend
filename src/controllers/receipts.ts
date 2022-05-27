@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express'
 import { Receipt, Receipts } from '../models/receipt'
-import { addItem, getItem, deleteItem } from '../models/receiptDao' //find
+import { find, addItem, getItem, deleteItem } from '../models/receiptDao' //find
 import { addToReceiptArray, deleteReceiptFromAllUsers } from '../models/userDao'
 import { userExtractor } from '../utils/middleware'
 //import { find } from '../models/userDao'
@@ -23,6 +23,7 @@ receiptsRouter.get('/test', async (_req: Request, res: Response) => {
 receiptsRouter.get('/', userExtractor, async (req: Request, res: Response) => {
   const user = req.user
   const receiptIdValues = user.receiptIds
+
   let values = []
   //!!!This could deffinitelly be done better than firing request for each id but for now it works
   for (let i = 0; i < receiptIdValues.length; i++) {
@@ -30,12 +31,13 @@ receiptsRouter.get('/', userExtractor, async (req: Request, res: Response) => {
     values.push(item)
   }
 
+
   /*
   //This does not produce any results, even though syntax is correct
   const mappedValues = receiptIdValues.map(i => `"${i}"`).join(",")
   //The IN operator goes through string values in a form of "abc", "123", "ubn"
   const querySpec3 = {
-    query: `SELECT * FROM receipts r WHERE r.id IN ${mappedValues}`,
+    query: `SELECT * FROM receipts r WHERE r.id IN (@receiptIds)`,
     parameters: [
       { name: '@receiptIds', value: mappedValues }
     ]
