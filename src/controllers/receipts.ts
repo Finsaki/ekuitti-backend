@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express'
 import { Receipt, Receipts } from '../models/receipt'
 import { findReceipts, addItem, getItem, deleteItem, addToReceiptArray } from '../models/receiptDao' //find
-import { findUsers } from '../models/userDao'
+import { findUser } from '../models/userDao'
 import { userExtractor } from '../utils/middleware'
 import * as logger from '../utils/logger'
 
@@ -13,21 +13,63 @@ import * as logger from '../utils/logger'
 const receiptsRouter = Router()
 
 //testReceipts without database connection
+//Needs to be above get('/:id') because otherwise path is never registered
 receiptsRouter.get('/test', async (_req: Request, res: Response) => {
   const json = await import('../../docs/fake_receipts.json') // import local json file for testing
   const data: Receipts = json.default //.default gets the actual data
   res.json(data)
 })
 
-//Show all receipts in database. Not wanted for production, modify later to work with user!!!
+//Show all receipts where the current user is the original owner
 receiptsRouter.get('/', userExtractor, async (req: Request, res: Response) => {
   const user = req.user
 
   //only the receipts where eAddressId matches
+  //'SELECT * FROM root r WHERE r.eAddressId = @userEAddress ORDER BY r.receiptTimeStamp DESC'
   const querySpec = {
     query: 'SELECT * FROM root r WHERE r.eAddressId = @userEAddress',
     parameters: [
       { name: '@userEAddress', value: user.eAddressId }
+    ]
+  }
+  const values = await findReceipts(querySpec)
+
+  logger.debug(`${values.length} values found`)
+
+  res.json(values)
+})
+
+//Show all receipts which the current user has forwarded
+//Needs to be above get('/:id') because otherwise path is never registered
+receiptsRouter.get('/forwarded', userExtractor, async (req: Request, res: Response) => {
+  const user = req.user
+  //only the receipts where eAddressId matches and forwardedUsers field exists and isnt empty
+  const querySpec = {
+    query: 'SELECT * FROM root r WHERE r.eAddressId = @userEAddress AND (IS_DEFINED(r.forwardedUsers) AND NOT IS_NULL(r.forwardedUsers))',
+    parameters: [
+      { name: '@userEAddress', value: user.eAddressId }
+    ]
+  }
+  const values = await findReceipts(querySpec)
+
+  logger.debug(`${values.length} values found`)
+
+  res.json(values)
+})
+
+//Returns all the data that eAddress holder has shared to current user
+receiptsRouter.get('/shared/:eAddressId', userExtractor, async (req: Request, res: Response) => {
+  const user = req.user
+
+  if (user.eAddressId === req.params.eAddressId) {
+    return res.status(400).json({ error: 'user cannot have receipts forwarded from themself' })
+  }
+
+  const querySpec = {
+    query: 'SELECT * FROM root r WHERE r.eAddressId = @requestedEAddress AND (IS_DEFINED(r.forwardedUsers) AND ARRAY_CONTAINS(r.forwardedUsers, @requesterId))',
+    parameters: [
+      { name: '@requestedEAddress', value: req.params.eAddressId },
+      { name: '@requesterId', value: user.id }
     ]
   }
   const values = await findReceipts(querySpec)
@@ -91,7 +133,7 @@ receiptsRouter.post('/forwardreceipt', userExtractor, async (req: Request, res: 
   const recipientAddress = item.eAddressId
 
   if (recipientAddress === user.eAddressId) {
-    return res.status(400).json({ error: 'forwarding receipts to yourself is not allowed' })
+    return res.status(400).json({ error: 'forwarding receipts to oneself is not allowed' })
   }
 
   const receipt: Receipt = await getItem(receiptId)
@@ -109,19 +151,8 @@ receiptsRouter.post('/forwardreceipt', userExtractor, async (req: Request, res: 
     ]
   }
 
-  //CosmosDB returns queries in arrays
-  const userItemArray = await findUsers(querySpec)
-
-  //This should not be possible but adding incase of manual changes to db
-  //createUserContainer method in daoHelper class enforces unique usernames
-  if (userItemArray.length > 1) {
-    return res.status(500).json({
-      error: 'database: more than one user with given username found'
-    })
-  }
-
-  //taking the first and only item from array
-  const userItem = userItemArray[0]
+  //finding a user with eAddressId
+  const userItem = await findUser(querySpec)
 
   if (!userItem) {
     return res.status(500).json({ error: 'database: no user with given eAddress was found' })
