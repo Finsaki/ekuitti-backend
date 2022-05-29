@@ -19,6 +19,7 @@ const cosmosClient = new CosmosClient({
 })
 
 try {
+  logger.info('Program starting...')
   init(cosmosClient)
 } catch (err) {
   logger.error(err)

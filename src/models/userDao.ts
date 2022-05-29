@@ -29,7 +29,7 @@ const findUser = async (querySpec: SqlQuerySpec) => {
   //This should not be possible but adding incase of manual changes to db
   //createUserContainer method in daoHelper class enforces unique usernames
   if (resources.length > 1) {
-    throw 'database: more than one user with given username found'
+    throw new Error('database: more than one user with given username found')
   }
   //taking the first and only item from array
   const userItem = resources[0]
