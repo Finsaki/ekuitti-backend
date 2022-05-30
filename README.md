@@ -62,3 +62,14 @@ Run requests from src/requests/--.rest
 3. Now run requests inside receipt.rest which use {{tokenVariable}}
 
 > Make sure to change the json file accordingly in POST request when creating a new receipt, program will throw error if eAddresses do not match
+
+#### Testing Cors policy
+Cors policies are set differently for public router and other routers
+These differences can be easily tested from any browser with following methods
+1. Open any website (but not backend or frontend address)
+2. Press F12 to open devtools
+3. Open console tab
+4. Input: fetch('http://localhost:8080/api/users')
+> This will result in error because cors policy restricts connections from other urls than frontend or backend
+5. Input: fetch('http://localhost:8080/api/public/receipts')
+> This will not produce an error and instead will return a Promise with "status: 200". This is because public api cors policy allows all connections.

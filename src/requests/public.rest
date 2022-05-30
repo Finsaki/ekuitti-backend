@@ -1,0 +1,15 @@
+### Post a receipt to the public api endpoint
+POST http://localhost:8080/api/public/receipts
+content-type: application/json
+
+< ../../docs/single_fake_receipt1.json
+
+### Post an invalid receipt to the public api endpoint
+POST http://localhost:8080/api/public/receipts
+content-type: application/json
+
+{
+  "receiptId": "1",
+  "eAddressId": "2",
+  "nonexisting": "3"
+}
