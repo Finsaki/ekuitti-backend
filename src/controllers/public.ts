@@ -8,6 +8,7 @@ import { addItem } from '../models/receiptDao'
 
 const publicRouter = Router()
 
+//Creates a new receipt to database using public API
 publicRouter.post('/receipts', async (req: Request, res: Response) => {
   const item: Receipt = req.body
 
@@ -27,6 +28,7 @@ publicRouter.post('/receipts', async (req: Request, res: Response) => {
   }
 })
 
+//This is simply for testing the public API connection
 publicRouter.get('/receipts', async (req: Request, res: Response) => {
   return res.json('success')
 })
