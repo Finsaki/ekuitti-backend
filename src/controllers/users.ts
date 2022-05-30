@@ -44,7 +44,7 @@ usersRouter.get('/:id', async (req: Request, res: Response) => {
   res.json(item)
 })
 
-usersRouter.post('/adduser', async (req: Request, res: Response) => {
+usersRouter.post('/', async (req: Request, res: Response) => {
   const item = req.body
 
   //check here if password is acceptable, item.password comes from frontend
