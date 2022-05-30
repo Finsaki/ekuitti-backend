@@ -5,6 +5,10 @@ type Receipt = {
   // eAddress that identifies the original buyer
   eAddressId: string
 
+  // optional field that tells who the receipt is forwarded to
+  // if its empty or does not exist then only eAddressId owner has access
+  forwardedUsers?: string[]
+
   //used receipt data
   receiptTimeStamp: string
   merchant: Merchant
