@@ -92,7 +92,7 @@ receiptsRouter.get('/:id', userExtractor, async (req: Request, res: Response) =>
   if (item.eAddressId === user.eAddressId) {
     res.json(item)
   } else if (item.forwardedUsers) {
-    if (item.forwardedUsers.includes(user.eAddressId)) {
+    if (item.forwardedUsers.includes(user.id)) {
       res.json(item)
     } else {
       return res.status(400).json({ error: 'access denied: receipt is not forwarded to current user' })
@@ -103,7 +103,7 @@ receiptsRouter.get('/:id', userExtractor, async (req: Request, res: Response) =>
 })
 
 //addReceipt
-receiptsRouter.post('/addreceipt', userExtractor, async (req: Request, res: Response) => {
+receiptsRouter.post('/', userExtractor, async (req: Request, res: Response) => {
   const item = req.body
   const user = req.user
 
@@ -126,7 +126,7 @@ receiptsRouter.post('/addreceipt', userExtractor, async (req: Request, res: Resp
 })
 
 //forwardReceipt
-receiptsRouter.post('/forwardreceipt', userExtractor, async (req: Request, res: Response) => {
+receiptsRouter.post('/forwarded', userExtractor, async (req: Request, res: Response) => {
   const item = req.body
   const user = req.user
   const receiptId = item.receiptId
