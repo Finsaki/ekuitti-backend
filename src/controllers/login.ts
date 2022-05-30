@@ -1,5 +1,5 @@
 import { Request, Response, Router } from 'express'
-import { findUsers } from '../models/userDao'
+import { findUser } from '../models/userDao'
 import { sha512 } from '../utils/hashHelper'
 import jwt from 'jsonwebtoken'
 
@@ -8,6 +8,7 @@ const loginRouter = Router()
 
 loginRouter.post('/', async (req: Request, res: Response) => {
   const body = req.body
+  //same error is returned in bot bad username and bad password cases so no information is given by accident
   const sameError = 'invalid username or password'
 
   const querySpec = {
@@ -17,21 +18,10 @@ loginRouter.post('/', async (req: Request, res: Response) => {
     ]
   }
 
-  //CosmosDB returns queries in arrays
-  const userItemArray = await findUsers(querySpec)
+  //finding a user with username
+  const userItem = await findUser(querySpec)
 
-  //This should not be possible but adding incase of manual changes to db
-  //createUserContainer method in daoHelper class enforces unique usernames
-  if (userItemArray.length > 1) {
-    return res.status(500).json({
-      error: 'database: more than one user with given username found'
-    })
-  }
-
-  //taking the first and only item from array
-  const userItem = userItemArray[0]
-
-  //Checking if userItem is not null and if passwordhashes match
+  //Checking if userItem is not null
   if (!userItem) {
     return res.status(401).json({
       error: sameError
