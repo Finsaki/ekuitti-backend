@@ -1,3 +1,6 @@
+### Test the public api endpoint connection
+GET http://localhost:8080/api/public/receipts
+
 ### Post a receipt to the public api endpoint
 POST http://localhost:8080/api/public/receipts
 content-type: application/json
