@@ -1,3 +1,7 @@
+/**
+ * Typings for receipts
+ */
+
 type Receipt = {
   // Azure item ID
   id?: string

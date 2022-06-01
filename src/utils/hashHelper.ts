@@ -10,6 +10,7 @@ const genRandomString = (length: number) => {
 }
 
 //hash password with sha512.
+//can be used in either hashing the password or removing the hash from hashedpassword
 const sha512 = (password: string, salt: string) => {
   const hash = crypto.createHmac('sha512', salt) //Hashing algorithm sha512
   hash.update(password)

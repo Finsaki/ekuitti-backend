@@ -3,9 +3,13 @@ import { findUser } from '../models/userDao'
 import { sha512 } from '../utils/hashHelper'
 import jwt from 'jsonwebtoken'
 
+/**
+ * Login functionality
+ */
 
 const loginRouter = Router()
 
+//creating a new login with given username and password
 loginRouter.post('/', async (req: Request, res: Response) => {
   const body = req.body
   //same error is returned in bot bad username and bad password cases so no information is given by accident

@@ -1,3 +1,7 @@
+/**
+ * Typings for users
+ */
+
 type User = {
   username: string,
   name: string,

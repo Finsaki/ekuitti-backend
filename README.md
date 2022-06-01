@@ -1,6 +1,8 @@
 # ekuitti-backend
 
-> Read documentation.md for more information (in finnish)
+> Read [documentation.md](documentation.md) for more information about the backend structure (in finnish)
+
+> Read [api-documentation](api-documentation) for more information about API routes provided by this backend
 
 ## Start local development
 1. git clone / git pull
@@ -57,7 +59,7 @@ Run requests from src/requests/--.rest
 3. Run requests in the .rest file which use {{idVariable}}
 
 #### To run receipt requests which need a user to be logged in
-1. Run POST request inside login.rest and copy the value of "token" from response.
+1. Run POST request inside [login.rest](src/requests/login.rest) and copy the value of "token" from response.
 2. Replace the @tokenVariable value inside receipt.rest request with the copied token value
 3. Now run requests inside receipt.rest which use {{tokenVariable}}
 

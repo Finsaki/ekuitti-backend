@@ -7,11 +7,15 @@ import * as logger from './utils/logger'
 import * as middleware from './utils/middleware'
 import { CosmosClient } from '@azure/cosmos'
 import { init } from './utils/daoHelper'
-import { taskRouter } from './controllers/tasks'
 import { receiptsRouter } from './controllers/receipts'
 import { usersRouter } from './controllers/users'
 import { loginRouter } from './controllers/login'
 import { publicRouter } from './controllers/public'
+
+/**
+ * The main connection in backend which asigns specific routes to different routers and sets their cors policies
+ * Also handles starting the database connection and implements middlewares to catch requests, responses and errors
+ */
 
 //--------connection to db here-------------
 const cosmosClient = new CosmosClient({
@@ -49,7 +53,6 @@ app.use('/api/public', cors({
 //setting cors policy for following api routes that accept requests from frontend only
 app.use(cors({ credentials: true, origin: config.FRONTURI }))
 
-app.use('/api/tasks', taskRouter) //testing with db
 app.use('/api/receipts', receiptsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
