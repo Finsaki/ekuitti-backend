@@ -1,0 +1,36 @@
+{
+  "eAddressId": "did:example:123456789abcdefghi",
+  "receiptNumber": "1652278238954",
+  "merchant": {
+    "something": "..."
+  },
+  "payments": [
+    {
+      "something": "..."
+    }
+  ],
+  "currencyISOCode": "EUR",
+  "products": [
+    {
+      "something": "..."
+    }
+  ],
+  "vats": [
+    {
+      "something": "..."
+    }
+  ],
+  "receiptTimeStamp": "2022-05-11T00:43:08.159Z",
+  "totalPriceExcVAT": 552,
+  "totalPriceIncVAT": 630,
+  "totalVATAmount": 78,
+  "id": "e73b9d32-8c38...",
+  "_rid": "chY1ALQbSi...",
+  "_self": "dbs/chY1AA==/...",
+  "_etag": "0b00f6e1-0000-4700...",
+  "_attachments": "attachments/",
+  "forwardedUsers": [
+    "f2cd62b9-57a4-47..."
+  ],
+  "_ts": 16541111111
+}
