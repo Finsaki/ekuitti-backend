@@ -5,6 +5,7 @@ GET http://localhost:8080/api/users
 
 ### Create a new user
 POST http://localhost:8080/api/users
+content-type: application/json
 
 {
   "username": "kayttaja1",
@@ -22,6 +23,17 @@ content-type: application/json
   "name": "User2",
   "password": "kekret",
   "eAddressId": "did:other:ihgfedcba987654321"
+}
+
+### Create a third user
+POST http://localhost:8080/api/users
+content-type: application/json
+
+{
+  "username": "kayttaja3",
+  "name": "User3",
+  "password": "sadasd",
+  "eAddressId": "did:example:123456789000000000"
 }
 
 ### Get a user with id

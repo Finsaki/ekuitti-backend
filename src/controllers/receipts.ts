@@ -57,7 +57,49 @@ receiptsRouter.get('/forwarded', userExtractor, async (req: Request, res: Respon
   res.json(values)
 })
 
-//Returns all the data that eAddress holder has shared to current user
+//Returns the name of users and their eAddressId that have shared receipts to current user, also amount of receipts shared
+receiptsRouter.get('/shared', userExtractor, async (req: Request, res: Response) => {
+  const user = req.user
+
+  const querySpec = {
+    query: 'SELECT r.eAddressId FROM root r WHERE (IS_DEFINED(r.forwardedUsers) AND ARRAY_CONTAINS(r.forwardedUsers, @requesterId))',
+    parameters: [
+      { name: '@requesterId', value: user.id }
+    ]
+  }
+  //this will return all receipts that are shared to current user by anyone
+  const values = await findReceipts(querySpec)
+
+  logger.debug(`${values.length} values found`)
+
+  //getting disctinct values with amounts
+  const b = values.reduce( (val, o) => (val[o.eAddressId] = (val[o.eAddressId] || 0)+1, val), {} )
+
+  //new result array
+  let results = []
+
+  //iterating through values and creating a new object with user's name, eAddressId and amount of sharedReceipts
+  for (let a in b) {
+    const querySpec = {
+      query: 'SELECT * FROM users u WHERE u.eAddressId = @eAddress',
+      parameters: [
+        { name: '@eAddress', value: a }
+      ]
+    }
+    const user = await findUser(querySpec)
+    results.push({
+      name: user.name,
+      eAddressId: a,
+      sharedReceiptAmount: b[a]
+    })
+  }
+
+  //if only wanted to return all the receipts that is shared to user by anyone: res.json(values)
+  res.json(results)
+})
+
+
+//Returns all the receipts that specific eAddress holder has shared to current user
 receiptsRouter.get('/shared/:eAddressId', userExtractor, async (req: Request, res: Response) => {
   const user = req.user
 

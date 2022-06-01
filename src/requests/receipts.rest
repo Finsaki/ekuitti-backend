@@ -1,5 +1,5 @@
-@tokenVariable = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtheXR0YWphMiIsImlkIjoiNGY0Zjc2NDYtMjMzZi00ZmUyLTliODAtZGYzZDczOTgxMzk2IiwiaWF0IjoxNjUzODk1ODI1LCJleHAiOjE2NTM4OTk0MjV9.zIei0oZ373k53jL475zjX1dNjYaHt5NyiBGkt7Drk2c
-@idVariable = 9b9529e3-36e7-43c6-bc3d-924d642929bd
+@tokenVariable = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtheXR0YWphMiIsImlkIjoiZjJjZDYyYjktNTdhNC00Nzc5LWFjMzktZDIwYWFlZmM0M2Y0IiwiaWF0IjoxNjU0MDc1MjQ3LCJleHAiOjE2NTQwNzg4NDd9.D20_NhPnAHP3Pc1-ErWW1E4Yr83SSXaZ0DpiIqokSbg
+@idVariable = 239781f8-3524-4f0e-8f76-c4dbdc9e24e0
 @eAddressVariable = did:example:123456789abcdefghi
 
 ### Get all receipts
@@ -34,6 +34,10 @@ DELETE http://localhost:8080/api/receipts/{{idVariable}}
 GET http://localhost:8080/api/receipts/forwarded
 Cookie: token={{tokenVariable}}
 
-### Get all shared receipts to current user from another user by eAddressId
+### Get all shared receipts to current user from specific user by eAddressId
 GET http://localhost:8080/api/receipts/shared/{{eAddressVariable}}
+Cookie: token={{tokenVariable}}
+
+### Get name of users and their eAddressId that have shared receipts to current user, also amount of receipts shared
+GET http://localhost:8080/api/receipts/shared
 Cookie: token={{tokenVariable}}
