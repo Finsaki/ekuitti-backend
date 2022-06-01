@@ -22,7 +22,7 @@ publicRouter.post('/receipts', async (req: Request, res: Response) => {
 
     //adding the receipt to database
     await addItem(item)
-    res.json('success')
+    res.status(201).json('success')
   } else {
     return res.status(400).json({ error: 'receipt data is invalid' })
   }
