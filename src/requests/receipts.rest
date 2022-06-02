@@ -1,5 +1,5 @@
-@tokenVariable = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtheXR0YWphMiIsImlkIjoiZjJjZDYyYjktNTdhNC00Nzc5LWFjMzktZDIwYWFlZmM0M2Y0IiwiaWF0IjoxNjU0MDc1MjQ3LCJleHAiOjE2NTQwNzg4NDd9.D20_NhPnAHP3Pc1-ErWW1E4Yr83SSXaZ0DpiIqokSbg
-@idVariable = 239781f8-3524-4f0e-8f76-c4dbdc9e24e0
+@tokenVariable = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtheXR0YWphMiIsImlkIjoiNjFkMjFjMDItMTk2OC00ZTdhLWIxYmUtODA0Njg1OTZiYzFjIiwiaWF0IjoxNjU0MTY1NTM2LCJleHAiOjE2NTQxNjkxMzZ9.6wxGsK7Bfwg7jjvGksfMUH4cUvYtp0ZrjuM9NDCPqfY
+@idVariable = 5ec72131-fa79-4d6a-9428-3ecef8f50a2e
 @eAddressVariable = did:example:123456789abcdefghi
 
 ### Get all receipts

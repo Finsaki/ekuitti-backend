@@ -11,7 +11,7 @@ content-type: application/json
   "username": "kayttaja1",
   "name": "User1",
   "password": "sekret",
-  "eAddressId": "did:example:123456789abcdefghi"
+  "eAddressId": "did:example:123456789abcdefghj"
 }
 
 ### Create a second user

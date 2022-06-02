@@ -47,11 +47,14 @@ app.use(
 
 //--------routers here, (GET, POST, PUT..).---------
 //setting up special cors policy for public api to accept requests from anywhere
-app.use('/api/public', cors({
-  origin: '*',
-  optionsSuccessStatus: 200
-}), publicRouter)
-
+app.use(
+  '/api/public',
+  cors({
+    origin: '*',
+    optionsSuccessStatus: 200,
+  }),
+  publicRouter
+)
 app.use('/api/receipts', receiptsRouter)
 app.use('/api/users', usersRouter)
 app.use('/api/login', loginRouter)
