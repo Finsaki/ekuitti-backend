@@ -1,0 +1,3983 @@
+[
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238952",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 8468,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T16:25:43.713Z",
+                    "terminalId": "4714169",
+                    "referenceNumber": "590544362331",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "5774226386",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Dencon foods big al's hiiligrillattu ham",
+                "EANCode": "5099556020858",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 378,
+                        "totalAmountExcVAT": 2702,
+                        "totalAmountIncVAT": 3080
+                    }
+                ],
+                "quantity": "1",
+                "productId": "8055724",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 3080,
+                "totalAmountExcVAT": 2702,
+                "totalAmountIncVAT": 3080,
+                "freeText": "",
+                "discounts": []
+            },
+            {
+                "name": "Pirkka sinappikurkkusalaatti 360g",
+                "EANCode": "6410405180032",
+                "quantity": "1,000",
+                "productId": "6410405180032",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 175,
+                "unitPriceIncVATDecimal": "1.75",
+                "totalAmountExcVAT": 154,
+                "totalAmountIncVAT": 175,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 21.491228044033,
+                        "totalAmountExcVAT": 154,
+                        "totalAmountIncVAT": 175
+                    }
+                ]
+            },
+            {
+                "name": "Amerikansalaatti filmi espanja",
+                "EANCode": "2300130643503",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 212,
+                        "totalAmountExcVAT": 1511,
+                        "totalAmountIncVAT": 1723
+                    }
+                ],
+                "quantity": "4.35",
+                "productId": "1306",
+                "quantityCode": "kg",
+                "unitPriceIncVAT": 426,
+                "totalAmountExcVAT": 1511,
+                "totalAmountIncVAT": 1723,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 130,
+                        "percentage": "7.02",
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "name": "Taittomoppi SINI",
+                "EANCode": "6423800033629",
+                "quantity": "1,000",
+                "productId": "6423800033629",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 3490,
+                "unitPriceIncVATDecimal": "34,90",
+                "totalAmountExcVAT": 2815,
+                "totalAmountIncVAT": 3490,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 675,
+                        "totalAmountExcVAT": 2815,
+                        "totalAmountIncVAT": 3490
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 611.491228044033,
+                "totalAmountExcVAT": 4367,
+                "totalAmountIncVAT": 4978
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 675,
+                "totalAmountExcVAT": 2815,
+                "totalAmountIncVAT": 3490
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T16:25:43.713Z",
+        "totalPriceExcVAT": 7182,
+        "totalPriceIncVAT": 8468,
+        "totalVATAmount": 1286.491228044033
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 3069,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T03:54:58.170Z",
+                    "terminalId": "4618569",
+                    "referenceNumber": "911333586119",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "6983951721",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Huhtamäki 50 kpl x 500 ml bioware kuumak",
+                "EANCode": "6410600130597",
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 164,
+                        "totalAmountExcVAT": 685,
+                        "totalAmountIncVAT": 849
+                    }
+                ],
+                "quantity": "1",
+                "productId": "8069828",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 849,
+                "totalAmountExcVAT": 685,
+                "totalAmountIncVAT": 849,
+                "freeText": "",
+                "discounts": []
+            },
+            {
+                "name": "Fazer 48x75g talonpulla nostatettu pak",
+                "EANCode": "6413466013004",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 273,
+                        "totalAmountExcVAT": 1947,
+                        "totalAmountIncVAT": 2220
+                    }
+                ],
+                "quantity": "1",
+                "productId": "8023438",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 2337,
+                "totalAmountExcVAT": 1947,
+                "totalAmountIncVAT": 2220,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 117,
+                        "percentage": "5.01",
+                        "description": ""
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 273,
+                "totalAmountExcVAT": 1947,
+                "totalAmountIncVAT": 2220
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 164,
+                "totalAmountExcVAT": 685,
+                "totalAmountIncVAT": 849
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T03:54:58.170Z",
+        "totalPriceExcVAT": 2632,
+        "totalPriceIncVAT": 3069,
+        "totalVATAmount": 437
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "T-Valinta Aho",
+            "companyID": "1271288-1",
+            "branch": {
+                "name": "T-Valinta Aho",
+                "address": {
+                    "city": "Otanmäki",
+                    "country": "Suomi",
+                    "streetAddress": "Kauppa-ahontie 7",
+                    "zipCode": "88200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 439,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T05:29:00.442Z",
+                    "terminalId": "7152494",
+                    "referenceNumber": "183500916140",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "8693496764",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Juhla Mokka Tumma Paahto 500g papu ",
+                "EANCode": "6411300166169",
+                "quantity": "1.000",
+                "productID": "16399",
+                "quantityCode": "pcs",
+                "unitPriceIncVAT": 439,
+                "totalAmountIncVAT": 439,
+                "totalAmountExcVAT": 385,
+                "vats": [
+                    {
+                        "VATRate": "14.00",
+                        "VATAmount": 54,
+                        "totalAmountExcVAT": 385,
+                        "totalAmountIncVAT": 439
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14.00",
+                "totalVATAmount": 54,
+                "totalAmountExcVAT": 385,
+                "totalAmountIncVAT": 439
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T05:29:00.442Z",
+        "totalPriceExcVAT": 385,
+        "totalPriceIncVAT": 439,
+        "totalVATAmount": 54
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "T-Valinta Aho",
+            "companyID": "1271288-1",
+            "branch": {
+                "name": "T-Valinta Aho",
+                "address": {
+                    "city": "Otanmäki",
+                    "country": "Suomi",
+                    "streetAddress": "Kauppa-ahontie 7",
+                    "zipCode": "88200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 2040,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T04:39:35.854Z",
+                    "terminalId": "2832035",
+                    "referenceNumber": "056450349158",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "5557463899",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Pelikortit",
+                "EANCode": "6426600090748",
+                "quantity": "",
+                "quantityCode": "",
+                "unitPriceIncVAT": 500,
+                "unitPriceIncVATDecimal": "5,00",
+                "totalAmountExcVAT": 403,
+                "totalAmountIncVAT": 500,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 97,
+                        "totalAmountExcVAT": 403,
+                        "totalAmountIncVAT": 500
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Olvi Vichy sitrus mg kivennäisv 0,5 l",
+                "EANCode": "6419800052708",
+                "quantity": "1.000",
+                "productID": "17167",
+                "quantityCode": "pcs",
+                "unitPriceIncVAT": 220,
+                "totalAmountIncVAT": 220,
+                "totalAmountExcVAT": 193,
+                "vats": [
+                    {
+                        "VATRate": "14.00",
+                        "VATAmount": 27,
+                        "totalAmountExcVAT": 193,
+                        "totalAmountIncVAT": 220
+                    }
+                ]
+            },
+            {
+                "name": "Naudanmahakuvio 1 kg ",
+                "EANCode": "6420614791066",
+                "quantity": "1,000",
+                "productId": "6420614791066",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 330,
+                "unitPriceIncVATDecimal": "3,30",
+                "totalAmountExcVAT": 289,
+                "totalAmountIncVAT": 330,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 41,
+                        "totalAmountExcVAT": 289,
+                        "totalAmountIncVAT": 330
+                    }
+                ]
+            },
+            {
+                "name": "THE MOZZARELLA",
+                "EANCode": "010029000653",
+                "quantity": "1",
+                "productId": "129358",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 990,
+                "unitPriceIncVATDecimal": "9,90",
+                "totalAmountExcVAT": 868,
+                "totalAmountIncVAT": 990,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 122,
+                        "totalAmountExcVAT": 868,
+                        "totalAmountIncVAT": 990
+                    }
+                ],
+                "discounts": [
+                    {
+                        "amount": 300,
+                        "percentage": "",
+                        "description": "Hinnastoalennus"
+                    }
+                ],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 163,
+                "totalAmountExcVAT": 1157,
+                "totalAmountIncVAT": 1320
+            },
+            {
+                "VATRate": "14.00",
+                "totalVATAmount": 27,
+                "totalAmountExcVAT": 193,
+                "totalAmountIncVAT": 220
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 97,
+                "totalAmountExcVAT": 403,
+                "totalAmountIncVAT": 500
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T04:39:35.854Z",
+        "totalPriceExcVAT": 1753,
+        "totalPriceIncVAT": 2040,
+        "totalVATAmount": 287
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "Hyryn Kauppa",
+            "companyID": "9210465-8",
+            "branch": {
+                "name": "Hyryn Kauppa",
+                "address": {
+                    "city": "Hyrynsalmi",
+                    "country": "Suomi",
+                    "streetAddress": "Hyryntie 39",
+                    "zipCode": "89400"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 8980,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T19:05:52.011Z",
+                    "terminalId": "3264493",
+                    "referenceNumber": "777941204301",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "678963711",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "JBL TUNE 660BTNC BT-SANKA-",
+                "EANCode": "6925281959387",
+                "quantity": "1,000",
+                "productId": "6925281959387",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 5990,
+                "unitPriceIncVATDecimal": "59,90",
+                "totalAmountExcVAT": 4831,
+                "totalAmountIncVAT": 5990,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 1159,
+                        "totalAmountExcVAT": 4831,
+                        "totalAmountIncVAT": 5990
+                    }
+                ]
+            },
+            {
+                "name": "WILFA WK5B VEDENKEITIN",
+                "EANCode": "7044876099600",
+                "quantity": "1,000",
+                "productId": "7044876099600",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 2990,
+                "unitPriceIncVATDecimal": "29,90",
+                "totalAmountExcVAT": 2411,
+                "totalAmountIncVAT": 2990,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 579,
+                        "totalAmountExcVAT": 2411,
+                        "totalAmountIncVAT": 2990
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "24",
+                "totalVATAmount": 1738,
+                "totalAmountExcVAT": 7242,
+                "totalAmountIncVAT": 8980
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T19:05:52.011Z",
+        "totalPriceExcVAT": 7242,
+        "totalPriceIncVAT": 8980,
+        "totalVATAmount": 1738
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 9422,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T16:27:35.538Z",
+                    "terminalId": "9977894",
+                    "referenceNumber": "353069538982",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "6372355670",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "RUISKAUNOKKI 1 PUNAINEN",
+                "EANCode": "8711117416104",
+                "quantity": "1,000",
+                "productId": "8711117416104",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 50,
+                "unitPriceIncVATDecimal": "0,50",
+                "totalAmountExcVAT": 40,
+                "totalAmountIncVAT": 50,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 10,
+                        "totalAmountExcVAT": 40,
+                        "totalAmountIncVAT": 50
+                    }
+                ]
+            },
+            {
+                "name": "HUOLTOTYÖ",
+                "EANCode": "015425001201",
+                "quantity": "1",
+                "productId": "275771",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 8100,
+                "unitPriceIncVATDecimal": "81,00",
+                "totalAmountExcVAT": 6532,
+                "totalAmountIncVAT": 8100,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 1568,
+                        "totalAmountExcVAT": 6532,
+                        "totalAmountIncVAT": 8100
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Nmk n.3kg broilerin paistisuikale",
+                "EANCode": "2370675830072",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 147,
+                        "totalAmountExcVAT": 1053,
+                        "totalAmountIncVAT": 1200
+                    }
+                ],
+                "quantity": "3.007",
+                "productId": "8075943",
+                "quantityCode": "kg",
+                "unitPriceIncVAT": 399,
+                "totalAmountExcVAT": 1053,
+                "totalAmountIncVAT": 1200,
+                "freeText": "",
+                "discounts": []
+            },
+            {
+                "name": "Koivulan lihapiirakka 125g irto",
+                "EANCode": "2300440010002",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 9,
+                        "totalAmountExcVAT": 63,
+                        "totalAmountIncVAT": 72
+                    }
+                ],
+                "quantity": "1",
+                "productId": "4400",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 145,
+                "totalAmountExcVAT": 63,
+                "totalAmountIncVAT": 72,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 73,
+                        "percentage": "50.34",
+                        "description": ""
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 156,
+                "totalAmountExcVAT": 1116,
+                "totalAmountIncVAT": 1272
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 1578,
+                "totalAmountExcVAT": 6572,
+                "totalAmountIncVAT": 8150
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T16:27:35.538Z",
+        "totalPriceExcVAT": 7688,
+        "totalPriceIncVAT": 9422,
+        "totalVATAmount": 1734
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "T-Valinta Aho",
+            "companyID": "1271288-1",
+            "branch": {
+                "name": "T-Valinta Aho",
+                "address": {
+                    "city": "Otanmäki",
+                    "country": "Suomi",
+                    "streetAddress": "Kauppa-ahontie 7",
+                    "zipCode": "88200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 7083,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T17:53:12.080Z",
+                    "terminalId": "3128417",
+                    "referenceNumber": "767127852978",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "1075338233",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Nobe Aloe Vera Lemon Sour 0,5L",
+                "EANCode": "7340116879392",
+                "quantity": "1",
+                "productId": "438714",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 279,
+                "unitPriceIncVATDecimal": "2,79",
+                "totalAmountExcVAT": 245,
+                "totalAmountIncVAT": 279,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 34,
+                        "totalAmountExcVAT": 245,
+                        "totalAmountIncVAT": 279
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Ehrmann Maitorahka 250g",
+                "EANCode": "4002971466102",
+                "quantity": "1",
+                "productId": "25571",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 85,
+                "unitPriceIncVATDecimal": "0,85",
+                "totalAmountExcVAT": 75,
+                "totalAmountIncVAT": 85,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 10,
+                        "totalAmountExcVAT": 75,
+                        "totalAmountIncVAT": 85
+                    }
+                ],
+                "discounts": [
+                    {
+                        "amount": 4,
+                        "percentage": "",
+                        "description": "Hinnastoalennus"
+                    }
+                ],
+                "customAttributes": []
+            },
+            {
+                "name": "Jalmarin Laatikkorauta",
+                "EANCode": "3950000000920",
+                "quantity": "1,000",
+                "productId": "3950000000920",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 6500,
+                "unitPriceIncVATDecimal": "65,00",
+                "totalAmountExcVAT": 5242,
+                "totalAmountIncVAT": 6500,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 1258,
+                        "totalAmountExcVAT": 5242,
+                        "totalAmountIncVAT": 6500
+                    }
+                ]
+            },
+            {
+                "name": "HEDELMÄTOFFEE MIX 225G",
+                "EANCode": "6420617412685",
+                "quantity": "1,000",
+                "productId": "6420617412685",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 219,
+                "unitPriceIncVATDecimal": "2,19",
+                "totalAmountExcVAT": 192,
+                "totalAmountIncVAT": 219,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 27,
+                        "totalAmountExcVAT": 192,
+                        "totalAmountIncVAT": 219
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 71,
+                "totalAmountExcVAT": 512,
+                "totalAmountIncVAT": 583
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 1258,
+                "totalAmountExcVAT": 5242,
+                "totalAmountIncVAT": 6500
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T17:53:12.080Z",
+        "totalPriceExcVAT": 5754,
+        "totalPriceIncVAT": 7083,
+        "totalVATAmount": 1329
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 1929,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T20:45:29.847Z",
+                    "terminalId": "3730445",
+                    "referenceNumber": "118107004866",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "804962998",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Hengityssuojaimen filtteri 2 kpl ",
+                "EANCode": "5038428154161",
+                "quantity": "1,000",
+                "productId": "5038428154161",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1690,
+                "unitPriceIncVATDecimal": "16,90",
+                "totalAmountExcVAT": 1363,
+                "totalAmountIncVAT": 1690,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 327,
+                        "totalAmountExcVAT": 1363,
+                        "totalAmountIncVAT": 1690
+                    }
+                ]
+            },
+            {
+                "name": "Oreo 154g Original Täytekeksi",
+                "EANCode": "7622300336738",
+                "quantity": "1,000",
+                "productId": "7622300336738",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 239.000010490417,
+                "unitPriceIncVATDecimal": "2.39",
+                "totalAmountExcVAT": 210,
+                "totalAmountIncVAT": 239,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 29.3508768081665,
+                        "totalAmountExcVAT": 210,
+                        "totalAmountIncVAT": 239
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 29.3508768081665,
+                "totalAmountExcVAT": 210,
+                "totalAmountIncVAT": 239
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 327,
+                "totalAmountExcVAT": 1363,
+                "totalAmountIncVAT": 1690
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T20:45:29.847Z",
+        "totalPriceExcVAT": 1573,
+        "totalPriceIncVAT": 1929,
+        "totalVATAmount": 356.3508768081665
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "Kotalan Kyläkauppa Oy",
+            "companyID": "2253017-6",
+            "branch": {
+                "name": "Tarmo Kotalan kyläkauppa",
+                "address": {
+                    "city": "Kotala",
+                    "country": "Suomi",
+                    "streetAddress": "Vironkoskentie 72",
+                    "zipCode": "42870"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 5159,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T11:19:47.436Z",
+                    "terminalId": "88241",
+                    "referenceNumber": "428568505873",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "9685918149",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Ms grillausmauste 550g",
+                "EANCode": "6436501005147",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 61,
+                        "totalAmountExcVAT": 437,
+                        "totalAmountIncVAT": 498
+                    }
+                ],
+                "quantity": "1",
+                "productId": "9903250",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 498,
+                "totalAmountExcVAT": 437,
+                "totalAmountIncVAT": 498,
+                "freeText": "",
+                "discounts": []
+            },
+            {
+                "name": "Lb 16g/6kg falafelpyörykkä kyp pak",
+                "EANCode": "6405263040673",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 572,
+                        "totalAmountExcVAT": 4089,
+                        "totalAmountIncVAT": 4661
+                    }
+                ],
+                "quantity": "1",
+                "productId": "8051081",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 5066,
+                "totalAmountExcVAT": 4089,
+                "totalAmountIncVAT": 4661,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 405,
+                        "percentage": "7.99",
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "name": "Noutamattoman lähety",
+                "EANCode": "04090311",
+                "quantity": "",
+                "quantityCode": "",
+                "unitPriceIncVAT": 0,
+                "unitPriceIncVATDecimal": "0,00",
+                "totalAmountExcVAT": 0,
+                "totalAmountIncVAT": 0,
+                "vats": [
+                    {
+                        "VATRate": "0",
+                        "VATAmount": 0,
+                        "totalAmountExcVAT": 0,
+                        "totalAmountIncVAT": 0
+                    }
+                ],
+                "discounts": [],
+                "freeText": "550100136706",
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "0",
+                "totalVATAmount": 0,
+                "totalAmountExcVAT": 0,
+                "totalAmountIncVAT": 0
+            },
+            {
+                "VATRate": "14",
+                "totalVATAmount": 633,
+                "totalAmountExcVAT": 4526,
+                "totalAmountIncVAT": 5159
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T11:19:47.436Z",
+        "totalPriceExcVAT": 4526,
+        "totalPriceIncVAT": 5159,
+        "totalVATAmount": 633
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "Kirpputori Säästöporsas",
+            "companyID": "2785592-2",
+            "branch": {
+                "name": "Kirpputori Säästöporsas",
+                "address": {
+                    "city": "Loimaa",
+                    "country": "Suomi",
+                    "streetAddress": "Turuntie 67",
+                    "zipCode": "32200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 11180,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T04:54:13.760Z",
+                    "terminalId": "1360193",
+                    "referenceNumber": "978278998978",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "7253919970",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "KANA-FETA-AVOKADO KOTZONE",
+                "EANCode": "022930000050",
+                "quantity": "1",
+                "productId": "322475",
+                "quantityCode": "G",
+                "freeText": "",
+                "unitPriceIncVAT": 1190,
+                "unitPriceIncVATDecimal": "11,90",
+                "totalAmountExcVAT": 1044,
+                "totalAmountIncVAT": 1190,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 146,
+                        "totalAmountExcVAT": 1044,
+                        "totalAmountIncVAT": 1190
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Gas/Nestekaasut",
+                "EANCode": "019525002601",
+                "quantity": "1",
+                "productId": "152244",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 8100,
+                "unitPriceIncVATDecimal": "81,00",
+                "totalAmountExcVAT": 6532,
+                "totalAmountIncVAT": 8100,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 1568,
+                        "totalAmountExcVAT": 6532,
+                        "totalAmountIncVAT": 8100
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Neste Pro C2 5W-30 1 ltr",
+                "EANCode": "6412241172523",
+                "quantity": "1",
+                "productId": "377052",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1890,
+                "unitPriceIncVATDecimal": "18,90",
+                "totalAmountExcVAT": 1524,
+                "totalAmountIncVAT": 1890,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 366,
+                        "totalAmountExcVAT": 1524,
+                        "totalAmountIncVAT": 1890
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "RAY IKÄ  EI OK",
+                "EANCode": "05105244",
+                "quantity": "",
+                "quantityCode": "",
+                "unitPriceIncVAT": 0,
+                "unitPriceIncVATDecimal": "0,00",
+                "totalAmountExcVAT": 0,
+                "totalAmountIncVAT": 0,
+                "vats": [
+                    {
+                        "VATRate": "0",
+                        "VATAmount": 0,
+                        "totalAmountExcVAT": 0,
+                        "totalAmountIncVAT": 0
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "0",
+                "totalVATAmount": 0,
+                "totalAmountExcVAT": 0,
+                "totalAmountIncVAT": 0
+            },
+            {
+                "VATRate": "14",
+                "totalVATAmount": 146,
+                "totalAmountExcVAT": 1044,
+                "totalAmountIncVAT": 1190
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 1934,
+                "totalAmountExcVAT": 8056,
+                "totalAmountIncVAT": 9990
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T04:54:13.760Z",
+        "totalPriceExcVAT": 9100,
+        "totalPriceIncVAT": 11180,
+        "totalVATAmount": 2080
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "Kirpputori Säästöporsas",
+            "companyID": "2785592-2",
+            "branch": {
+                "name": "Kirpputori Säästöporsas",
+                "address": {
+                    "city": "Loimaa",
+                    "country": "Suomi",
+                    "streetAddress": "Turuntie 67",
+                    "zipCode": "32200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 29900,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T10:23:20.822Z",
+                    "terminalId": "3159204",
+                    "referenceNumber": "036851578512",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "761393901",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "EPSON ECOTANK ET2820 MUSTE-",
+                "EANCode": "8715946684055",
+                "quantity": "1,000",
+                "productId": "8715946684055",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 29900,
+                "unitPriceIncVATDecimal": "299,00",
+                "totalAmountExcVAT": 24113,
+                "totalAmountIncVAT": 29900,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 5787,
+                        "totalAmountExcVAT": 24113,
+                        "totalAmountIncVAT": 29900
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "24",
+                "totalVATAmount": 5787,
+                "totalAmountExcVAT": 24113,
+                "totalAmountIncVAT": 29900
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T10:23:20.822Z",
+        "totalPriceExcVAT": 24113,
+        "totalPriceIncVAT": 29900,
+        "totalVATAmount": 5787
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "Kotalan Kyläkauppa Oy",
+            "companyID": "2253017-6",
+            "branch": {
+                "name": "Tarmo Kotalan kyläkauppa",
+                "address": {
+                    "city": "Kotala",
+                    "country": "Suomi",
+                    "streetAddress": "Vironkoskentie 72",
+                    "zipCode": "42870"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 1147,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T09:41:34.483Z",
+                    "terminalId": "9056132",
+                    "referenceNumber": "591157845014",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "3028813643",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "BANDAGE LAASTARI 100 kpl/pkt",
+                "EANCode": "6438159019118",
+                "quantity": "1,000",
+                "productId": "6438159019118",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 250,
+                "unitPriceIncVATDecimal": "2.50",
+                "totalAmountExcVAT": 202,
+                "totalAmountIncVAT": 250,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 48.3870953321457,
+                        "totalAmountExcVAT": 202,
+                        "totalAmountIncVAT": 250
+                    }
+                ]
+            },
+            {
+                "name": "Netti Miniär.lu.pe.p",
+                "EANCode": "04094326",
+                "quantity": "",
+                "quantityCode": "",
+                "unitPriceIncVAT": 0,
+                "unitPriceIncVATDecimal": "0,00",
+                "totalAmountExcVAT": 0,
+                "totalAmountIncVAT": 0,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 0,
+                        "totalAmountExcVAT": 0,
+                        "totalAmountIncVAT": 0
+                    }
+                ],
+                "discounts": [],
+                "freeText": "RP115525696FI",
+                "customAttributes": []
+            },
+            {
+                "name": "Skechers Quarter3 pac white 43-46",
+                "EANCode": "4052171311351",
+                "quantity": "1,000",
+                "productId": "4052171311351",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1495,
+                "unitPriceIncVATDecimal": "14,95",
+                "totalAmountExcVAT": 1321,
+                "totalAmountIncVAT": 897,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 174,
+                        "totalAmountExcVAT": 1321,
+                        "totalAmountIncVAT": 897
+                    }
+                ],
+                "discounts": [
+                    {
+                        "amount": 598,
+                        "description": "Alennus"
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "24",
+                "totalVATAmount": 222.3870953321457,
+                "totalAmountExcVAT": 1523,
+                "totalAmountIncVAT": 1147
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T09:41:34.483Z",
+        "totalPriceExcVAT": 1523,
+        "totalPriceIncVAT": 1147,
+        "totalVATAmount": 222.3870953321457
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 620,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T14:17:34.190Z",
+                    "terminalId": "4233723",
+                    "referenceNumber": "339740963985",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "2198882790",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Original Lonkero 5,5% 33cl",
+                "EANCode": "0250950101",
+                "quantity": "1",
+                "productId": "406412",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 620,
+                "unitPriceIncVATDecimal": "6,20",
+                "totalAmountExcVAT": 500,
+                "totalAmountIncVAT": 620,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 120,
+                        "totalAmountExcVAT": 500,
+                        "totalAmountIncVAT": 620
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "24",
+                "totalVATAmount": 120,
+                "totalAmountExcVAT": 500,
+                "totalAmountIncVAT": 620
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T14:17:34.190Z",
+        "totalPriceExcVAT": 500,
+        "totalPriceIncVAT": 620,
+        "totalVATAmount": 120
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238953",
+        "merchant": {
+            "name": "T-Valinta Aho",
+            "companyID": "1271288-1",
+            "branch": {
+                "name": "T-Valinta Aho",
+                "address": {
+                    "city": "Otanmäki",
+                    "country": "Suomi",
+                    "streetAddress": "Kauppa-ahontie 7",
+                    "zipCode": "88200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 3070,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T13:20:12.555Z",
+                    "terminalId": "7800887",
+                    "referenceNumber": "946505820501",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "4377832893",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Nutisal 60g enjoy mix pähkinäsekoitus",
+                "EANCode": "7330869141143",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 309,
+                        "totalAmountExcVAT": 2211,
+                        "totalAmountIncVAT": 2520
+                    }
+                ],
+                "quantity": "1",
+                "productId": "8053661",
+                "quantityCode": "ki",
+                "unitPriceIncVAT": 2800,
+                "totalAmountExcVAT": 2211,
+                "totalAmountIncVAT": 2520,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 280,
+                        "percentage": "10.00",
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "name": "LEIKKUULAUTA 30X20,5 cm Purppura",
+                "EANCode": "6411761350473",
+                "quantity": "1,000",
+                "productId": "6411761350473",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 550,
+                "unitPriceIncVATDecimal": "5,50",
+                "totalAmountExcVAT": 444,
+                "totalAmountIncVAT": 550,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 106,
+                        "totalAmountExcVAT": 444,
+                        "totalAmountIncVAT": 550
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 309,
+                "totalAmountExcVAT": 2211,
+                "totalAmountIncVAT": 2520
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 106,
+                "totalAmountExcVAT": 444,
+                "totalAmountIncVAT": 550
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T13:20:12.555Z",
+        "totalPriceExcVAT": 2655,
+        "totalPriceIncVAT": 3070,
+        "totalVATAmount": 415
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 2808,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T18:28:10.933Z",
+                    "terminalId": "8908080",
+                    "referenceNumber": "138467004142",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "6042818580",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "PALMOLIVE SUIHKUGEELI 250MLFlower Fiel",
+                "EANCode": "8718951270534",
+                "quantity": "1,000",
+                "productId": "8718951270534",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 159,
+                "unitPriceIncVATDecimal": "1,59",
+                "totalAmountExcVAT": 128,
+                "totalAmountIncVAT": 159,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 31,
+                        "totalAmountExcVAT": 128,
+                        "totalAmountIncVAT": 159
+                    }
+                ]
+            },
+            {
+                "name": "MUURAHAISRASIA  NATURKRAFT",
+                "EANCode": "4005240194874",
+                "quantity": "1,000",
+                "productId": "4005240194874",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 149,
+                "unitPriceIncVATDecimal": "1,49",
+                "totalAmountExcVAT": 120,
+                "totalAmountIncVAT": 149,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 29,
+                        "totalAmountExcVAT": 120,
+                        "totalAmountIncVAT": 149
+                    }
+                ]
+            },
+            {
+                "name": "RENGASTYÖ",
+                "EANCode": "017225001207",
+                "quantity": "1",
+                "productId": "111781",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 2500,
+                "unitPriceIncVATDecimal": "25,00",
+                "totalAmountExcVAT": 2016,
+                "totalAmountIncVAT": 2500,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 484,
+                        "totalAmountExcVAT": 2016,
+                        "totalAmountIncVAT": 2500
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "24",
+                "totalVATAmount": 544,
+                "totalAmountExcVAT": 2264,
+                "totalAmountIncVAT": 2808
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T18:28:10.933Z",
+        "totalPriceExcVAT": 2264,
+        "totalPriceIncVAT": 2808,
+        "totalVATAmount": 544
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Hyryn Kauppa",
+            "companyID": "9210465-8",
+            "branch": {
+                "name": "Hyryn Kauppa",
+                "address": {
+                    "city": "Hyrynsalmi",
+                    "country": "Suomi",
+                    "streetAddress": "Hyryntie 39",
+                    "zipCode": "89400"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 825,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T09:18:59.014Z",
+                    "terminalId": "1070323",
+                    "referenceNumber": "552870176263",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "996993828",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Pirkka jäätelötuutti 6x70g van-suk pa",
+                "EANCode": "6410405112088",
+                "quantity": "1,000",
+                "productId": "6410405112088",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 175,
+                "unitPriceIncVATDecimal": "1.75",
+                "totalAmountExcVAT": 154,
+                "totalAmountIncVAT": 175,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 21.491228044033,
+                        "totalAmountExcVAT": 154,
+                        "totalAmountIncVAT": 175
+                    }
+                ]
+            },
+            {
+                "name": "Nakkikori",
+                "EANCode": "706110593",
+                "quantity": "1",
+                "productId": "396624",
+                "quantityCode": "G",
+                "freeText": "",
+                "unitPriceIncVAT": 650,
+                "unitPriceIncVATDecimal": "6,50",
+                "totalAmountExcVAT": 570,
+                "totalAmountIncVAT": 650,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 80,
+                        "totalAmountExcVAT": 570,
+                        "totalAmountIncVAT": 650
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 101.491228044033,
+                "totalAmountExcVAT": 724,
+                "totalAmountIncVAT": 825
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T09:18:59.014Z",
+        "totalPriceExcVAT": 724,
+        "totalPriceIncVAT": 825,
+        "totalVATAmount": 101.491228044033
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Hyryn Kauppa",
+            "companyID": "9210465-8",
+            "branch": {
+                "name": "Hyryn Kauppa",
+                "address": {
+                    "city": "Hyrynsalmi",
+                    "country": "Suomi",
+                    "streetAddress": "Hyryntie 39",
+                    "zipCode": "89400"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 630,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T00:43:08.159Z",
+                    "terminalId": "115094",
+                    "referenceNumber": "060502117909",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "2773234409",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Reissumies",
+                "EANCode": "007500000002",
+                "quantity": "1",
+                "productId": "437563",
+                "quantityCode": "G",
+                "freeText": "",
+                "unitPriceIncVAT": 380,
+                "unitPriceIncVATDecimal": "3,80",
+                "totalAmountExcVAT": 333,
+                "totalAmountIncVAT": 380,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 47,
+                        "totalAmountExcVAT": 333,
+                        "totalAmountIncVAT": 380
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "KINKKUNYYTTI",
+                "EANCode": "012900325532",
+                "quantity": "1",
+                "productId": "243771",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 250,
+                "unitPriceIncVATDecimal": "2,50",
+                "totalAmountExcVAT": 219,
+                "totalAmountIncVAT": 250,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 31,
+                        "totalAmountExcVAT": 219,
+                        "totalAmountIncVAT": 250
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 78,
+                "totalAmountExcVAT": 552,
+                "totalAmountIncVAT": 630
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T00:43:08.159Z",
+        "totalPriceExcVAT": 552,
+        "totalPriceIncVAT": 630,
+        "totalVATAmount": 78
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Hyryn Kauppa",
+            "companyID": "9210465-8",
+            "branch": {
+                "name": "Hyryn Kauppa",
+                "address": {
+                    "city": "Hyrynsalmi",
+                    "country": "Suomi",
+                    "streetAddress": "Hyryntie 39",
+                    "zipCode": "89400"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 2149,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T22:12:19.739Z",
+                    "terminalId": "4282704",
+                    "referenceNumber": "486597661093",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "7723110068",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "KALAHAMPURILAINEN",
+                "EANCode": "020225002906",
+                "quantity": "1",
+                "productId": "136975",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 500,
+                "unitPriceIncVATDecimal": "5,00",
+                "totalAmountExcVAT": 439,
+                "totalAmountIncVAT": 500,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 61,
+                        "totalAmountExcVAT": 439,
+                        "totalAmountIncVAT": 500
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Hanajuoma 0,4l",
+                "EANCode": "03420000901",
+                "quantity": "1",
+                "productId": "250341",
+                "quantityCode": "G",
+                "freeText": "",
+                "unitPriceIncVAT": 260,
+                "unitPriceIncVATDecimal": "2,60",
+                "totalAmountExcVAT": 228,
+                "totalAmountIncVAT": 260,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 32,
+                        "totalAmountExcVAT": 228,
+                        "totalAmountIncVAT": 260
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "HAU-HAU KALKK.-RIISI MAKKARA 800G",
+                "EANCode": "6420140900598",
+                "quantity": "1,000",
+                "productId": "6420140900598",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 199,
+                "unitPriceIncVATDecimal": "1,99",
+                "totalAmountExcVAT": 175,
+                "totalAmountIncVAT": 199,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 24,
+                        "totalAmountExcVAT": 175,
+                        "totalAmountIncVAT": 199
+                    }
+                ]
+            },
+            {
+                "name": "AURAJUUSTO-PEKONI KANALEIKE",
+                "EANCode": "028525000181",
+                "quantity": "1",
+                "productId": "344751",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1190,
+                "unitPriceIncVATDecimal": "11,90",
+                "totalAmountExcVAT": 1044,
+                "totalAmountIncVAT": 1190,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 146,
+                        "totalAmountExcVAT": 1044,
+                        "totalAmountIncVAT": 1190
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 263,
+                "totalAmountExcVAT": 1886,
+                "totalAmountIncVAT": 2149
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T22:12:19.739Z",
+        "totalPriceExcVAT": 1886,
+        "totalPriceIncVAT": 2149,
+        "totalVATAmount": 263
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Kirpputori Säästöporsas",
+            "companyID": "2785592-2",
+            "branch": {
+                "name": "Kirpputori Säästöporsas",
+                "address": {
+                    "city": "Loimaa",
+                    "country": "Suomi",
+                    "streetAddress": "Turuntie 67",
+                    "zipCode": "32200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 1587,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T06:37:08.855Z",
+                    "terminalId": "5843409",
+                    "referenceNumber": "020943797271",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "5317743113",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "SISÄRENGAS 28/40-622/630 28/27",
+                "EANCode": "4009208001853",
+                "quantity": "1,000",
+                "productId": "4009208001853",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 399,
+                "unitPriceIncVATDecimal": "3,99",
+                "totalAmountExcVAT": 322,
+                "totalAmountIncVAT": 399,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 77,
+                        "totalAmountExcVAT": 322,
+                        "totalAmountIncVAT": 399
+                    }
+                ]
+            },
+            {
+                "name": "At n3kg porsaan ulkofilee extra fi",
+                "EANCode": "2378204424259",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 146,
+                        "totalAmountExcVAT": 1042,
+                        "totalAmountIncVAT": 1188
+                    }
+                ],
+                "quantity": "2.425",
+                "productId": "8040236",
+                "quantityCode": "kg",
+                "unitPriceIncVAT": 650,
+                "totalAmountExcVAT": 1042,
+                "totalAmountIncVAT": 1188,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 388,
+                        "percentage": "24.62",
+                        "description": ""
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 146,
+                "totalAmountExcVAT": 1042,
+                "totalAmountIncVAT": 1188
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 77,
+                "totalAmountExcVAT": 322,
+                "totalAmountIncVAT": 399
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T06:37:08.855Z",
+        "totalPriceExcVAT": 1364,
+        "totalPriceIncVAT": 1587,
+        "totalVATAmount": 223
+    },
+    {
+        "eAddressId": "did:example:123456789abcdefghi",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 4442,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T02:12:01.013Z",
+                    "terminalId": "573745",
+                    "referenceNumber": "469771398732",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "3540030472",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Elvir kermavaahtovalmiste 250g",
+                "EANCode": "3451790802485",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 42,
+                        "totalAmountExcVAT": 300,
+                        "totalAmountIncVAT": 342
+                    }
+                ],
+                "quantity": "1",
+                "productId": "8008679",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 376,
+                "totalAmountExcVAT": 300,
+                "totalAmountIncVAT": 342,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 34,
+                        "percentage": "9.04",
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "name": "Kona hanalei ipa 35,5cl 4,5% olut",
+                "EANCode": "796030814921",
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 244,
+                        "totalAmountExcVAT": 1016,
+                        "totalAmountIncVAT": 1260
+                    }
+                ],
+                "quantity": "7",
+                "productId": "9513451",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 180,
+                "totalAmountExcVAT": 1016,
+                "totalAmountIncVAT": 1260,
+                "freeText": "",
+                "discounts": []
+            },
+            {
+                "name": "Komposiittikaasupullo 10 kg",
+                "EANCode": "025425000584",
+                "quantity": "1",
+                "productId": "169107",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 2840,
+                "unitPriceIncVATDecimal": "28,40",
+                "totalAmountExcVAT": 2290,
+                "totalAmountIncVAT": 2840,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 550,
+                        "totalAmountExcVAT": 2290,
+                        "totalAmountIncVAT": 2840
+                    }
+                ],
+                "discounts": [
+                    {
+                        "amount": 150,
+                        "percentage": "",
+                        "description": "Hinnastoalennus"
+                    }
+                ],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 42,
+                "totalAmountExcVAT": 300,
+                "totalAmountIncVAT": 342
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 794,
+                "totalAmountExcVAT": 3306,
+                "totalAmountIncVAT": 4100
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T02:12:01.013Z",
+        "totalPriceExcVAT": 3606,
+        "totalPriceIncVAT": 4442,
+        "totalVATAmount": 836
+    },
+    {
+        "eAddressId": "did:other:ihgfedcba987654321",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Hyryn Kauppa",
+            "companyID": "9210465-8",
+            "branch": {
+                "name": "Hyryn Kauppa",
+                "address": {
+                    "city": "Hyrynsalmi",
+                    "country": "Suomi",
+                    "streetAddress": "Hyryntie 39",
+                    "zipCode": "89400"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 3318,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T09:29:27.649Z",
+                    "terminalId": "4443679",
+                    "referenceNumber": "327474659607",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "9073551838",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "KARIN. BR FILESUIKALEET 250G MAUSTAMAT",
+                "EANCode": "6409100025335",
+                "quantity": "1,000",
+                "productId": "6409100025335",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 349.000000953674,
+                "unitPriceIncVATDecimal": "3.49",
+                "totalAmountExcVAT": 319,
+                "totalAmountIncVAT": 244,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 30.0017535686493,
+                        "totalAmountExcVAT": 319,
+                        "totalAmountIncVAT": 244
+                    }
+                ],
+                "discounts": [
+                    {
+                        "amount": 105,
+                        "description": "Alennus"
+                    }
+                ]
+            },
+            {
+                "name": "Vänrikkiateria",
+                "EANCode": "049701068492",
+                "quantity": "2",
+                "productId": "102223",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1195,
+                "unitPriceIncVATDecimal": "11,95",
+                "totalAmountExcVAT": 2096,
+                "totalAmountIncVAT": 2390,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 294,
+                        "totalAmountExcVAT": 2096,
+                        "totalAmountIncVAT": 2390
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Nutrifree 90g gluteeniton patonki",
+                "EANCode": "8008696030006",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 56,
+                        "totalAmountExcVAT": 398,
+                        "totalAmountIncVAT": 454
+                    }
+                ],
+                "quantity": "2",
+                "productId": "8072486",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 227,
+                "totalAmountExcVAT": 398,
+                "totalAmountIncVAT": 454,
+                "freeText": "",
+                "discounts": []
+            },
+            {
+                "name": "Marabou 85g Darkmilk",
+                "EANCode": "7622210656025",
+                "quantity": "",
+                "quantityCode": "",
+                "unitPriceIncVAT": 230,
+                "unitPriceIncVATDecimal": "2,30",
+                "totalAmountExcVAT": 202,
+                "totalAmountIncVAT": 230,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 28,
+                        "totalAmountExcVAT": 202,
+                        "totalAmountIncVAT": 230
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 408.0017535686493,
+                "totalAmountExcVAT": 3015,
+                "totalAmountIncVAT": 3318
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T09:29:27.649Z",
+        "totalPriceExcVAT": 3015,
+        "totalPriceIncVAT": 3318,
+        "totalVATAmount": 408.0017535686493
+    },
+    {
+        "eAddressId": "did:other:ihgfedcba987654321",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 9720,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T04:58:20.600Z",
+                    "terminalId": "7775305",
+                    "referenceNumber": "291290216087",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "2061802607",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "JALKAPALLO SELECT TB ELITE",
+                "EANCode": "5703543127917",
+                "quantity": "1,000",
+                "productId": "5703543127917",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 8900,
+                "unitPriceIncVATDecimal": "89.00",
+                "totalAmountExcVAT": 7177,
+                "totalAmountIncVAT": 8900,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 1722.58071899414,
+                        "totalAmountExcVAT": 7177,
+                        "totalAmountIncVAT": 8900
+                    }
+                ]
+            },
+            {
+                "name": "Kinkkujuusto sämpylä",
+                "EANCode": "0770260002021",
+                "quantity": "1",
+                "productId": "442776",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 395,
+                "unitPriceIncVATDecimal": "3,95",
+                "totalAmountExcVAT": 346,
+                "totalAmountIncVAT": 395,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 49,
+                        "totalAmountExcVAT": 346,
+                        "totalAmountIncVAT": 395
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Iisakin Ristikot",
+                "EANCode": "6414882883080",
+                "quantity": "",
+                "quantityCode": "",
+                "unitPriceIncVAT": 425,
+                "unitPriceIncVATDecimal": "4,25",
+                "totalAmountExcVAT": 386,
+                "totalAmountIncVAT": 425,
+                "vats": [
+                    {
+                        "VATRate": "10",
+                        "VATAmount": 39,
+                        "totalAmountExcVAT": 386,
+                        "totalAmountIncVAT": 425
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "10",
+                "totalVATAmount": 39,
+                "totalAmountExcVAT": 386,
+                "totalAmountIncVAT": 425
+            },
+            {
+                "VATRate": "14",
+                "totalVATAmount": 49,
+                "totalAmountExcVAT": 346,
+                "totalAmountIncVAT": 395
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 1722.58071899414,
+                "totalAmountExcVAT": 7177,
+                "totalAmountIncVAT": 8900
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T04:58:20.600Z",
+        "totalPriceExcVAT": 7909,
+        "totalPriceIncVAT": 9720,
+        "totalVATAmount": 1810.58071899414
+    },
+    {
+        "eAddressId": "did:other:ihgfedcba987654321",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Hyryn Kauppa",
+            "companyID": "9210465-8",
+            "branch": {
+                "name": "Hyryn Kauppa",
+                "address": {
+                    "city": "Hyrynsalmi",
+                    "country": "Suomi",
+                    "streetAddress": "Hyryntie 39",
+                    "zipCode": "89400"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 1880,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T22:02:34.162Z",
+                    "terminalId": "6262319",
+                    "referenceNumber": "428724651162",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "513625318",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Mozzarellatikut 4 kpl",
+                "EANCode": "044045000072",
+                "quantity": "2",
+                "productId": "322060",
+                "quantityCode": "G",
+                "freeText": "",
+                "unitPriceIncVAT": 490,
+                "unitPriceIncVATDecimal": "4,90",
+                "totalAmountExcVAT": 860,
+                "totalAmountIncVAT": 980,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 120,
+                        "totalAmountExcVAT": 860,
+                        "totalAmountIncVAT": 980
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Kent 20 Core",
+                "EANCode": "64030494",
+                "quantity": "",
+                "quantityCode": "",
+                "unitPriceIncVAT": 900,
+                "unitPriceIncVATDecimal": "9,00",
+                "totalAmountExcVAT": 726,
+                "totalAmountIncVAT": 900,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 174,
+                        "totalAmountExcVAT": 726,
+                        "totalAmountIncVAT": 900
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "sweetcurrydippi ateriaan",
+                "EANCode": "013829002286",
+                "quantity": "1",
+                "productId": "418766",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 0,
+                "unitPriceIncVATDecimal": "0,00",
+                "totalAmountExcVAT": 0,
+                "totalAmountIncVAT": 0,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 0,
+                        "totalAmountExcVAT": 0,
+                        "totalAmountIncVAT": 0
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 120,
+                "totalAmountExcVAT": 860,
+                "totalAmountIncVAT": 980
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 174,
+                "totalAmountExcVAT": 726,
+                "totalAmountIncVAT": 900
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T22:02:34.162Z",
+        "totalPriceExcVAT": 1586,
+        "totalPriceIncVAT": 1880,
+        "totalVATAmount": 294
+    },
+    {
+        "eAddressId": "did:other:ihgfedcba987654321",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 5863,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T11:13:01.458Z",
+                    "terminalId": "7604465",
+                    "referenceNumber": "084001035126",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "9890553792",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Kariniemen kananpojan rintafilee maustam",
+                "EANCode": "2377237446054",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 447,
+                        "totalAmountExcVAT": 3191,
+                        "totalAmountIncVAT": 3638
+                    }
+                ],
+                "quantity": "4.605",
+                "productId": "772374",
+                "quantityCode": "kg",
+                "unitPriceIncVAT": 1029,
+                "totalAmountExcVAT": 3191,
+                "totalAmountIncVAT": 3638,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 1101,
+                        "percentage": "23.23",
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "name": "Pekoniburger",
+                "EANCode": "050826000447",
+                "quantity": "1",
+                "productId": "129658",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 690,
+                "unitPriceIncVATDecimal": "6,90",
+                "totalAmountExcVAT": 605,
+                "totalAmountIncVAT": 690,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 85,
+                        "totalAmountExcVAT": 605,
+                        "totalAmountIncVAT": 690
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "14. KEVYTPESU HARJATON YÖ",
+                "EANCode": "010000007124",
+                "quantity": "1",
+                "productId": "129171",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1200,
+                "unitPriceIncVATDecimal": "12,00",
+                "totalAmountExcVAT": 968,
+                "totalAmountIncVAT": 1200,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 232,
+                        "totalAmountExcVAT": 968,
+                        "totalAmountIncVAT": 1200
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Bang Krazy Key Lime Pie 0,5l",
+                "EANCode": "8720211192050",
+                "quantity": "1",
+                "productId": "442386",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 335,
+                "unitPriceIncVATDecimal": "3,35",
+                "totalAmountExcVAT": 294,
+                "totalAmountIncVAT": 335,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 41,
+                        "totalAmountExcVAT": 294,
+                        "totalAmountIncVAT": 335
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 573,
+                "totalAmountExcVAT": 4090,
+                "totalAmountIncVAT": 4663
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 232,
+                "totalAmountExcVAT": 968,
+                "totalAmountIncVAT": 1200
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T11:13:01.458Z",
+        "totalPriceExcVAT": 5058,
+        "totalPriceIncVAT": 5863,
+        "totalVATAmount": 805
+    },
+    {
+        "eAddressId": "did:other:ihgfedcba987654321",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "T-Valinta Aho",
+            "companyID": "1271288-1",
+            "branch": {
+                "name": "T-Valinta Aho",
+                "address": {
+                    "city": "Otanmäki",
+                    "country": "Suomi",
+                    "streetAddress": "Kauppa-ahontie 7",
+                    "zipCode": "88200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 1290,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T00:00:22.059Z",
+                    "terminalId": "3809278",
+                    "referenceNumber": "658753509914",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "4566914467",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Kanarulla",
+                "EANCode": "780225000282",
+                "quantity": "1",
+                "productId": "437478",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1090,
+                "unitPriceIncVATDecimal": "10,90",
+                "totalAmountExcVAT": 956,
+                "totalAmountIncVAT": 1090,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 134,
+                        "totalAmountExcVAT": 956,
+                        "totalAmountIncVAT": 1090
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Kahvi ja suklaapatukka",
+                "EANCode": "2280005000825",
+                "quantity": "",
+                "quantityCode": "",
+                "unitPriceIncVAT": 0,
+                "unitPriceIncVATDecimal": "0,00",
+                "totalAmountExcVAT": 0,
+                "totalAmountIncVAT": 0,
+                "vats": [
+                    {
+                        "VATRate": "0",
+                        "VATAmount": 0,
+                        "totalAmountExcVAT": 0,
+                        "totalAmountIncVAT": 0
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Carletti Skum Bananer",
+                "EANCode": "5701049119849",
+                "quantity": "1",
+                "productId": "437539",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 200,
+                "unitPriceIncVATDecimal": "2,00",
+                "totalAmountExcVAT": 175,
+                "totalAmountIncVAT": 200,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 25,
+                        "totalAmountExcVAT": 175,
+                        "totalAmountIncVAT": 200
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "0",
+                "totalVATAmount": 0,
+                "totalAmountExcVAT": 0,
+                "totalAmountIncVAT": 0
+            },
+            {
+                "VATRate": "14",
+                "totalVATAmount": 159,
+                "totalAmountExcVAT": 1131,
+                "totalAmountIncVAT": 1290
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T00:00:22.059Z",
+        "totalPriceExcVAT": 1131,
+        "totalPriceIncVAT": 1290,
+        "totalVATAmount": 159
+    },
+    {
+        "eAddressId": "did:other:ihgfedcba987654321",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "T-Valinta Aho",
+            "companyID": "1271288-1",
+            "branch": {
+                "name": "T-Valinta Aho",
+                "address": {
+                    "city": "Otanmäki",
+                    "country": "Suomi",
+                    "streetAddress": "Kauppa-ahontie 7",
+                    "zipCode": "88200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 3426,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T16:31:27.392Z",
+                    "terminalId": "6325793",
+                    "referenceNumber": "523998257373",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "9295258503",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Greenest neidonsalaatti 250g",
+                "EANCode": "7330583993196",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 37,
+                        "totalAmountExcVAT": 264,
+                        "totalAmountIncVAT": 301
+                    }
+                ],
+                "quantity": "1",
+                "productId": "8072883",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 301,
+                "totalAmountExcVAT": 264,
+                "totalAmountIncVAT": 301,
+                "freeText": "",
+                "discounts": []
+            },
+            {
+                "name": "Valvoline DuraBlend 4T10W-40 1L",
+                "EANCode": "8710941019208",
+                "quantity": "1",
+                "productId": "325268",
+                "quantityCode": "G",
+                "freeText": "",
+                "unitPriceIncVAT": 1500,
+                "unitPriceIncVATDecimal": "15,00",
+                "totalAmountExcVAT": 1210,
+                "totalAmountIncVAT": 1500,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 290,
+                        "totalAmountExcVAT": 1210,
+                        "totalAmountIncVAT": 1500
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Amerikansalaatti filmi espanja",
+                "EANCode": "2300130641004",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 200,
+                        "totalAmountExcVAT": 1425,
+                        "totalAmountIncVAT": 1625
+                    }
+                ],
+                "quantity": "4.1",
+                "productId": "1306",
+                "quantityCode": "kg",
+                "unitPriceIncVAT": 426,
+                "totalAmountExcVAT": 1425,
+                "totalAmountIncVAT": 1625,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 122,
+                        "percentage": "6.98",
+                        "description": ""
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 237,
+                "totalAmountExcVAT": 1689,
+                "totalAmountIncVAT": 1926
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 290,
+                "totalAmountExcVAT": 1210,
+                "totalAmountIncVAT": 1500
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T16:31:27.392Z",
+        "totalPriceExcVAT": 2899,
+        "totalPriceIncVAT": 3426,
+        "totalVATAmount": 527
+    },
+    {
+        "eAddressId": "did:other:ihgfedcba987654321",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "T-Valinta Aho",
+            "companyID": "1271288-1",
+            "branch": {
+                "name": "T-Valinta Aho",
+                "address": {
+                    "city": "Otanmäki",
+                    "country": "Suomi",
+                    "streetAddress": "Kauppa-ahontie 7",
+                    "zipCode": "88200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 858,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T12:50:43.695Z",
+                    "terminalId": "2303319",
+                    "referenceNumber": "071342723625",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "4713851479",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Vesimeloni eu",
+                "EANCode": "2300341243004",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 105,
+                        "totalAmountExcVAT": 753,
+                        "totalAmountIncVAT": 858
+                    }
+                ],
+                "quantity": "4.3",
+                "productId": "3412",
+                "quantityCode": "kg",
+                "unitPriceIncVAT": 210,
+                "totalAmountExcVAT": 753,
+                "totalAmountIncVAT": 858,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 45,
+                        "percentage": "4.98",
+                        "description": ""
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 105,
+                "totalAmountExcVAT": 753,
+                "totalAmountIncVAT": 858
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T12:50:43.695Z",
+        "totalPriceExcVAT": 753,
+        "totalPriceIncVAT": 858,
+        "totalVATAmount": 105
+    },
+    {
+        "eAddressId": "did:other:ihgfedcba987654321",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "T-Valinta Aho",
+            "companyID": "1271288-1",
+            "branch": {
+                "name": "T-Valinta Aho",
+                "address": {
+                    "city": "Otanmäki",
+                    "country": "Suomi",
+                    "streetAddress": "Kauppa-ahontie 7",
+                    "zipCode": "88200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 3097,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T02:14:58.627Z",
+                    "terminalId": "725838",
+                    "referenceNumber": "151334856944",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "8820396032",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Mutti 4100g aromaattinen pizzakastike",
+                "EANCode": "8005110551222",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 356,
+                        "totalAmountExcVAT": 2542,
+                        "totalAmountIncVAT": 2898
+                    }
+                ],
+                "quantity": "1",
+                "productId": "8076005",
+                "quantityCode": "ki",
+                "unitPriceIncVAT": 2898,
+                "totalAmountExcVAT": 2542,
+                "totalAmountIncVAT": 2898,
+                "freeText": "",
+                "discounts": []
+            },
+            {
+                "name": "HOITAVA NESTESAIPPUA 1L OMENA",
+                "EANCode": "6417037002220",
+                "quantity": "1,000",
+                "productId": "6417037002220",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 199.000000953674,
+                "unitPriceIncVATDecimal": "1.99",
+                "totalAmountExcVAT": 160,
+                "totalAmountIncVAT": 199,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 38.5161280632019,
+                        "totalAmountExcVAT": 160,
+                        "totalAmountIncVAT": 199
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 356,
+                "totalAmountExcVAT": 2542,
+                "totalAmountIncVAT": 2898
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 38.5161280632019,
+                "totalAmountExcVAT": 160,
+                "totalAmountIncVAT": 199
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T02:14:58.627Z",
+        "totalPriceExcVAT": 2702,
+        "totalPriceIncVAT": 3097,
+        "totalVATAmount": 394.5161280632019
+    },
+    {
+        "eAddressId": "did:other:ihgfedcba987654321",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Kotalan Kyläkauppa Oy",
+            "companyID": "2253017-6",
+            "branch": {
+                "name": "Tarmo Kotalan kyläkauppa",
+                "address": {
+                    "city": "Kotala",
+                    "country": "Suomi",
+                    "streetAddress": "Vironkoskentie 72",
+                    "zipCode": "42870"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 6242,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T03:50:44.247Z",
+                    "terminalId": "7424252",
+                    "referenceNumber": "976565280468",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "6174695320",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "LUMME  VALKOPYYKKI 800ML ",
+                "EANCode": "7310612380104",
+                "quantity": "1,000",
+                "productId": "7310612380104",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 399,
+                "unitPriceIncVATDecimal": "3,99",
+                "totalAmountExcVAT": 322,
+                "totalAmountIncVAT": 399,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 77,
+                        "totalAmountExcVAT": 322,
+                        "totalAmountIncVAT": 399
+                    }
+                ]
+            },
+            {
+                "name": "VEGANATERIA",
+                "EANCode": "022926100121",
+                "quantity": "1",
+                "productId": "272843",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1090,
+                "unitPriceIncVATDecimal": "10,90",
+                "totalAmountExcVAT": 956,
+                "totalAmountIncVAT": 1090,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 134,
+                        "totalAmountExcVAT": 956,
+                        "totalAmountIncVAT": 1090
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "BANDIT PU BIKER NOOS",
+                "EANCode": "2000010137275",
+                "quantity": "1",
+                "productId": "2000010137275",
+                "quantityCode": "KPL",
+                "unitPriceIncVAT": 3999,
+                "totalAmountExcVAT": 3225,
+                "totalAmountIncVAT": 3999,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 774,
+                        "totalAmountExcVAT": 3225,
+                        "totalAmountIncVAT": 3999
+                    }
+                ],
+                "discounts": [
+                    {
+                        "amount": 0,
+                        "percentage": "0",
+                        "description": ""
+                    }
+                ],
+                "freeText": ""
+            },
+            {
+                "name": "Kurkku 1lk suomi filmi",
+                "EANCode": "2300120829801",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 93,
+                        "totalAmountExcVAT": 661,
+                        "totalAmountIncVAT": 754
+                    }
+                ],
+                "quantity": "2.98",
+                "productId": "1208",
+                "quantityCode": "kg",
+                "unitPriceIncVAT": 253,
+                "totalAmountExcVAT": 661,
+                "totalAmountIncVAT": 754,
+                "freeText": "",
+                "discounts": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 227,
+                "totalAmountExcVAT": 1617,
+                "totalAmountIncVAT": 1844
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 851,
+                "totalAmountExcVAT": 3547,
+                "totalAmountIncVAT": 4398
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T03:50:44.247Z",
+        "totalPriceExcVAT": 5164,
+        "totalPriceIncVAT": 6242,
+        "totalVATAmount": 1078
+    },
+    {
+        "eAddressId": "did:other:ihgfedcba987654321",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "T-Valinta Aho",
+            "companyID": "1271288-1",
+            "branch": {
+                "name": "T-Valinta Aho",
+                "address": {
+                    "city": "Otanmäki",
+                    "country": "Suomi",
+                    "streetAddress": "Kauppa-ahontie 7",
+                    "zipCode": "88200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 2419,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T21:34:09.064Z",
+                    "terminalId": "3335414",
+                    "referenceNumber": "253794801660",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "1981515586",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "Pitkäkarvahiiri 7,5cm valk/väri Nobby",
+                "EANCode": "025687",
+                "quantity": "1,000",
+                "productId": "025687",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 199,
+                "unitPriceIncVATDecimal": "1,99",
+                "totalAmountExcVAT": 160,
+                "totalAmountIncVAT": 199,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 39,
+                        "totalAmountExcVAT": 160,
+                        "totalAmountIncVAT": 199
+                    }
+                ]
+            },
+            {
+                "name": "Salmiakki Kulkuset 7",
+                "EANCode": "7391523013992",
+                "quantity": "2",
+                "quantityCode": " x ",
+                "unitPriceIncVAT": 15,
+                "unitPriceIncVATDecimal": "0,15",
+                "totalAmountExcVAT": 26,
+                "totalAmountIncVAT": 30,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 4,
+                        "totalAmountExcVAT": 26,
+                        "totalAmountIncVAT": 30
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Juoma 0,33 L",
+                "EANCode": "007400500201",
+                "quantity": "1",
+                "productId": "104363",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 250,
+                "unitPriceIncVATDecimal": "2,50",
+                "totalAmountExcVAT": 219,
+                "totalAmountIncVAT": 250,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 31,
+                        "totalAmountExcVAT": 219,
+                        "totalAmountIncVAT": 250
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "PEITELISTA 12X42X3600         ",
+                "EANCode": "4741585038717",
+                "quantity": "2,000",
+                "productId": "4741585038717",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 970,
+                "unitPriceIncVATDecimal": "9,70",
+                "totalAmountExcVAT": 595,
+                "totalAmountIncVAT": 1940,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 375,
+                        "totalAmountExcVAT": 595,
+                        "totalAmountIncVAT": 1940
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 35,
+                "totalAmountExcVAT": 245,
+                "totalAmountIncVAT": 280
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 414,
+                "totalAmountExcVAT": 755,
+                "totalAmountIncVAT": 2139
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T21:34:09.064Z",
+        "totalPriceExcVAT": 1000,
+        "totalPriceIncVAT": 2419,
+        "totalVATAmount": 449
+    },
+    {
+        "eAddressId": "did:karavar:abd000213n",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "T-Valinta Aho",
+            "companyID": "1271288-1",
+            "branch": {
+                "name": "T-Valinta Aho",
+                "address": {
+                    "city": "Otanmäki",
+                    "country": "Suomi",
+                    "streetAddress": "Kauppa-ahontie 7",
+                    "zipCode": "88200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 4014,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T02:09:40.955Z",
+                    "terminalId": "4525376",
+                    "referenceNumber": "610131716628",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "9302561764",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "LUKULASIT +1",
+                "EANCode": "6416096746106",
+                "quantity": "1,000",
+                "productId": "6416096746106",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 299,
+                "unitPriceIncVATDecimal": "2,99",
+                "totalAmountExcVAT": 241,
+                "totalAmountIncVAT": 299,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 58,
+                        "totalAmountExcVAT": 241,
+                        "totalAmountIncVAT": 299
+                    }
+                ]
+            },
+            {
+                "name": "KUPONKI BIG PAPA ATERIA",
+                "EANCode": "075525006786",
+                "quantity": "1",
+                "productId": "434960",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1300,
+                "unitPriceIncVATDecimal": "13,00",
+                "totalAmountExcVAT": 1140,
+                "totalAmountIncVAT": 1300,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 160,
+                        "totalAmountExcVAT": 1140,
+                        "totalAmountIncVAT": 1300
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "M.SAAPAS BASIC",
+                "EANCode": "6410412684080",
+                "quantity": "1,000",
+                "productId": "6410412684080",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1695,
+                "unitPriceIncVATDecimal": "16,95",
+                "totalAmountExcVAT": 1367,
+                "totalAmountIncVAT": 1695,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 328,
+                        "totalAmountExcVAT": 1367,
+                        "totalAmountIncVAT": 1695
+                    }
+                ]
+            },
+            {
+                "name": "Nicorette imeskelytabletti 2mg",
+                "EANCode": "3574660719611",
+                "quantity": "1",
+                "productId": "120629",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 720,
+                "unitPriceIncVATDecimal": "7,20",
+                "totalAmountExcVAT": 655,
+                "totalAmountIncVAT": 720,
+                "vats": [
+                    {
+                        "VATRate": "10",
+                        "VATAmount": 65,
+                        "totalAmountExcVAT": 655,
+                        "totalAmountIncVAT": 720
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "10",
+                "totalVATAmount": 65,
+                "totalAmountExcVAT": 655,
+                "totalAmountIncVAT": 720
+            },
+            {
+                "VATRate": "14",
+                "totalVATAmount": 160,
+                "totalAmountExcVAT": 1140,
+                "totalAmountIncVAT": 1300
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 386,
+                "totalAmountExcVAT": 1608,
+                "totalAmountIncVAT": 1994
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T02:09:40.955Z",
+        "totalPriceExcVAT": 3403,
+        "totalPriceIncVAT": 4014,
+        "totalVATAmount": 611
+    },
+    {
+        "eAddressId": "did:karavar:abd000213n",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Kirpputori Säästöporsas",
+            "companyID": "2785592-2",
+            "branch": {
+                "name": "Kirpputori Säästöporsas",
+                "address": {
+                    "city": "Loimaa",
+                    "country": "Suomi",
+                    "streetAddress": "Turuntie 67",
+                    "zipCode": "32200"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 3963,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T01:58:10.430Z",
+                    "terminalId": "9263479",
+                    "referenceNumber": "711524809860",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "2042282840",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "HALLITUNKKI 2T",
+                "EANCode": "6438159998406",
+                "quantity": "1,000",
+                "productId": "6438159998406",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 2990,
+                "unitPriceIncVATDecimal": "29,90",
+                "totalAmountExcVAT": 2411,
+                "totalAmountIncVAT": 2990,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 579,
+                        "totalAmountExcVAT": 2411,
+                        "totalAmountIncVAT": 2990
+                    }
+                ]
+            },
+            {
+                "name": "Sitruuna etelä-afrikka",
+                "EANCode": "2300319230104",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 68,
+                        "totalAmountExcVAT": 486,
+                        "totalAmountIncVAT": 554
+                    }
+                ],
+                "quantity": "3.01",
+                "productId": "3192",
+                "quantityCode": "kg",
+                "unitPriceIncVAT": 200,
+                "totalAmountExcVAT": 486,
+                "totalAmountIncVAT": 554,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 48,
+                        "percentage": "7.97",
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "name": "Fazer Puikula pehmeä täysjyvä 4kpl 240",
+                "EANCode": "6413467364303",
+                "quantity": "1,000",
+                "productId": "6413467364303",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 169.000005722046,
+                "unitPriceIncVATDecimal": "1.69",
+                "totalAmountExcVAT": 148,
+                "totalAmountIncVAT": 169,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 20.754386484623,
+                        "totalAmountExcVAT": 148,
+                        "totalAmountIncVAT": 169
+                    }
+                ]
+            },
+            {
+                "name": "CHILIJUUSTONUGGETS 5 KPL",
+                "EANCode": "0259280000112",
+                "quantity": "1",
+                "productId": "345034",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 250,
+                "unitPriceIncVATDecimal": "2,50",
+                "totalAmountExcVAT": 219,
+                "totalAmountIncVAT": 250,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 31,
+                        "totalAmountExcVAT": 219,
+                        "totalAmountIncVAT": 250
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 119.754386484623,
+                "totalAmountExcVAT": 853,
+                "totalAmountIncVAT": 973
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 579,
+                "totalAmountExcVAT": 2411,
+                "totalAmountIncVAT": 2990
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T01:58:10.430Z",
+        "totalPriceExcVAT": 3264,
+        "totalPriceIncVAT": 3963,
+        "totalVATAmount": 698.754386484623
+    },
+    {
+        "eAddressId": "did:karavar:abd000213n",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 6180,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T21:32:55.460Z",
+                    "terminalId": "7986770",
+                    "referenceNumber": "575686485262",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "6894739683",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "ELECTROLUX EFS1W SUODATIN",
+                "EANCode": "7319599019199",
+                "quantity": "2,000",
+                "productId": "7319599019199",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 2990,
+                "unitPriceIncVATDecimal": "29,90",
+                "totalAmountExcVAT": 1833,
+                "totalAmountIncVAT": 5980,
+                "vats": [
+                    {
+                        "VATRate": "24",
+                        "VATAmount": 1157,
+                        "totalAmountExcVAT": 1833,
+                        "totalAmountIncVAT": 5980
+                    }
+                ]
+            },
+            {
+                "name": "Postim. 2.00 Suomen",
+                "EANCode": "6416982013985",
+                "quantity": "",
+                "quantityCode": "",
+                "unitPriceIncVAT": 200,
+                "unitPriceIncVATDecimal": "2,00",
+                "totalAmountExcVAT": 200,
+                "totalAmountIncVAT": 200,
+                "vats": [
+                    {
+                        "VATRate": "0",
+                        "VATAmount": 0,
+                        "totalAmountExcVAT": 200,
+                        "totalAmountIncVAT": 200
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "0",
+                "totalVATAmount": 0,
+                "totalAmountExcVAT": 200,
+                "totalAmountIncVAT": 200
+            },
+            {
+                "VATRate": "24",
+                "totalVATAmount": 1157,
+                "totalAmountExcVAT": 1833,
+                "totalAmountIncVAT": 5980
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T21:32:55.460Z",
+        "totalPriceExcVAT": 2033,
+        "totalPriceIncVAT": 6180,
+        "totalVATAmount": 1157
+    },
+    {
+        "eAddressId": "did:tukkur:5678abc10",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Vahvaselän kauppa",
+            "companyID": "1544017-2",
+            "branch": {
+                "name": "Vahvaselän kauppa",
+                "address": {
+                    "city": "Korpikoski",
+                    "country": "Suomi",
+                    "streetAddress": "Vanhamäentie 96",
+                    "zipCode": "50770"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 1540,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-11T11:27:08.048Z",
+                    "terminalId": "8326156",
+                    "referenceNumber": "024747444379",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "4287005362",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "OLIIVI",
+                "EANCode": "025404000586",
+                "quantity": "1",
+                "productId": "168923",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 0,
+                "unitPriceIncVATDecimal": "0,00",
+                "totalAmountExcVAT": 0,
+                "totalAmountIncVAT": 0,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 0,
+                        "totalAmountExcVAT": 0,
+                        "totalAmountIncVAT": 0
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "(11)KERROSATERIA",
+                "EANCode": "073226210009",
+                "quantity": "1",
+                "productId": "220576",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1090,
+                "unitPriceIncVATDecimal": "10,90",
+                "totalAmountExcVAT": 956,
+                "totalAmountIncVAT": 1090,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 134,
+                        "totalAmountExcVAT": 956,
+                        "totalAmountIncVAT": 1090
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Aleksanteri",
+                "EANCode": "1129",
+                "quantity": "1,000",
+                "productId": "1129",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 450,
+                "unitPriceIncVATDecimal": "4,50",
+                "totalAmountExcVAT": 395,
+                "totalAmountIncVAT": 450,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 55,
+                        "totalAmountExcVAT": 395,
+                        "totalAmountIncVAT": 450
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "14",
+                "totalVATAmount": 189,
+                "totalAmountExcVAT": 1351,
+                "totalAmountIncVAT": 1540
+            }
+        ],
+        "receiptTimeStamp": "2022-05-11T11:27:08.048Z",
+        "totalPriceExcVAT": 1351,
+        "totalPriceIncVAT": 1540,
+        "totalVATAmount": 189
+    },
+    {
+        "eAddressId": "did:tukkur:5678abc10",
+        "receiptNumber": "1652278238954",
+        "merchant": {
+            "name": "Hyryn Kauppa",
+            "companyID": "9210465-8",
+            "branch": {
+                "name": "Hyryn Kauppa",
+                "address": {
+                    "city": "Hyrynsalmi",
+                    "country": "Suomi",
+                    "streetAddress": "Hyryntie 39",
+                    "zipCode": "89400"
+                }
+            }
+        },
+        "payments": [
+            {
+                "type": "CARD",
+                "amount": 2052,
+                "attributes": {
+                    "cardType": "PaymentCard",
+                    "timeStamp": "2022-05-10T21:49:27.930Z",
+                    "terminalId": "5404463",
+                    "referenceNumber": "736056370561",
+                    "authorizationCode": "0000000000000000",
+                    "transactionId": "4831630231",
+                    "maskedPAN": "4111*****111"
+                }
+            }
+        ],
+        "currencyISOCode": "EUR",
+        "products": [
+            {
+                "name": "papa-ateria",
+                "EANCode": "013829002227",
+                "quantity": "1",
+                "productId": "418693",
+                "quantityCode": "KPL",
+                "freeText": "",
+                "unitPriceIncVAT": 1190,
+                "unitPriceIncVATDecimal": "11,90",
+                "totalAmountExcVAT": 1044,
+                "totalAmountIncVAT": 1190,
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 146,
+                        "totalAmountExcVAT": 1044,
+                        "totalAmountIncVAT": 1190
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "MONIVETO-1",
+                "EANCode": "04110059",
+                "quantity": "",
+                "quantityCode": "",
+                "unitPriceIncVAT": 320,
+                "unitPriceIncVATDecimal": "3,20",
+                "totalAmountExcVAT": 320,
+                "totalAmountIncVAT": 320,
+                "vats": [
+                    {
+                        "VATRate": "0",
+                        "VATAmount": 0,
+                        "totalAmountExcVAT": 320,
+                        "totalAmountIncVAT": 320
+                    }
+                ],
+                "discounts": [],
+                "customAttributes": []
+            },
+            {
+                "name": "Venäläinen hapankaali 3kg",
+                "EANCode": "6430044381485",
+                "vats": [
+                    {
+                        "VATRate": "14",
+                        "VATAmount": 67,
+                        "totalAmountExcVAT": 475,
+                        "totalAmountIncVAT": 542
+                    }
+                ],
+                "quantity": "1",
+                "productId": "8064886",
+                "quantityCode": "kpl",
+                "unitPriceIncVAT": 602,
+                "totalAmountExcVAT": 475,
+                "totalAmountIncVAT": 542,
+                "freeText": "",
+                "discounts": [
+                    {
+                        "amount": 60,
+                        "percentage": "9.97",
+                        "description": ""
+                    }
+                ]
+            }
+        ],
+        "vats": [
+            {
+                "VATRate": "0",
+                "totalVATAmount": 0,
+                "totalAmountExcVAT": 320,
+                "totalAmountIncVAT": 320
+            },
+            {
+                "VATRate": "14",
+                "totalVATAmount": 213,
+                "totalAmountExcVAT": 1519,
+                "totalAmountIncVAT": 1732
+            }
+        ],
+        "receiptTimeStamp": "2022-05-10T21:49:27.930Z",
+        "totalPriceExcVAT": 1839,
+        "totalPriceIncVAT": 2052,
+        "totalVATAmount": 213
+    }
+]

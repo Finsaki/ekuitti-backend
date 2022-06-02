@@ -9,7 +9,7 @@ import * as logger from './logger'
 
 const createUsers = async (userContainer: Container) => {
   logger.info('Populating users for testing...')
-  const json = await import('../../docs/users.json')
+  const json = await import('../../docs/demo/demo_users.json')
   const users = json.default
   users.forEach(async (user) => {
     const salt = genRandomString(16)
@@ -33,7 +33,7 @@ const createUsers = async (userContainer: Container) => {
 
 const createReceipts = async (receiptContainer: Container) => {
   logger.info('Populating receipts for testing...')
-  const json = await import('../../docs/fake_receipts.json')
+  const json = await import('../../docs/demo/demo_receipts.json')
   const receipts = json.default
   receipts.forEach(async (receipt) => {
     await receiptContainer.items.create(receipt)

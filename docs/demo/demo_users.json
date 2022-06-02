@@ -1,0 +1,26 @@
+[
+  {
+    "username": "taavit",
+    "name": "Taavin Tilitoimisto",
+    "password": "sekret",
+    "eAddressId": "did:other:ihgfedcba987654321"
+  },
+  {
+    "username": "tukkutiina",
+    "name": "Tiinan Tukkukauppa",
+    "password": "1234",
+    "eAddressId": "did:tukkur:5678abc10"
+  },
+  {
+    "username": "katinkulta",
+    "name": "Katin Kuljetus",
+    "password": "poisalta",
+    "eAddressId": "did:karavar:abd000213n"
+  },
+  {
+    "username": "reiska4ever",
+    "name": "Reiskan Remontti",
+    "password": "4everreiska",
+    "eAddressId": "did:example:123456789abcdefghi"
+  }
+]
