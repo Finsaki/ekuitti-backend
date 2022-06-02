@@ -72,30 +72,33 @@ receiptsRouter.get('/shared', userExtractor, async (req: Request, res: Response)
 
   logger.debug(`${values.length} values found`)
 
-  //getting disctinct values with amounts
-  const b = values.reduce( (val, o) => (val[o.eAddressId] = (val[o.eAddressId] || 0)+1, val), {} )
+  if (values.length > 0) {
+    //getting disctinct values with amounts
+    const b = values.reduce( (val, o) => (val[o.eAddressId] = (val[o.eAddressId] || 0)+1, val), {} )
 
-  //new result array
-  let results = []
+    //new result array
+    let results = []
 
-  //iterating through values and creating a new object with user's name, eAddressId and amount of sharedReceipts
-  for (let a in b) {
-    const querySpec = {
-      query: 'SELECT * FROM users u WHERE u.eAddressId = @eAddress',
-      parameters: [
-        { name: '@eAddress', value: a }
-      ]
+    //iterating through values and creating a new object with user's name, eAddressId and amount of sharedReceipts
+    for (let a in b) {
+      const querySpec = {
+        query: 'SELECT * FROM users u WHERE u.eAddressId = @eAddress',
+        parameters: [
+          { name: '@eAddress', value: a }
+        ]
+      }
+      const user = await findUser(querySpec)
+      results.push({
+        name: user.name,
+        eAddressId: a,
+        sharedReceiptAmount: b[a]
+      })
     }
-    const user = await findUser(querySpec)
-    results.push({
-      name: user.name,
-      eAddressId: a,
-      sharedReceiptAmount: b[a]
-    })
+    res.json(results)
+  } else {
+    //if only wanted to return all the receipts that is shared to user by anyone: res.json(values)
+    res.json(values)
   }
-
-  //if only wanted to return all the receipts that is shared to user by anyone: res.json(values)
-  res.json(results)
 })
 
 
