@@ -35,6 +35,8 @@ try {
 }
 
 //--------middlewares here (other than error handling), before routers-------
+//setting cors policy for api routes to accept requests from frontend only
+app.use(cors({ credentials: true, origin: config.FRONTURI }))
 app.use(express.json())
 app.use(middleware.tokenExtractor)
 app.use(
@@ -44,14 +46,11 @@ app.use(
 )
 
 //--------routers here, (GET, POST, PUT..).---------
-//setting cors policy for public api to accept requests from anywhere
+//setting up special cors policy for public api to accept requests from anywhere
 app.use('/api/public', cors({
   origin: '*',
   optionsSuccessStatus: 200
 }), publicRouter)
-
-//setting cors policy for following api routes that accept requests from frontend only
-app.use(cors({ credentials: true, origin: config.FRONTURI }))
 
 app.use('/api/receipts', receiptsRouter)
 app.use('/api/users', usersRouter)
