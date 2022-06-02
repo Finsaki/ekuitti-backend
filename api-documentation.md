@@ -55,7 +55,7 @@ has permissions to access.
 * [Show all test receipts](#receipts-get-test) : `GET /api/receipts/test`
 * [Show all receipts](#receipts-get) : `GET /api/receipts`
 * [Show all receipts forwarded by user](#receipts-get-forwarded) : `GET /api/receipts/forwarded`
-* [Show all users that have shared receipts and the amount of receipts](#receipts-get-shared) : `GET /api/receipts/shared/:eAddressId`
+* [Show all users that have shared receipts and the amount of receipts](#receipts-get-shared) : `GET /api/receipts/shared`
 * [Show all receipts shared to user by specific user](#receipts-get-shared-by-eAddress) : `GET /api/receipts/shared/:eAddressId`
 * [Show receipt](#receipts-get-by-id) : `GET /api/receipts/:id`
 * [Create receipt](#receipts-post) : `POST /api/receipts`
