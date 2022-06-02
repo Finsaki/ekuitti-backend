@@ -167,7 +167,7 @@ receiptsRouter.post('/', userExtractor, async (req: Request, res: Response) => {
   //adding the receipt to database
   await addItem(item)
 
-  res.redirect('/')
+  res.status(201).json('success')
 })
 
 //forwardReceipt
@@ -212,7 +212,7 @@ receiptsRouter.post('/forwarded', userExtractor, async (req: Request, res: Respo
   //adding the user ID to the userId listing in given receipt
   await addToReceiptArray(receiptId, userItem.id)
 
-  res.redirect('/')
+  res.status(201).json('success')
 })
 
 //deleteReceipt, not for production!!!
