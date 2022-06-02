@@ -6,8 +6,8 @@ import { userExtractor } from '../utils/middleware'
 import * as logger from '../utils/logger'
 
 /**
- * This class connects the API endpoints and database CRUD operations from model
- * class receiptDao.ts
+ * Connects the API endpoints and database CRUD operations from src/model/receiptDao.ts
+ * Some functions also require operations involving users from src/model/userDao.ts
  */
 
 const receiptsRouter = Router()
@@ -209,6 +209,7 @@ receiptsRouter.post('/forwarded', userExtractor, async (req: Request, res: Respo
     }
   }
 
+  //adding the user ID to the userId listing in given receipt
   await addToReceiptArray(receiptId, userItem.id)
 
   res.redirect('/')

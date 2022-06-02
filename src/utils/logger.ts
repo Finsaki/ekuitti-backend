@@ -1,4 +1,6 @@
-//With this file info and error messages can be separeted and used instead of console.log
+/**
+ * With this file info, error and debug messages can be separeted and used instead of console.log
+ */
 
 const info = (...params: String[]) => {
   if (process.env.NODE_ENV !== 'test') {

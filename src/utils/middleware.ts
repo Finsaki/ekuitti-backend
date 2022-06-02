@@ -5,7 +5,9 @@ import { verify, JwtPayload } from 'jsonwebtoken'
 import { getItem } from '../models/userDao'
 import { parseCookies } from './cookieHelper'
 
-//This file contains helper functions which are used in response to API calls
+/**
+ * This file contains helper functions which are used in response to API calls
+ */
 
 //setting up a custom morgan token that shows the request body data when the operation is a POST operation
 morgan.token('response-body', function (req: Request) {
@@ -64,6 +66,7 @@ const tokenExtractor = async (
   next()
 }
 
+//Will catch specific error codes/messages and output more understandable error messages
 const errorHandler = (
   error: Error,
   _req: Request,

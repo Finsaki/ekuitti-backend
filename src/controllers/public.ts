@@ -3,7 +3,7 @@ import { Receipt } from '../models/receipt'
 import { addItem } from '../models/receiptDao'
 
 /**
- * This class contains the public API endpoints
+ * Routes which use public API endpoints
  */
 
 const publicRouter = Router()

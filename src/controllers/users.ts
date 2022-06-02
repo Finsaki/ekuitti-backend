@@ -6,20 +6,12 @@ import { genRandomString, sha512 } from '../utils/hashHelper'
 import * as logger from '../utils/logger'
 
 /**
- * This class connects the API endpoints and database CRUD operations from model
- * class userDao.ts
+ * Connects the API endpoints and database CRUD operations from src/model/userDao.ts
  */
 
 const usersRouter = Router()
 
-//testUser without database connection
-/* usersRouter.get('/test', async (_req: Request, res: Response) => {
-  const json = await import('../../docs/users.json') // import local json file for testing
-  const data: Users = json.default //.default gets the actual data
-  await removePasswordForUsers(data)
-  res.json(data)
-}) */
-
+//get all users
 usersRouter.get('/', async (_req: Request, res: Response) => {
   const querySpec = {
     query: 'SELECT * FROM root',
@@ -44,6 +36,7 @@ usersRouter.get('/:id', async (req: Request, res: Response) => {
   res.json(item)
 })
 
+//create a new user
 usersRouter.post('/', async (req: Request, res: Response) => {
   const item = req.body
 
@@ -90,5 +83,13 @@ usersRouter.delete('/:id', async (req: Request, res: Response) => {
   const result = await deleteItem(req.params.id)
   res.json(result)
 })
+
+/*
+//changeUserName
+usersRouter.put('/:id', async (req: Request, res: Response) => {
+  const result = await updateItemName(req.params.id, req.body.name)
+  res.json(result)
+})
+*/
 
 export { usersRouter }

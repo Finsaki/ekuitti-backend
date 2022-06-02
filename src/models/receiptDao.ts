@@ -4,7 +4,7 @@ import { receiptContainer, checkIfContainerInitialized } from '../utils/daoHelpe
 import { Receipt } from '../models/receipt'
 
 /**
- * This class houses the CRUD operations to manage receipts in the database
+ * Houses the CRUD operations to manage receipts in the database
  * It is used by the controller class receipts.ts
  */
 

@@ -1,7 +1,9 @@
 import { config } from 'dotenv'
 config()
 
-//Contains necessary variables for connections
+/**
+ * Contains necessary variables for connections
+ */
 
 const PORT = process.env.PORT || '8080'
 

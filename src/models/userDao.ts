@@ -4,7 +4,7 @@ import { userContainer, checkIfContainerInitialized } from '../utils/daoHelper'
 import { User } from '../models/user'
 
 /**
- * This class houses the CRUD operations to manage users in the database
+ * Houses the CRUD operations to manage users in the database
  * It is used by the controller class users.ts
  */
 
@@ -56,5 +56,19 @@ const getItem = async (itemId: string) => {
   const { resource } = await userContainer.item(itemId, partitionKey).read()
   return resource
 }
+
+/*
+//Used to update name for an existing item in the database
+const updateItemName = async (itemId: string, name: string) => {
+  logger.debug('Update a user in the database')
+  const doc = await getItem(itemId)
+  doc.name = name
+
+  const { resource: replaced } = await userContainer
+    .item(itemId, partitionKey)
+    .replace(doc)
+  return replaced
+}
+*/
 
 export { findUsers, findUser, addItem, getItem, deleteItem }

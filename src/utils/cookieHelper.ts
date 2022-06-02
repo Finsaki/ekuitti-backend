@@ -1,3 +1,9 @@
+/**
+ * Parses the given cookie string into and object where different cookies can be found by their key value
+ * @param cookies continuous cookie string provided by frontend
+ * @returns object where cookies are divided by key and value
+ */
+
 const parseCookies = (cookies: string) => {
   const obj: { [key: string]: any } = {}
 
