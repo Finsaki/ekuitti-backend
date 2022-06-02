@@ -75,7 +75,7 @@ usersRouter.post('/', async (req: Request, res: Response) => {
 
   await addItem(newUser)
 
-  res.redirect('/')
+  res.status(201).json('success')
 })
 
 //delete User with id
