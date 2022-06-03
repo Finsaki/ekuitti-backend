@@ -2,7 +2,7 @@
 
 > Read [documentation.md](documentation.md) for more information about the backend structure (in finnish)
 
-> Read [api-documentation](api-documentation) for more information about API routes provided by this backend
+> Read [api-documentation](api-documentation.md) for more information about API routes provided by this backend
 
 ## Start local development
 1. git clone / git pull
