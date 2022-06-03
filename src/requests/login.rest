@@ -1,17 +1,35 @@
-### Login with user
+### Login with Taavin Tilitoimisto
 POST http://localhost:8080/api/login
 content-type: application/json
 
 {
-  "username": "kayttaja1",
-  "password": "terkes"
+  "username": "taavit",
+  "password": "sekret"
 }
 
-### Login with other user
+### Login with Tiinan Tukkukauppa
 POST http://localhost:8080/api/login
 content-type: application/json
 
 {
-  "username": "kayttaja2",
-  "password": "sekret"
+  "username": "tukkutiina",
+  "password": "1234"
+}
+
+### Login with Katin Kuljetus
+POST http://localhost:8080/api/login
+content-type: application/json
+
+{
+  "username": "katinkulta",
+  "password": "poisalta"
+}
+
+### Login with Reiskan Remontti
+POST http://localhost:8080/api/login
+content-type: application/json
+
+{
+  "username": "reiska4ever",
+  "password": "4everreiska"
 }
