@@ -204,7 +204,7 @@ receiptsRouter.post('/forwarded', userExtractor, async (req: Request, res: Respo
   }
 
   if (receipt.forwardedUsers) {
-    if (receipt.forwardedUsers.includes(userItem.eAddressId)) {
+    if (receipt.forwardedUsers.includes(userItem.id)) {
       return res.status(500).json({ error: 'database: user already has access to receipt' })
     }
   }
