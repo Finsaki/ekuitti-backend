@@ -269,11 +269,15 @@ Used to create a new user.
 
 ### Success Response
 
-**Code** : `302 Found`
+**Code** : `201 Created`
 
-**Content example**
+**Content**
 
-> Found. Redirecting to /
+```json
+{
+  "success"
+}
+```
 
 ### Error Response
 
@@ -613,11 +617,15 @@ Used to create a new receipt.
 
 ### Success Response
 
-**Code** : `302 Found`
+**Code** : `201 Created`
 
-**Content example**
+**Content**
 
-> Found. Redirecting to /
+```json
+{
+  "success"
+}
+```
 
 ### Error Response
 
@@ -693,11 +701,15 @@ Used to forward an existing receipt to another user
 
 ### Success Response
 
-**Code** : `302 Found`
+**Code** : `201 Created`
 
-**Content example**
+**Content**
 
-> Found. Redirecting to /
+```json
+{
+  "success"
+}
+```
 
 ### Error Response
 
