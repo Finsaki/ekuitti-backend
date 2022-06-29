@@ -36,6 +36,16 @@ const findUser = async (querySpec: SqlQuerySpec) => {
   return userItem
 }
 
+// Get a user by user id
+const findUserByID = async (id: string) => {
+  const querySpec = {
+    query: 'SELECT * FROM users u WHERE u.id = @id',
+    parameters: [{ name: '@id', value: id }],
+  }
+  const user = await findUser(querySpec)
+  return user
+}
+
 //Used to add a new User to database
 const addItem = async (user: User) => {
   logger.debug('Adding a user to the database')
@@ -71,4 +81,4 @@ const updateItemName = async (itemId: string, name: string) => {
 }
 */
 
-export { findUsers, findUser, addItem, getItem, deleteItem }
+export { findUsers, findUser, addItem, getItem, deleteItem, findUserByID }

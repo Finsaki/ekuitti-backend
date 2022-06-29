@@ -1,9 +1,9 @@
 import { Request, Response, Router } from 'express'
 import { User } from '../models/user'
-import { findUsers, addItem, getItem, deleteItem } from '../models/userDao'
-import { removePasswordForUsers, removePasswordForUser } from '../utils/userHelper'
+import { addItem, getItem, deleteItem, findUserByID } from '../models/userDao'
+import { removePasswordForUser } from '../utils/userHelper'
 import { genRandomString, sha512 } from '../utils/hashHelper'
-import * as logger from '../utils/logger'
+import { userExtractor } from '../utils/middleware'
 
 /**
  * Connects the API endpoints and database CRUD operations from src/model/userDao.ts
@@ -11,17 +11,10 @@ import * as logger from '../utils/logger'
 
 const usersRouter = Router()
 
-//get all users
-usersRouter.get('/', async (_req: Request, res: Response) => {
-  const querySpec = {
-    query: 'SELECT * FROM root',
-  }
-  const items = await findUsers(querySpec)
-  await removePasswordForUsers(items)
-
-  logger.debug(`${items.length} values found`)
-
-  res.json(items)
+// Get a user profile
+usersRouter.get('/', userExtractor, async (req: Request, res: Response) => {
+  const user = await findUserByID(req.user.id)
+  res.json(user)
 })
 
 //get a single item by id
