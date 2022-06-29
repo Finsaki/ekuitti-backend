@@ -12,9 +12,10 @@ import { userExtractor } from '../utils/middleware'
 const usersRouter = Router()
 
 // Get a user profile
+// TODO: probably want to remove password hash and salt from response
 usersRouter.get('/', userExtractor, async (req: Request, res: Response) => {
   const user = await findUserByID(req.user.id)
-  res.json(user)
+  res.status(200).json(user)
 })
 
 //get a single item by id
