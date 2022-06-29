@@ -23,7 +23,7 @@ frontend which by default is located at 'http://localhost:3000'
 
 ### User related
 
-* [Show all users](#users-get) : `GET /api/users/`
+* [Get user profile](#users-get) : `GET /api/users/`
 * [Show user](#users-get-by-id) : `GET /api/users/:id`
 * [Create user](#users-post) : `POST /api/users/`
 * [Delete user](#users-delete-by-id) : `DELETE /api/users/:id`
@@ -217,13 +217,13 @@ Used to collect a Token for a registered User.
 
 ## Users GET
 
-Used to get all users
+Used to get a user's profile
 
 **URL** : `/api/users`
 
 **Method** : `GET`
 
-**Auth required** : NO
+**Auth required** : YES
 
 ## Users GET by ID
 
