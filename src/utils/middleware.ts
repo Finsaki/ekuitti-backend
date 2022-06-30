@@ -30,10 +30,7 @@ const userExtractor = async (
   next: NextFunction
 ) => {
   //checking that token field in request matches decodedToken with envSecret value
-  const decodedToken = verify(
-    req.token,
-    process.env.SECRET
-  ) as JwtPayload // Tell tsc that token is a jwtpayload not a string
+  const decodedToken = verify(req.token, process.env.SECRET) as JwtPayload // Tell tsc that token is a jwtpayload not a string
 
   if (!req.token || !decodedToken.id) {
     return res.status(401).json({ error: 'token missing or invalid' })
@@ -43,7 +40,7 @@ const userExtractor = async (
   //all id's are used for verification processes
   req.user = {
     id: user.id,
-    eAddressId: user.eAddressId
+    eAddressId: user.eAddressId,
   }
 
   next()
