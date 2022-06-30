@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express'
 import { User } from '../models/user'
-import { addItem, getItem, deleteItem, findUserByID } from '../models/userDao'
+import { addItem, getItem, deleteItem } from '../models/userDao'
 import { removePasswordForUser } from '../utils/userHelper'
 import { genRandomString, sha512 } from '../utils/hashHelper'
 import { userExtractor } from '../utils/middleware'
@@ -14,7 +14,7 @@ const usersRouter = Router()
 // Get a user profile
 // TODO: probably want to remove password hash and salt from response
 usersRouter.get('/', userExtractor, async (req: Request, res: Response) => {
-  const user = await findUserByID(req.user.id)
+  const user = await getItem(req.user.id)
   res.status(200).json(user)
 })
 
